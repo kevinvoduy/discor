@@ -1,7 +1,10 @@
-const http = require('http');
-const App = require('./config/express');
-const graphqlHTTP = require('express-graphql');
-const schema = require('../src/config/graphql/schema/user.js')
+require('babel-register');
+require('babel-polyfill')
+
+import http from 'http';
+import graphqlHTTP from 'express-graphql';
+import App from './config/express';
+import schema from '../src/config/graphql/schema/user.js';
 
 const data = {
   1: {

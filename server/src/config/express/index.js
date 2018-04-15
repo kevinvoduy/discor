@@ -1,7 +1,7 @@
-const express = require('express');
-const parser = require('body-parser');
-const path = require('path');
-const graphqlHTTP = require('express-graphql');
+import express from 'express';
+import parser from 'body-parser';
+import path from 'path';
+import graphqlHTTP from 'express-graphql';
 
 const middleware = [
   parser.json(),
