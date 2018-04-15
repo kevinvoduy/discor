@@ -1,6 +1,7 @@
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
+const graphqlHTTP = require('express-graphql');
 
 const middleware = [
   parser.json(),
