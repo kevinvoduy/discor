@@ -1,6 +1,7 @@
 import express from 'express';
 import parser from 'body-parser';
 import path from 'path';
+import router from '../../config/routes';
 
 const middleware = [
 	parser.json(),
@@ -12,16 +13,16 @@ class App {
 	constructor() {
 		this.express = express();
 		this.mountMiddleware();
-		// this.mountRoutes();
+		this.mountRoutes();
 	}
 
 	mountMiddleware() {
 		this.express.use(...middleware);
 	}
 
-	// mountRoutes() {
-	//   this.express.use('/api', router);
-	// }
+	mountRoutes() {
+	  this.express.use('/api', router);
+	}
 }
 
 export default new App();
