@@ -1,2 +1,2 @@
 # discor
-Messaging platform
+Social platform
