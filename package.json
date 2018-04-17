@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cd rest-server && npm test",
-    "db:setup:server": "cd rest-server && babel-node src/config/database/setup.js"
+    "db:setup:rest-server": "cd rest-server && babel-node src/config/database/setup.js"
   },
   "repository": {
     "type": "git",

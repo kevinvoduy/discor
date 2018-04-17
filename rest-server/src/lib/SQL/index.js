@@ -94,7 +94,7 @@ export const createCredentialsTable = async() => {
     );
     success('created users table');
   } catch (err) {
-    error('error creating users table -', err);
+    error('error creating credentials table -', err);
   }
 };
 
