@@ -4,8 +4,8 @@
   "description": "Messaging platform",
   "main": "index.js",
   "scripts": {
-    "test": "cd server && npm test",
-    "db:setup:server": "cd server && babel-node src/config/database/setup.js"
+    "test": "cd rest-server && npm test",
+    "db:setup:server": "cd rest-server && babel-node src/config/database/setup.js"
   },
   "repository": {
     "type": "git",

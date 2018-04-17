@@ -10,7 +10,7 @@ mongoose.connect(`mongodb://localhost:27017/${username}`);
 mongoose.Promise = global.Promise;
 const mongoDB = mongoose.connection;
 
-mongoDB.once('connected', (err) => {
+mongoDB.once('open', (err) => {
   success('successfully connected to MongoDB:', username);
   if (err) error('failed to connect to MongoDB', err);
 });

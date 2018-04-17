@@ -1,7 +1,4 @@
 import {
-  createDatabase,
-  dropDatabase,
-  useDatabase,
   createUserTable,
   dropUserTable,
   createCredentialsTable,
