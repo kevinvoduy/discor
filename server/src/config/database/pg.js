@@ -20,14 +20,16 @@ const config = {
 const db = new Pool(config);
 
 db.on('connect', () => {
-  success('successfully connected to pg', config.database);
+  success('successfully connected to pg database:', config.database);
 });
 
 db.on('error', err => {
   error('error in pg:', err);
 });
 
-db.connect().catch(err => error('Error in pg', err));
+db.connect((err) => {
+  if (err) throw err;
+});
 
 Promise.promisifyAll(db);
 

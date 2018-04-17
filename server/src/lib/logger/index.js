@@ -8,7 +8,7 @@ export const success = (...log) => {
 
 export const warning = (...log) => {
   if (process.env.DEBUG === 'true') {
-    console.log(chalk.default.white.bgYellow.bold(...log));
+    console.log(chalk.default.gray.bgYellow.bold(...log));
   }
 };
 

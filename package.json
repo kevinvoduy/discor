@@ -4,7 +4,8 @@
   "description": "Messaging platform",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd server && npm test",
+    "db:setup:server": "cd server && babel-node src/config/database/setup.js"
   },
   "repository": {
     "type": "git",
