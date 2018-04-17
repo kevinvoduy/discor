@@ -1,10 +1,11 @@
 {
     "env": {
         "es6": true,
-        "node": true
+        "node": true,
+        "commonjs": true
     },
     "extends": [
-        "airbnb",
+        "airbnb-base",
         "eslint:recommended",
         "plugin:node/recommended",
         "plugin:react/recommended",
@@ -20,13 +21,13 @@
     "plugins": [
         "react",
         "node",
-        "jsx-a11y"
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
-        "linebreak-style": ["warn", "unix"],
         "quotes": ["warn", "single"],
-        "semi": ["warn", "always"],
-        "no-console": ["off"],
+        "semi": "error",
+        "no-console": "off",
         "node/exports-style": ["warn", "module.exports"],
         "node/no-unsupported-features": ["off"]
     }

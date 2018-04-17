@@ -11,6 +11,7 @@ const schema = buildSchema(`
 
   type Query {
     user(id: Int): User
+    name(lastName: String): [User]
   }
 `);
 
