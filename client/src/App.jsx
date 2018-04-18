@@ -1,10 +1,10 @@
 import React from 'react';
-import Landing from './components/landing';
+import Login from './components/login';
 
 const App = () => (
   <div>
     <h2>Hello Kevin</h2>
-    <Landing />
+    <Login />
   </div>
 );
 

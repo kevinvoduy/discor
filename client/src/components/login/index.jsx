@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import saveUsernameAction from '../../redux/actions/usernameAction';
 
-class Landing extends React.Component {
-  constructor() {
-    super();
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       username: '',
       password: '',
@@ -18,13 +23,17 @@ class Landing extends React.Component {
   }
 
   logState() {
-    console.log('state', this.state);
+    console.log('state', this.state, '\nprops', this.props.store.username);
+    this.props.saveUsername(this.state.username);
+  }
+
+  loginUser() {
   }
 
   render() {
     return (
-      <div className="landing__page" >
-        <div className="login">
+      <div className="login__page" >
+        <div className="form__container">
           <form>
             <label htmlFor="username">
               <input
@@ -54,4 +63,20 @@ class Landing extends React.Component {
   }
 }
 
-export default Landing;
+Login.propTypes ={
+  saveUsername: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => {
+  return {
+    store: state.username__store,
+  };
+};
+
+const matchDispatchToProps = dispatch => {
+  return bindActionCreators({
+    saveUsername: saveUsernameAction,
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, matchDispatchToProps)(Login);
