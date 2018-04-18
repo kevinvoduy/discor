@@ -7,15 +7,25 @@
     "dev": "webpack -w --mode development",
     "build": "webpack -w"
   },
-  "author": "",
+  "author": "Kevin V",
   "license": "ISC",
+  "eslintConfig": {
+      "env": {
+          "browser": true,
+          "node": true
+      }
+  },
+  "eslintIgnore": "bundle.js",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "dotenv": "^5.0.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "redux-devtools": "^3.4.1",
     "uglify-js": "^3.3.21"
   },
   "devDependencies": {

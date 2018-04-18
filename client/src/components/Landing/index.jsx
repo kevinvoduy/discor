@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Landing extends React.Component {
   constructor() {
@@ -7,7 +7,14 @@ class Landing extends React.Component {
       username: '',
       password: '',
     };
+    this.onChangeHandler = this.onChangeHandler.bind(this);
     this.logState = this.logState.bind(this);
+  }
+
+  onChangeHandler(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   }
 
   logState() {
@@ -24,18 +31,18 @@ class Landing extends React.Component {
                 type="text"
                 name="username"
                 placeholder="Username"
-                onChange={e => this.state.username = e.target.value}
+                onChange={this.onChangeHandler}
               />
             </label>
 
-            <br/>
+            <br />
 
             <label htmlFor="password">
               <input
                 type="text"
                 name="password"
                 placeholder="Password"
-                onChange={e => this.state.password = e.target.value}
+                onChange={this.onChangeHandler}
               />
             </label>
           </form>
@@ -43,7 +50,7 @@ class Landing extends React.Component {
           <button onClick={this.logState}>State</button>
         </div>
       </div>
-    )
+    );
   }
 }
 
