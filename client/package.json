@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack -w --mode development",
     "build": "webpack -w"
   },
   "author": "",
