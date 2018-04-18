@@ -14,6 +14,7 @@ class Login extends React.Component {
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.logState = this.logState.bind(this);
+    this.authenticateUser = this.authenticateUser.bind(this);
   }
 
   onChangeHandler(e) {
@@ -23,11 +24,11 @@ class Login extends React.Component {
   }
 
   logState() {
-    console.log('state', this.state, '\nprops', this.props.store.username);
     this.props.saveUsername(this.state.username);
+    console.log('state', this.state, '\nstore', this.props.username);
   }
 
-  loginUser() {
+  authenticateUser() {
   }
 
   render() {
@@ -63,13 +64,18 @@ class Login extends React.Component {
   }
 }
 
-Login.propTypes ={
+Login.propTypes = {
   saveUsername: PropTypes.func.isRequired,
+  username: PropTypes.string,
+};
+
+Login.defaultProps = {
+  username: null,
 };
 
 const mapStateToProps = state => {
   return {
-    store: state.username__store,
+    username: state.username__store.username,
   };
 };
 
