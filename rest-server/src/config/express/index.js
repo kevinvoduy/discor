@@ -2,10 +2,11 @@ import express from 'express';
 import parser from 'body-parser';
 import path from 'path';
 import cors from 'cors';
-import 'helmet';
+import compression from 'compression';
 import router from '../../config/routes';
 
 const middleware = [
+	compression(),
 	parser.json(),
 	parser.urlencoded ({ extended:  true }),
 	cors({
@@ -24,6 +25,11 @@ class App {
 
 	mountMiddleware() {
 		this.express.use(...middleware);
+		this.express.get('*.js', function (req, res, next) {
+      req.url = req.url + '.gz';
+      res.set('Content-Encoding', 'gzip');
+      next();
+    });
 	}
 
 	mountRoutes() {

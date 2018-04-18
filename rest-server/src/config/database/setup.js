@@ -27,6 +27,7 @@ const setup = async (err) => {
   await createMessagesTable();
   await createMessageRecipiantTable();
   if (err) throw err;
+  // process.exit();
 };
 
 setup();
