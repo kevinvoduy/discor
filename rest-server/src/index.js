@@ -63,4 +63,4 @@ server.listen(PORT, (err) => {
 	else success('successfully connected to server:', PORT);
 });
 
-export default server;
+module.exports = { app: app, serve: server };
