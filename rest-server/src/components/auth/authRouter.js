@@ -1,6 +1,6 @@
 import express from 'express';
 // import validate from 'express-validation';
-import signupController from './signupController';
+import signupController from './authController';
 
 const router = express.Router();
 

@@ -1,4 +1,4 @@
-// import db from '../../config/database/pg';
+import signupQuery from './authQueries';
 import {
   success,
   error,
@@ -6,8 +6,11 @@ import {
 
 const signupController = async(req, res) => {
   try {
-    success('successfully signed up user');
-    res.status(200).send('signup');
+    // adds username to db, returning id
+    const id = await signupQuery(req.body);
+
+    success('controller - successfully signed up user');
+    res.status(200).send(id);
   } catch (err) {
     error('failed to authenticate signup', err);
   }

@@ -7,7 +7,6 @@ const server = require('../../../').serve;
 
 const payload = {
   username: 'kevinvoduy',
-  password: 'password',
 };
 
 afterEach(done => {
