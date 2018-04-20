@@ -47,6 +47,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login__page" >
+        <h1>Login/Signup</h1>
         <div className="form__container">
           <form>
             <label htmlFor="username">

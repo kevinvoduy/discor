@@ -53,7 +53,7 @@ export const createUserTable = async() => {
       CREATE TABLE IF NOT EXISTS users
       (
         id SERIAL,
-        username VARCHAR(60) UNIQUE NOT NULL,
+        username VARCHAR(25) UNIQUE NOT NULL,
         CONSTRAINT users_pk
           PRIMARY KEY(id)
       )
@@ -86,13 +86,13 @@ export const createCredentialsTable = async() => {
       (
         id SERIAL,
         user_id INT NOT NULL,
-        hash VARCHAR NOT NULL,
+        hash VARCHAR(25) NOT NULL,
         CONSTRAINT fk_users_id
           FOREIGN KEY(user_id) REFERENCES users(id)
       )
       `
     );
-    success('created users table');
+    success('created credentials table');
   } catch (err) {
     error('error creating credentials table -', err);
   }

@@ -7,6 +7,7 @@ const server = require('../../../').serve;
 
 const payload = {
   username: 'kevinvoduy',
+  password: 'password',
 };
 
 afterEach(done => {
@@ -16,9 +17,9 @@ afterEach(done => {
 
 describe('creates a user', () => {
   test('it should create a user', async() => {
-    const { status } = await request(app.listen(1234))
+    await request(app.listen(1234))
     .post('/api/auth/test')
-    .send(payload);
-  expect(status).toBe(200);
+    .send(payload)
+    .expect(200);
   });
 });
