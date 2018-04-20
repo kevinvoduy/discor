@@ -6,13 +6,17 @@ import {
 
 const signupController = async(req, res) => {
   try {
-    // adds username to db, returning id
-    const id = await signupQuery(req.body);
+    // adds username to db
+    const result = await signupQuery(req.body);
 
-    success('controller - successfully signed up user');
-    res.status(200).send(id);
+    // validate username
+
+    // validate password
+
+    success('controller - successfully signed up user :', req.body.username);
+    res.status(200).send(result);
   } catch (err) {
-    error('failed to authenticate signup', err);
+    error('failed to authenticate user', err);
   }
 };
 

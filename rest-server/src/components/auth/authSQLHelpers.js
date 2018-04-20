@@ -1,4 +1,4 @@
-const signupSQLHelper = ({ username }) => {
+export const addUsername = ({ username }) => {
   return `
     INSERT INTO users (username)
     VALUES ('${username}')
@@ -6,4 +6,9 @@ const signupSQLHelper = ({ username }) => {
   `;
 };
 
-export default signupSQLHelper;
+export const addPassword =(id, { password }) => {
+  return `
+    INSERT INTO credentials (user_id, hash)
+    VALUES (${id}, '${password}')
+  `;
+};

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import saveUsernameAction from '../../redux/actions/usernameAction';
+import axios from 'axios';
+
+import saveUsernameAction from '../../redux/actions/signupAction';
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Login extends React.Component {
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.logState = this.logState.bind(this);
-    this.authenticateUser = this.authenticateUser.bind(this);
+    this.userSignup = this.userSignup.bind(this);
   }
 
   onChangeHandler(e) {
@@ -28,7 +29,19 @@ class Login extends React.Component {
     console.log('state', this.state, '\nstore', this.props.username);
   }
 
-  authenticateUser() {
+  userSignup() {
+    const payload = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+
+    axios.post('/api/auth/test', payload)
+      .then(res => {
+        console.log('User added to db', res);
+      })
+      .catch(err => {
+        throw new Error('failed to sign up user', err);
+      });
   }
 
   render() {
@@ -57,7 +70,7 @@ class Login extends React.Component {
             </label>
           </form>
 
-          <button onClick={this.logState}>State</button>
+          <button onClick={this.userSignup}>State</button>
         </div>
       </div>
     );

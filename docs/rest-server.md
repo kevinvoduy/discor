@@ -80,3 +80,11 @@ __Endpoints__
           friend_id,
         }
 ```
+
+#Testing
+
+Backend testing is done with Jest. To add new tests, each test needs to open a new port that is not in use.
+
+```bash
+npm run test
+```
