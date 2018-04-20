@@ -5,7 +5,7 @@ import formValidation from '../../middleware/validation/request-validation';
 
 const router = express.Router();
 
-router.route('/test')
+router.route('/signup')
   .post(validate(formValidation.signup), signupController);
 
 export default router;

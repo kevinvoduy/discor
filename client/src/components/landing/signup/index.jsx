@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import saveUsernameAction from '../../../redux/actions/signupAction';
+import setLoginStateAction from '../../../redux/actions/authToggleAction';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -25,8 +26,8 @@ class Signup extends React.Component {
   }
 
   logState() {
-    this.props.saveUsername(this.state.username);
-    console.log('state', this.state, '\nstore', this.props.username);
+    // bypass signup
+    this.props.redirectHome();
   }
 
   userSignup() {
@@ -34,15 +35,15 @@ class Signup extends React.Component {
       username: this.state.username,
       password: this.state.password,
     };
-
-    axios.post('/api/auth/test', payload)
-      .then(res => {
+    axios.post('/api/auth/signup', payload)
+      .then(() => {
+        // save username to redux
         this.props.saveUsername(this.state.username);
+        this.props.setLoginState(true);
         this.props.redirectHome();
-        console.log('User added to db', res);
       })
-      .catch(err => {
-        console.log('failed to sign up user\n', err);
+      .catch(() => {
+        throw new Error('failed to add new user');
       });
   }
 
@@ -74,6 +75,7 @@ class Signup extends React.Component {
           </form>
 
           <button onClick={this.userSignup}>State</button>
+          <button onClick={this.logState}>Skip</button>
         </div>
       </div>
     );
@@ -82,23 +84,21 @@ class Signup extends React.Component {
 
 Signup.propTypes = {
   saveUsername: PropTypes.func.isRequired,
-  username: PropTypes.string,
   redirectHome: PropTypes.func.isRequired,
-};
-
-Signup.defaultProps = {
-  username: null,
+  setLoginState: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => {
   return {
     username: state.username__store.username,
+    isLoggedIn: state.isLoggedIn__store.isLoggedIn,
   };
 };
 
 const matchDispatchToProps = dispatch => {
   return bindActionCreators({
     saveUsername: saveUsernameAction,
+    setLoginState: setLoginStateAction,
   }, dispatch);
 };
 
