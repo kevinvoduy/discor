@@ -1,6 +1,6 @@
 import signupQuery from './authQueries';
 import {
-  success,
+  database,
   error,
  } from '../../lib/logger';
 
@@ -13,10 +13,10 @@ const signupController = async(req, res) => {
 
     // validate password
 
-    success('controller - successfully signed up user :', req.body.username);
+    database('controller - successfully signed up user :', req.body.username);
     res.status(200).send(result);
   } catch (err) {
-    error('failed to authenticate user', err);
+    error('controller - failed to authenticate user', err);
   }
 };
 

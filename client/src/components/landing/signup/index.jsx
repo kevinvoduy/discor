@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import saveUsernameAction from '../../redux/actions/signupAction';
+import saveUsernameAction from '../../../redux/actions/signupAction';
 
-class Login extends React.Component {
+class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,17 +37,19 @@ class Login extends React.Component {
 
     axios.post('/api/auth/test', payload)
       .then(res => {
+        this.props.saveUsername(this.state.username);
+        this.props.redirectHome();
         console.log('User added to db', res);
       })
       .catch(err => {
-        throw new Error('failed to sign up user', err);
+        console.log('failed to sign up user\n', err);
       });
   }
 
   render() {
     return (
       <div className="login__page" >
-        <h1>Login/Signup</h1>
+        <h1>Signup</h1>
         <div className="form__container">
           <form>
             <label htmlFor="username">
@@ -78,12 +80,13 @@ class Login extends React.Component {
   }
 }
 
-Login.propTypes = {
+Signup.propTypes = {
   saveUsername: PropTypes.func.isRequired,
   username: PropTypes.string,
+  redirectHome: PropTypes.func.isRequired,
 };
 
-Login.defaultProps = {
+Signup.defaultProps = {
   username: null,
 };
 
@@ -99,4 +102,4 @@ const matchDispatchToProps = dispatch => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps, matchDispatchToProps)(Login);
+export default connect(mapStateToProps, matchDispatchToProps)(Signup);

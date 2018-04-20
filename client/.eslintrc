@@ -25,6 +25,7 @@
   "rules": {
       "quotes": ["warn", "single"],
       "semi": "error",
-      "no-console": "off"
+      "no-console": "off",
+      "react/forbid-prop-types": "off"
   }
 }

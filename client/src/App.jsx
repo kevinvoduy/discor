@@ -1,9 +1,9 @@
 import React from 'react';
-import Login from './components/login';
+import Landing from './components/landing';
 
 const App = () => (
   <div>
-    <Login />
+    <Landing />
   </div>
 );
 

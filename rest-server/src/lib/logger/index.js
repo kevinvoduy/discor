@@ -6,6 +6,12 @@ export const success = (...log) => {
   }
 };
 
+export const database = (...log) => {
+  if (process.env.DEBUG === 'true') {
+    console.log(chalk.default.gray.bgMagentaBright.bold(...log));
+  }
+};
+
 export const warning = (...log) => {
   if (process.env.DEBUG === 'true') {
     console.log(chalk.default.gray.bgYellow.bold(...log));
