@@ -14,6 +14,7 @@ const signupController = async(req, res) => {
     // validate password
 
     database('controller - successfully signed up user :', req.body.username);
+    console.log(JSON.stringify(result));
     res.status(200).send(result);
   } catch (err) {
     error('controller - failed to authenticate user', err);

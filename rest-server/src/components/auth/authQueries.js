@@ -13,10 +13,10 @@ const signupQuery = async(payload) => {
 
     // adds password to credentials table
     const passwordQuery = addPassword(id, payload);
-    const pw = await db.queryAsync(passwordQuery);
+    const query = await db.queryAsync(passwordQuery);
 
     database('queries - called db to sign up user');
-    return pw;
+    return { id, query };
   } catch(err) {
     error('queries - failed to add user to db -', err);
   }

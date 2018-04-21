@@ -11,7 +11,7 @@ import {
   dropMessageRecipiantTable
 } from '../../lib/SQL';
 
-const setup = async (err) => {
+const setup = async(err) => {
   // await dropDatabase();
   await dropCredentialsTable();
   await dropFriendsTable();
@@ -27,7 +27,7 @@ const setup = async (err) => {
   await createMessagesTable();
   await createMessageRecipiantTable();
   if (err) throw err;
-  // process.exit();
+  process.exit();
 };
 
 setup();

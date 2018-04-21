@@ -5,7 +5,7 @@ import App from './config/express';
 import schema from '../src/config/graphql/schema/user';
 import '../src/config/database/pg';
 import '../src/config/database/mongo';
-import '../src/config/database/setup';
+// import '../src/config/database/setup';
 
 import { success } from '../src/lib/logger';
 
