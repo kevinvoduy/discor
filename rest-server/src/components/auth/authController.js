@@ -1,7 +1,8 @@
-import signupQuery from './authQueries';
+import {
+  signupQuery,
+} from './authQueries';
 import {
   database,
-  error,
  } from '../../lib/logger';
 
 const signupController = async(req, res) => {
@@ -9,15 +10,10 @@ const signupController = async(req, res) => {
     // adds username to db
     const result = await signupQuery(req.body);
 
-    // validate username
-
-    // validate password
-
     database('controller - successfully signed up user :', req.body.username);
-    console.log(JSON.stringify(result));
-    res.status(200).send(result);
+    return res.status(200).send(result);
   } catch (err) {
-    error('controller - failed to authenticate user', err);
+    return res.status(400).send('Could not sign up user');
   }
 };
 

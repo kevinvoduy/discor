@@ -1,7 +1,9 @@
 import db from '../../config/database/pg';
-import { addUsername, addPassword } from './authSQLHelpers';
 import {
-  error,
+  addUsername,
+  addPassword,
+} from './authSQLHelpers';
+import {
   database,
  } from '.././../lib/logger';
 
@@ -18,7 +20,7 @@ const signupQuery = async(payload) => {
     database('queries - called db to sign up user');
     return { id, query };
   } catch(err) {
-    error('queries - failed to add user to db -', err);
+    throw new Error('queries - failed to add user to db', 'user different username');
   }
 };
 

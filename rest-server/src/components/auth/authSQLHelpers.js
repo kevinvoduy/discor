@@ -6,7 +6,7 @@ export const addUsername = ({ username }) => {
   `;
 };
 
-export const addPassword =(id, { password }) => {
+export const addPassword = (id, { password }) => {
   return `
     INSERT INTO credentials (user_id, hash)
     VALUES (${id}, '${password}')

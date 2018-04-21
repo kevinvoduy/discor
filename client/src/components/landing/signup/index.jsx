@@ -42,8 +42,8 @@ class Signup extends React.Component {
         this.props.setLoginState(true);
         this.props.redirectHome();
       })
-      .catch(() => {
-        throw new Error('failed to add new user');
+      .catch((err) => {
+        console.log('failed to add new user', err);
       });
   }
 
