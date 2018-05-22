@@ -22,7 +22,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home__page">
-        <h1>Home Page</h1>
         <NavBar />
         <ContentSwitcher />
         <button onClick={this.logOut} >Log out</button>
