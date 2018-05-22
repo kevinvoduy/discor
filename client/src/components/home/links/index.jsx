@@ -5,9 +5,8 @@ const Links = () => (
   <div className="links">
     <h4>Links Component</h4>
     <ul>
-      <li>
-        <Link to="/home/feed">Show Feed</Link>
-      </li>
+      <li><Link to="/home">Show Feed</Link></li>
+      <li><Link to="/home/people">Show People</Link></li>
     </ul>
   </div>
 );

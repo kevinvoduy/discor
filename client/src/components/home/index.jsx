@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import NavBar from './nav';
-import Links from './links';
 import ContentSwitcher from './content_switcher';
 
 import setLoginStateAction from '../../redux/actions/authToggleAction';
@@ -25,7 +24,6 @@ class Home extends React.Component {
       <div className="home__page">
         <h1>Home Page</h1>
         <NavBar />
-        <Links />
         <ContentSwitcher />
         <button onClick={this.logOut} >Log out</button>
       </div>
