@@ -5264,6 +5264,18 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./src/components/home/content_switcher/inbox/index.jsx":
+/*!**************************************************************!*\
+  !*** ./src/components/home/content_switcher/inbox/index.jsx ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Inbox = function Inbox() {\n  return _react2.default.createElement(\n    \"div\",\n    { className: \"inbox\" },\n    _react2.default.createElement(\n      \"h4\",\n      null,\n      \"Inbox Component\"\n    )\n  );\n};\n\nexports.default = Inbox;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/inbox/index.jsx?");
+
+/***/ }),
+
 /***/ "./src/components/home/content_switcher/index.jsx":
 /*!********************************************************!*\
   !*** ./src/components/home/content_switcher/index.jsx ***!
@@ -5272,7 +5284,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _links = __webpack_require__(/*! ../links */ \"./src/components/home/links/index.jsx\");\n\nvar _links2 = _interopRequireDefault(_links);\n\nvar _feed = __webpack_require__(/*! ./feed */ \"./src/components/home/content_switcher/feed/index.jsx\");\n\nvar _feed2 = _interopRequireDefault(_feed);\n\nvar _people = __webpack_require__(/*! ./people */ \"./src/components/home/content_switcher/people/index.jsx\");\n\nvar _people2 = _interopRequireDefault(_people);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ContentSwitcher = function ContentSwitcher() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_links2.default, null),\n    _react2.default.createElement(\n      _reactRouterDom.Switch,\n      null,\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home/people', component: _people2.default }),\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _feed2.default })\n    )\n  );\n};\n\nexports.default = ContentSwitcher;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _links = __webpack_require__(/*! ../links */ \"./src/components/home/links/index.jsx\");\n\nvar _links2 = _interopRequireDefault(_links);\n\nvar _feed = __webpack_require__(/*! ./feed */ \"./src/components/home/content_switcher/feed/index.jsx\");\n\nvar _feed2 = _interopRequireDefault(_feed);\n\nvar _people = __webpack_require__(/*! ./people */ \"./src/components/home/content_switcher/people/index.jsx\");\n\nvar _people2 = _interopRequireDefault(_people);\n\nvar _inbox = __webpack_require__(/*! ./inbox */ \"./src/components/home/content_switcher/inbox/index.jsx\");\n\nvar _inbox2 = _interopRequireDefault(_inbox);\n\nvar _settings = __webpack_require__(/*! ./settings */ \"./src/components/home/content_switcher/settings/index.jsx\");\n\nvar _settings2 = _interopRequireDefault(_settings);\n\nvar _premium = __webpack_require__(/*! ./premium */ \"./src/components/home/content_switcher/premium/index.jsx\");\n\nvar _premium2 = _interopRequireDefault(_premium);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ContentSwitcher = function ContentSwitcher() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'content__switcher' },\n    _react2.default.createElement(_links2.default, null),\n    _react2.default.createElement(\n      _reactRouterDom.Switch,\n      null,\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home/people', component: _people2.default }),\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home/inbox', component: _inbox2.default }),\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home/premium', component: _premium2.default }),\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home/settings', component: _settings2.default }),\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _feed2.default })\n    )\n  );\n};\n\nexports.default = ContentSwitcher;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/index.jsx?");
 
 /***/ }),
 
@@ -5285,6 +5297,30 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 "use strict";
 eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar People = function People() {\n  return _react2.default.createElement(\n    \"div\",\n    { className: \"people\" },\n    _react2.default.createElement(\n      \"h4\",\n      null,\n      \"People Component\"\n    )\n  );\n};\n\nexports.default = People;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/people/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/home/content_switcher/premium/index.jsx":
+/*!****************************************************************!*\
+  !*** ./src/components/home/content_switcher/premium/index.jsx ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Premium = function Premium() {\n  return _react2.default.createElement(\n    \"div\",\n    { className: \"premium\" },\n    _react2.default.createElement(\n      \"h4\",\n      null,\n      \"Premium Component\"\n    )\n  );\n};\n\nexports.default = Premium;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/premium/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/home/content_switcher/settings/index.jsx":
+/*!*****************************************************************!*\
+  !*** ./src/components/home/content_switcher/settings/index.jsx ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Settings = function Settings() {\n  return _react2.default.createElement(\n    \"div\",\n    { className: \"settings\" },\n    _react2.default.createElement(\n      \"h4\",\n      null,\n      \"Settings Component\"\n    )\n  );\n};\n\nexports.default = Settings;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/settings/index.jsx?");
 
 /***/ }),
 
@@ -5308,7 +5344,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Links = function Links() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'links' },\n    _react2.default.createElement(\n      'h4',\n      null,\n      'Links Component'\n    ),\n    _react2.default.createElement(\n      'ul',\n      null,\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home' },\n          'Show Feed'\n        )\n      ),\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home/people' },\n          'Show People'\n        )\n      )\n    )\n  );\n};\n\nexports.default = Links;\n\n//# sourceURL=webpack:///./src/components/home/links/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Links = function Links() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'links' },\n    _react2.default.createElement(\n      'h4',\n      null,\n      'Links Component'\n    ),\n    _react2.default.createElement(\n      'ul',\n      null,\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home' },\n          'Show Feed'\n        )\n      ),\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home/people' },\n          'Show People'\n        )\n      ),\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home/inbox' },\n          'Show Inbox'\n        )\n      ),\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home/premium' },\n          'Show Premium'\n        )\n      ),\n      _react2.default.createElement(\n        'li',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Link,\n          { to: '/home/settings' },\n          'Show Settings'\n        )\n      )\n    )\n  );\n};\n\nexports.default = Links;\n\n//# sourceURL=webpack:///./src/components/home/links/index.jsx?");
 
 /***/ }),
 
