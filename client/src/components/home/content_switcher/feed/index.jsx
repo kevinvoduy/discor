@@ -4,7 +4,7 @@ import FeedStream from './feedStream';
 
 const Feed = () => (
   <div className="feed">
-    <h4>Feed Component</h4>
+    <h3>Feed Component</h3>
     <UploadContent />
     <FeedStream />
   </div>

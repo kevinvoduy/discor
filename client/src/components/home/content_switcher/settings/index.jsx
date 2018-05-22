@@ -2,7 +2,7 @@ import React from 'react';
 
 const Settings = () => (
   <div className="settings">
-    <h4>Settings Component</h4>
+    <h3>Settings Component</h3>
   </div>
 );
 

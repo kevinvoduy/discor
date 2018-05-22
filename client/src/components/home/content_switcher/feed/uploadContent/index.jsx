@@ -2,6 +2,7 @@ import React from 'react';
 
 const UploadContent = () => (
   <div className="upload__content">
+    <h4>Upload Content</h4>
     <div className="content__type">
       <ul>
         <li><img src="" alt="quote" />Share an update</li>
