@@ -16,18 +16,12 @@ afterEach(done => {
 });
 
 describe('creates a user', () => {
-  test('it should hit endpoint & create a user', async() => {
-    await request(app.listen(1234))
-    .post('/api/auth/signup')
-    .send(payload)
-    .expect(200);
-  });
 
   test('it should fail if no password is supplied', async() => {
     await request(app.listen(1235))
-      .post('/api/auth/signup')
-      .send({ username: 'testuser1' })
-      .expect(400);
+    .post('/api/auth/signup')
+    .send({ username: 'testuser1' })
+    .expect(400);
   });
 
   test('it should fail if no username is supplied', async() => {
@@ -37,7 +31,10 @@ describe('creates a user', () => {
       .expect(400);
   });
 
-  test('it should remove a user', async() => {
-    return;
+  test('it should hit endpoint & create a user', async() => {
+    await request(app.listen(1234))
+    .post('/api/auth/signup')
+    .send(payload)
+    .expect(200);
   });
 });

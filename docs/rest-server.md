@@ -4,8 +4,8 @@ To begin developing on the RESTful JSON Data API, run the following from the 're
 
 ```bash
 npm i
-babel-node src/config/database/setup.js
-npm run start
+npm run db:build
+npm start
 ```
 
 #Database

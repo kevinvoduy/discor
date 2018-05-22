@@ -42,8 +42,8 @@ class Signup extends React.Component {
         this.props.setLoginState(true);
         this.props.redirectHome();
       })
-      .catch((err) => {
-        console.log('failed to add new user', err);
+      .catch(() => {
+        throw new Error('Username already in use');
       });
   }
 
@@ -74,7 +74,7 @@ class Signup extends React.Component {
             </label>
           </form>
 
-          <button onClick={this.userSignup}>State</button>
+          <button onClick={this.userSignup}>Sign Up / Log State</button>
           <button onClick={this.logState}>Skip</button>
         </div>
       </div>

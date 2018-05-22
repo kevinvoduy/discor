@@ -4,7 +4,7 @@
   "description": "rest server",
   "main": "index.js",
   "scripts": {
-    "test": "jest --silent --forceExit",
+    "test": "jest --forceExit",
     "db:build": "babel-node src/config/database/setup.js",
     "start": "babel-node src/index.js"
   },

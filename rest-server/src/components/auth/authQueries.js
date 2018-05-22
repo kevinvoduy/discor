@@ -10,17 +10,18 @@ import {
 const signupQuery = async(payload) => {
   try {
     // add username to users table, returns id
-    const usernameQuery = addUsername(payload);
+    const usernameQuery =  addUsername(payload);
     const { rows: [{ id }] } = await db.queryAsync(usernameQuery);
 
     // adds password to credentials table
     const passwordQuery = addPassword(id, payload);
-    const query = await db.queryAsync(passwordQuery);
+    await db.queryAsync(passwordQuery);
 
     database('queries - called db to sign up user');
-    return { id, query };
+    return 'SUCCESS - user signed up';
   } catch(err) {
-    throw new Error('queries - failed to add user to db', 'user different username');
+    database('queries - failed to add user to db');
+    throw new Error('queries - failed to add user to db', 'use different username');
   }
 };
 

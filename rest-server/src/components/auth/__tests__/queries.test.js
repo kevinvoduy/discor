@@ -5,7 +5,7 @@ const payload = {
   password: 'password',
 };
 
-describe('User sign up queries', () => {
+describe('Tests user sign up queries', () => {
   test('it should properly add user to database', () => {
     signupQuery(payload)
       .then(result => {
