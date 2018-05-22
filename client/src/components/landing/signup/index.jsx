@@ -74,7 +74,7 @@ class Signup extends React.Component {
             </label>
           </form>
 
-          <button onClick={this.userSignup}>Sign Up / Log State</button>
+          <button onClick={this.userSignup}>Sign Up</button>
           <button onClick={this.logState}>Skip</button>
         </div>
       </div>
