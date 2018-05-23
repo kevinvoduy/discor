@@ -1,23 +1,35 @@
-import Post from '../../config/schemas/post';
-import { success, error } from '../../lib/logger';
+import {
+  createPostQuery,
+  createCommentQuery,
+  pushCommentQuery
+} from "./postQueries";
 
 //creates a post
-const createPost = async(req, res) => {
+export const createPost = async(req, res) => {
   try {
-    const { owner, content } = req.body;
-    const newPost = new Post({
-      owner,
-      content,
-    });
-    newPost.save();
-    success('controller - successfully created post');
-    console.log('controller - successfully created post');
-    res.status(400).send(newPost);
-  } catch (err) {
-    error('controller - failed to create post');
-    console.log('controller - failed to create post');
+    const postQuery = await createPostQuery(req.body);
+    postQuery.save();
+
+    console.log('controller - successfully created post:\n', JSON.stringify(postQuery));
+    res.status(400).send(postQuery);
+  } catch(err) {
+    console.log('controller - failed to create post -', err);
     res.status(200).send(err.message);
   }
-}
+};
 
-export default createPost;
+//creates a comment
+export const createComment = async(req, res) => {
+  try {
+    const comment = await createCommentQuery(req.body);
+    comment.save();
+
+    const pushCommentToPost = await pushCommentQuery(req.body);
+
+    console.log('controller - successfully added comment to post:\n', comment['postID']);
+    res.status(400).send(comment);
+  } catch(err) {
+    console.log('controller - failed to added comment to post -', err);
+    res.status(200).send(err.message);
+  }
+};
