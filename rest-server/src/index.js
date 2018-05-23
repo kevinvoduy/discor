@@ -4,7 +4,7 @@ import graphqlHTTP from 'express-graphql';
 import App from './config/express';
 import schema from '../src/config/graphql/schema/user';
 import '../src/config/database/pg';
-import '../src/config/database/mongo';
+// import '../src/config/database/mongo';
 // import '../src/config/database/setup';
 
 import { success } from '../src/lib/logger';
@@ -58,7 +58,7 @@ app.use('/graphql', graphqlHTTP({
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, (err) => {
+server.listen(PORT, err => {
 	if (err) throw new Error;
 	else success('successfully connected to server:', PORT);
 });
