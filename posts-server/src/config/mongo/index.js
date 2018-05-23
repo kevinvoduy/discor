@@ -1,8 +1,5 @@
 import mongoose from 'mongoose';
-import {
-  success,
-  error,
-} from '../../lib/logger';
+import { error } from '../../lib/logger';
 
 const username = 'discor';
 
@@ -11,7 +8,7 @@ mongoose.Promise = global.Promise;
 const mongoDB = mongoose.connection;
 
 mongoDB.once('open', (err) => {
-  success('successfully connected to MongoDB:', username);
+  console.log('successfully connected to MongoDB:', username);
   if (err) error('failed to connect to MongoDB', err);
 });
 
