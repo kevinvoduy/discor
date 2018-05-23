@@ -8,19 +8,19 @@ export const createPostQuery = ({ owner, content }) => (
   })
 )
 
-export const createCommentQuery = ({ postID, owner, comment }) => (
-  new Comment({
+export const createCommentQuery = ({ postID, owner, comment }) => {
+  const newComment = new Comment({
     postID,
     owner,
     comment,
-  })
-)
+  });
+  return newComment;
+}
 
-export const pushCommentQuery = ({ postID, owner, comment }) => (
+export const pushCommentQuery = ({ postID}, comment) => (
   Post.findByIdAndUpdate(postID, {
     $push: {
       comments: {
-        owner,
         comment
       }
     }

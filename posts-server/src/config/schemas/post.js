@@ -11,12 +11,10 @@ const PostSchema = new mongoose.Schema({
   },
   comments: [
     {
-      owner: {
-        type: String,
-      },
       comment: {
-        type: String
-      },
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment',
+      }
     }
   ],
   date: { type: Date, default: Date.now },
