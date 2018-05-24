@@ -1,4 +1,5 @@
 import React from 'react';
+import './feedStream.sass';
 
 const FeedStream = () => (
   <div className="feed__stream">

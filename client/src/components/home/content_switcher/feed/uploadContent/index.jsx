@@ -1,14 +1,14 @@
 import React from 'react';
+import './uploadContent.sass';
+
+const dog = 'https://www.freefavicon.com/freefavicons/animal/dou-shou-qi-dog-152-194532.png';
 
 const UploadContent = () => (
   <div className="upload__content">
-    <h4>Upload Content</h4>
     <div className="content__type">
-      <ul>
-        <li><img src="" alt="quote" />Share an update</li>
-        <li><img src="" alt="camera" />Upload a photo</li>
-        <li><img src="" alt="pencil" />share a post</li>
-      </ul>
+      <img src={dog} alt="quote" /><p>Share an update</p>
+      <img src={dog} alt="camera" /><p>Upload a photo</p>
+      <img src={dog} alt="pencil" /><p>Share a post</p>
     </div>
 
     <div className="input form">
