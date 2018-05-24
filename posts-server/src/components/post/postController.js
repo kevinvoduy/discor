@@ -24,7 +24,7 @@ export const createComment = async(req, res) => {
     //saves comment
     const comment = await createCommentQuery(req.body);
     comment.save();
-    //puts comment on post with { postID, owner, comment }
+
     const pushCommentToPost = await pushCommentQuery(req.body, comment);
 
     console.log('controller - successfully added comment to post:\n', comment['postID']);

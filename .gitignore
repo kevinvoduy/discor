@@ -57,3 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# sass cache / map
+*.map
+.sass-cache/
+*.css
+
+# .DS_store
+*.DS_Store

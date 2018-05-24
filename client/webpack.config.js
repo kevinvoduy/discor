@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 require('dotenv').config();
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
@@ -19,8 +23,13 @@ module.exports = {
         },
       },
       {
-        test: /\.(scss|css)$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.s?[ac]ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
@@ -40,6 +49,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
+    new FriendlyErrorsWebpackPlugin(),
+    new MiniCssExtractPlugin(),
   ],
   optimization: {
     minimize: process.env.NODE_ENV === 'production' ? true : false,
