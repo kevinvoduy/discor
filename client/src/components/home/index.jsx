@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import NavBar from './nav';
+import Links from './links';
 import ContentSwitcher from './content_switcher';
 
 import setLoginStateAction from '../../redux/actions/authToggleAction';
+
+import './home.sass';
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,6 +26,7 @@ class Home extends React.Component {
     return (
       <div className="home__page">
         <NavBar />
+        <Links />
         <ContentSwitcher />
         <button onClick={this.logOut} >Log out</button>
       </div>

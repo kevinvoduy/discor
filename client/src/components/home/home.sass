@@ -1,0 +1,17 @@
+/* -- imports -- */
+@imports '../../global.sass'
+
+.home__page
+  display: grid
+  grid-template-columns: 12em 1fr
+  grid-template-rows: auto
+  grid-template-areas: "navbar navbar" "links content"
+
+.nav__bar
+  grid-area: navbar
+
+.links
+  grid-area: links
+
+.content__switcher
+  grid-area: content
