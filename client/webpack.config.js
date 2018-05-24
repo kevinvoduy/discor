@@ -50,7 +50,9 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
     new FriendlyErrorsWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+  }),
   ],
   optimization: {
     minimize: process.env.NODE_ENV === 'production' ? true : false,

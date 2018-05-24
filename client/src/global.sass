@@ -1,20 +1,32 @@
 /* -- colors -- */
-$hopbush: azure
+$azure: azure
 $bouquet: #b37399
 $venus: #998099
-$white: #ffffff
+$white: rgb(253, 253, 255)
 $iron: #dadbdf
+$patina: #699
+$nebula: #0077b5
+
+/* -- screen size -- */
+$screen-small: 1024px
+
+/* -- typography -- */
+$text-large: 24px
+$text-medium: 16px
+$text-small: 12px
+
+/* -- std heights --*/
+$navbar-height: 3em
 
 body
   background: $white
-  margin: 0
+  margin: 0 auto
   padding: 0
+  max-width: $screen-small
 
 a
   text-decoration: none
-  transition: all .5s
-  &:hover
-    color: $bouquet
+  transition: all .3s
 
 ul
   text-decoration: none

@@ -1,2 +1,36 @@
-/* -- imports -- *?
-@imports '../../../global.sass'
+/* -- imports -- */
+@import '../../../global.sass'
+
+.links
+  height: calc(100vh - 75px)
+  box-shadow: 6px 0px 11px -6px lightgray
+
+  ul
+    padding: 0
+    margin: auto
+    max-width: 75%
+
+  li
+    padding: 2px 10px
+    margin: 16px 0
+    background-color: transparent
+    font-size: $text-medium
+    cursor: pointer
+    border: 2px solid transparent
+    display: flex
+    align-items: center
+    &:hover
+      background-color: $nebula
+      border: 2px solid $nebula
+      border-radius: 20px
+      box-shadow: 0px 8px 8px -5px lightgray
+      a
+        color: $white
+
+  a
+    padding-top: 4px
+
+  img
+    max-height: 34px
+    border-radius: 50%
+    margin: 0 8px 0 0
