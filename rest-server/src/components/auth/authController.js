@@ -6,10 +6,10 @@ import {
 const signupController = async(req, res) => {
   try {
     // adds username to db
-    await signupQuery(req.body);
+    const result = await signupQuery(req.body);
     database('controller - successfully signed up user :', req.body.username);
 
-    return res.status(200);
+    return res.status(200).send(result);
   } catch (err) {
     database('controller - failed to sign up user:', err);
     return res.status(400).send('Could not sign up user');

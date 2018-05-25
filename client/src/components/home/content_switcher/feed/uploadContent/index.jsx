@@ -23,7 +23,8 @@ class UploadContent extends React.Component {
     });
   }
 
-  submitContent() {
+  submitContent(e) {
+    e.preventDefault();
     axios.post('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content })
       .then((post) => {
         console.log('successfully created post:', post);
@@ -45,7 +46,12 @@ class UploadContent extends React.Component {
         <div className="input__form">
           <form>
             <label htmlFor="content">
-              <textarea name="content" type="text" placeholder="What's on your mind?" onChange={this.onChangeHandler} />
+              <textarea
+                name="content"
+                type="text"
+                placeholder="What's on your mind?"
+                onChange={this.onChangeHandler}
+              />
             </label>
           </form>
 
