@@ -6,7 +6,7 @@ import Inbox from './inbox';
 import Settings from './settings';
 import Premium from './premium';
 
-import './contentSwitcher.sass';
+import './content_switcher.sass';
 
 const ContentSwitcher = () => (
   <div className="content__switcher">

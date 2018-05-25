@@ -3,7 +3,8 @@
 
 .links
   height: calc(100vh - 75px)
-  box-shadow: 6px 0px 11px -6px lightgray
+  box-shadow: 6px 0px 11px -6px $shadow
+  z-index: 4
 
   ul
     padding: 0
@@ -19,9 +20,10 @@
     border: 2px solid transparent
     display: flex
     align-items: center
+
     &:hover
-      background-color: $nebula
-      border: 2px solid $nebula
+      background-color: $twitter-blue
+      border: 2px solid $twitter-blue
       border-radius: 20px
       box-shadow: 0px 6px 14px -3px steelblue
       a
