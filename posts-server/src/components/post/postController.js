@@ -1,7 +1,8 @@
 import {
   createPostQuery,
   createCommentQuery,
-  pushCommentQuery
+  pushCommentQuery,
+  getPostsQuery,
 } from "./postQueries";
 
 //creates a post
@@ -34,3 +35,18 @@ export const createComment = async(req, res) => {
     res.status(400).send(err.message);
   }
 };
+
+//gets all posts from last 24hrs
+export const getPosts = async(req, res) => {
+  try {
+    const allPosts = await getPostsQuery();
+
+    console.log('controller - successfully fetched all posts');
+
+    if (allPosts.length) res.status(400).send(allPosts);
+    else res.status(400).send('No posts to fetch');
+  } catch(err) {
+    console.log('controller - failed to fetched all posts-', err);
+    res.status(400).send(err.message);
+  }
+}

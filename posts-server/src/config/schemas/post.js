@@ -9,6 +9,9 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  imageURL: {
+    type: String,
+  },
   comments: [
     {
       comment: {
