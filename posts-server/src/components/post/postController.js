@@ -11,10 +11,10 @@ export const createPost = async(req, res) => {
     postQuery.save();
 
     console.log('controller - successfully created post:\n', JSON.stringify(postQuery));
-    res.status(400).send(postQuery);
+    res.status(200).send(postQuery);
   } catch(err) {
     console.log('controller - failed to create post -', err);
-    res.status(200).send(err.message);
+    res.status(400).send(err.message);
   }
 };
 
@@ -28,9 +28,9 @@ export const createComment = async(req, res) => {
     const pushCommentToPost = await pushCommentQuery(req.body, comment);
 
     console.log('controller - successfully added comment to post:\n', comment['postID']);
-    res.status(400).send(comment);
+    res.status(200).send(comment);
   } catch(err) {
     console.log('controller - failed to added comment to post -', err);
-    res.status(200).send(err.message);
+    res.status(400).send(err.message);
   }
 };

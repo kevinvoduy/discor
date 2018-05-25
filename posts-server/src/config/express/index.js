@@ -10,9 +10,9 @@ const middleware = [
   parser.json(),
   parser.urlencoded({ extended: true }),
   cors({
-    allowedHeaders: 'Content-Type, authorized',
-    methods: ['GET, POST, PUT, DELETE', 'OPTIONS'],
-  }),
+		allowedHeaders: 'Content-Type, authorization',
+		methods: ['GET, POST, PUT, DELETE', 'OPTIONS']
+	}),
 ];
 
 class App {
