@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Comment from '../comments/comments';
+
 const dog = 'https://www.freefavicon.com/freefavicons/animal/dou-shou-qi-dog-152-194532.png';
 
 const Post = props => (
@@ -13,11 +15,15 @@ const Post = props => (
     </div>
 
     <div className="comments">
-      <p>
-        {
-          props.comments[0].comment
-        }
-      </p>
+      {
+        props.comments.map(comment =>(
+          <Comment
+            key={comment._id}
+            owner={comment.owner}
+            comment={comment.comment}
+          />
+        ))
+      }
     </div>
 
     <button>Reply</button>
@@ -29,6 +35,7 @@ Post.propTypes = {
   // createdAt: PropTypes.string.isRequired,
   // imageURL: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  comments: PropTypes.array.isRequired,
 };
 
 export default Post;
