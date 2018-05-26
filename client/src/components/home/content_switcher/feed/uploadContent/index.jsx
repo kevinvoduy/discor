@@ -65,6 +65,7 @@ class UploadContent extends React.Component {
   }
 }
 
+
 UploadContent.propTypes = {
   username: PropTypes.string.isRequired,
 };

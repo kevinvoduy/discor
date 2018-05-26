@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
+import Post from './posts/post';
 import './feedStream.sass';
 
 class FeedStream extends React.Component {
@@ -24,11 +26,13 @@ class FeedStream extends React.Component {
         <h4>Feed Stream</h4>
         {
           this.props.feedStream.map(post => (
-            <div className="post" key={post._id}>
-              <h4>{post.owner}</h4>
-              <p>{post.content}</p>
-              <p>{post.createdAt}</p>
-            </div>
+            <Post
+              key={post._id}
+              owner={post.owner}
+              createdAt={post.createdAt}
+              content={post.content}
+              comments={post.comments}
+            />
           ))
         }
       </div>

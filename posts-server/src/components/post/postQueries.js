@@ -24,9 +24,7 @@ export const createCommentQuery = ({ postID, owner, comment }) => {
 export const pushCommentQuery = ({ postID}, comment) => (
   Post.findByIdAndUpdate(postID, {
     $push: {
-      comments: {
-        comment
-      }
+      comments: comment
     }
   })
 )
@@ -38,6 +36,11 @@ export const getPostsQuery = () => (
       $gte: new Date(new Date().setDate(new Date().getDate()-1))
     }
   })
-  .sort({_id: -1})
+  .populate({
+    path: 'comments',
+    select: ['owner', 'comment'],
+    options: { limit: 4}
+  })
   .limit(20)
+  .sort({_id: -1})
 )

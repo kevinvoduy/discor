@@ -24,7 +24,7 @@ export function postsFetchDataSuccess(posts) {
 // action creator
 export function postsFetchData(url) {
   return (dispatch) => {
-    dispatch({ type: 'POSTS_DATA' });
+    dispatch({ type: 'POSTS_FETCH_DATA' });
 
     const request = axios({
       method: 'GET',

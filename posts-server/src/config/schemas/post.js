@@ -14,14 +14,12 @@ const PostSchema = new mongoose.Schema({
   },
   comments: [
     {
-      comment: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment',
-      }
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment',
     }
   ],
   createdAt: { type: Date, default: Date.now },
-});
+})
 
 const Post = mongoose.model('Post', PostSchema);
 export default Post;
