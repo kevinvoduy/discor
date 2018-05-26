@@ -6,8 +6,16 @@ import './feed.sass';
 
 const Feed = () => (
   <div className="feed">
-    <UploadContent />
-    <FeedStream />
+    <div className="user__posts">
+      <UploadContent />
+      <FeedStream />
+    </div>
+    <div className="suggestions">
+      <div>
+        <h5>suggestions</h5>
+        <h5>people you know know</h5>
+      </div>
+    </div>
   </div>
 );
 

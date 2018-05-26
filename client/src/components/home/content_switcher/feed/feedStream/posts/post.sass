@@ -4,14 +4,17 @@
 .post
   box-shadow: 0px 8px 24px 6px $shadow
   margin-top: 3em
+  border-radius: 6px
 
   .content
     display: grid
     grid-template-columns: 0px 1fr 80px
     grid-template-rows: 60px
-    background-color: $white
     align-items: center
+    background-color: $white
     padding: 1em 3.5em 2em 3.5em
+    border-top-left-radius: 6px
+    border-top-right-radius: 6px
 
     img
       max-height: $icon-size-user
@@ -33,13 +36,18 @@
       margin: 0
 
   .comments
-    padding: 1em 3em 3em 3em
+    padding: 1em 3em 0 3em
+
   button
     border: 1px solid transparent
-    border-radius: 40px
+    border-bottom-left-radius: 6px
+    border-bottom-right-radius: 6px
     outline: none
     cursor: pointer
-    box-shadow: 0px 2px 12px 2px $shadow
-    padding: 1em
-    width: 8em
+    // box-shadow: 0px 2px 12px 2px $shadow
+    padding: .8em
+    width: 100%
+    margin-top: 20px
     position: relative
+    font-weight: 600
+    text-transform: uppercase

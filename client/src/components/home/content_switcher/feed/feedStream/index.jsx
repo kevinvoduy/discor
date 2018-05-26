@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
 import Post from './posts/post';
-import './feedStream.sass';
 
 class FeedStream extends React.Component {
   componentDidMount() {
@@ -23,7 +22,6 @@ class FeedStream extends React.Component {
     }
     return (
       <div className="feed__stream">
-        <h4>Feed Stream</h4>
         {
           this.props.feedStream.map(post => (
             <Post

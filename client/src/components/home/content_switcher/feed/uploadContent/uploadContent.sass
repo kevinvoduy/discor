@@ -1,5 +1,6 @@
 /* -- imports -- */
 @import '../../../../../global.sass'
+
 /* -- update, photo, or post area -- */
 .content__type
   display: grid
@@ -25,13 +26,14 @@
     box-shadow: 0px 1px 3px 1px lightskyblue
 
   p
-    font-size: $text-medium
+    font-size: $text-small
     margin: 0
     padding: 4px 0 0 8px
 
 /* -- input form area -- */
 .input__form
   box-shadow: 0px 8px 24px 6px $shadow
+  border-radius: 6px
 
   label
     background-color: $white
@@ -44,12 +46,16 @@
     outline: none
     resize: none
     font-size: $text-medium
+    border-radius: 6px
+
 
 /* -- submit button area -- */
 .submit
   background-color: $gray
-  height: 50px
+  height: 39.38px
   width: 100%
+  border-bottom-left-radius: 6px
+  border-bottom-right-radius: 6px
 
   button
     border: transparent
@@ -58,6 +64,7 @@
     background-color: $twitter-blue
     color: $white
     text-transform: uppercase
-    font-size: $text-medium
-    padding: 1em 2em
+    font-size: $text-small
+    padding: .8em 2em
     float: right
+    border-bottom-right-radius: 6px
