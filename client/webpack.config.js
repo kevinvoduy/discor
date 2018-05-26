@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 require('dotenv').config();
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -52,7 +53,10 @@ module.exports = {
     new FriendlyErrorsWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'styles.css',
-  }),
+    }),
+    new CopyWebpackPlugin([
+      { from: 'public/assets', to: 'assets' }
+    ]),
   ],
   optimization: {
     minimize: process.env.NODE_ENV === 'production' ? true : false,

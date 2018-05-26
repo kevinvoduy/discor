@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './uploadContent.sass';
 
-const dog = 'https://www.freefavicon.com/freefavicons/animal/dou-shou-qi-dog-152-194532.png';
-
 class UploadContent extends React.Component {
   constructor(props) {
     super(props);
@@ -39,9 +37,9 @@ class UploadContent extends React.Component {
     return (
       <div className="upload__content">
         <div className="content__type">
-          <img src={dog} alt="quote" id="quote" /><p>Share an update</p>
-          <img src={dog} alt="camera" id="camera" /><p>Upload a photo</p>
-          <img src={dog} alt="pencil" id="pencil" /><p>Share a post</p>
+          <img src='assets/communication.png' alt="quote" id="quote" /><p>Share an update</p>
+          <img src='assets/technology.png' alt="camera" id="camera" /><p>Upload a photo</p>
+          <img src='assets/draw.png' alt="pencil" id="pencil" /><p>Share a post</p>
         </div>
 
         <div className="input__form">
