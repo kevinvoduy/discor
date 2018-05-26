@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Comment from '../comments/comments';
+import './post.sass';
 
-const dog = 'https://www.freefavicon.com/freefavicons/animal/dou-shou-qi-dog-152-194532.png';
+const dog = 'https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif';
 
 const Post = props => (
   <div className="post">

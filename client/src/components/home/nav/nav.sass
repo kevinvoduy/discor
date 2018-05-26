@@ -11,13 +11,13 @@
   align-content: center
   z-index: 5
 
-  img
+  #search__icon
     padding-top: 6px
 
   a
     color: black
     font-size: $text-x-large
-    margin: auto 0
+    margin: .4em 0
     font-family: $logo-font
 
 /* -- searchbar -- */
@@ -30,7 +30,6 @@
     vertical-align: middle
     max-height: $icon-size
     height: 100%
-    padding-right: 6px
 
   input
     font-size: $text-medium
@@ -47,10 +46,14 @@
 
 /* -- notification and user icon -- */
 .user__icon
+  display: grid
+  grid-template-columns: 40px 50px
+  justify-content: right
+  align-items: center
   img
-    margin: auto 0
     border-radius: 50%
-    padding-left: 6px
     height: 100%
+    max-height: $icon-size-notification
+    box-shadow: 0px 4px 12px 2px $shadow
+  #user__image
     max-height: $icon-size
-    float: right

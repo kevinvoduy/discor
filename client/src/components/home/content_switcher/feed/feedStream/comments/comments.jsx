@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './comments.sass';
+
+const dog = 'https://www.freefavicon.com/freefavicons/animal/dou-shou-qi-dog-152-194532.png';
+
 const Comment = props => (
   <div className="comment">
-    <img src="" alt="" id="imageURL" />
-    <h4 id="owner">{props.owner}</h4>
-    <p id="comment">{props.comment}</p>
+    <img src={dog} alt="" id="imageURL" />
+    <div className="name__comment">
+      <p><strong>{props.owner}</strong>{' - '}{props.comment}</p>
+    </div>
+    <p id="createdAt">2d</p>
   </div>
 );
 
