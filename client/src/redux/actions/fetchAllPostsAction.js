@@ -30,7 +30,7 @@ export function postsFetchData(url) {
       method: 'GET',
       url: url,
     });
-    console.log('redux is a whore', request);
+
     return request.then(
       response => dispatch(postsFetchDataSuccess(response.data)),
       () => postsHasErrored(true)

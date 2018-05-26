@@ -44,7 +44,7 @@ export const getPosts = async(req, res) => {
     console.log('controller - successfully fetched all posts');
 
     if (allPosts.length) res.status(200).send(allPosts);
-    else res.status(200).send('No posts to fetch');
+    else res.status(200).send([]);
   } catch(err) {
     console.log('controller - failed to fetched all posts-', err);
     res.status(400).send(err.message);

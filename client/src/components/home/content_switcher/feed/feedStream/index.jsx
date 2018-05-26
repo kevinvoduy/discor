@@ -24,7 +24,7 @@ class FeedStream extends React.Component {
         <h4>Feed Stream</h4>
         {
           this.props.feedStream.map(post => (
-            <div className="post" key={Date.now}>
+            <div className="post" key={post._id}>
               <h4>{post.owner}</h4>
               <p>{post.content}</p>
               <p>{post.createdAt}</p>
