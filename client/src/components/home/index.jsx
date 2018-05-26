@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import NavBar from './nav';
-import Links from './links';
+import Links from './sidenav';
 import ContentSwitcher from './content_switcher';
 
 import setLoginStateAction from '../../redux/actions/authToggleAction';

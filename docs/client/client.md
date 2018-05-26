@@ -13,3 +13,22 @@ Discor client utilizes React/Redux and webpack. To build the environment, run:
 ```bash
 npm run build
 ```
+
+##Organization
+- components
+  - home page
+    - content switcher
+      - feed
+        - feed stream
+          - comments
+          - posts
+      - inbox
+      - people
+      - premium
+      - settings
+    - navbar
+    - sidenav
+
+  - landing page
+    - login
+    - signup
