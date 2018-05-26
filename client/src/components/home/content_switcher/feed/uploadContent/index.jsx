@@ -12,6 +12,7 @@ class UploadContent extends React.Component {
     this.state = {
       owner: this.props.username,
       content: '',
+      imageURL: '',
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.submitContent = this.submitContent.bind(this);
@@ -25,7 +26,7 @@ class UploadContent extends React.Component {
 
   submitContent(e) {
     e.preventDefault();
-    axios.post('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content })
+    axios.post('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, image: this.state.imageURL })
       .then((post) => {
         console.log('successfully created post:', post);
       })

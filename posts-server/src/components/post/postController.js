@@ -5,7 +5,7 @@ import {
   getPostsQuery,
 } from "./postQueries";
 
-//creates a post
+// creates a post
 export const createPost = async(req, res) => {
   try {
     const postQuery = await createPostQuery(req.body);
@@ -19,10 +19,10 @@ export const createPost = async(req, res) => {
   }
 };
 
-//creates a comment
+// creates a comment
 export const createComment = async(req, res) => {
   try {
-    //saves comment
+    // saves comment
     const comment = await createCommentQuery(req.body);
     comment.save();
 
@@ -36,15 +36,15 @@ export const createComment = async(req, res) => {
   }
 };
 
-//gets all posts from last 24hrs
+// gets all posts from last 24hrs
 export const getPosts = async(req, res) => {
   try {
     const allPosts = await getPostsQuery();
 
     console.log('controller - successfully fetched all posts');
 
-    if (allPosts.length) res.status(400).send(allPosts);
-    else res.status(400).send('No posts to fetch');
+    if (allPosts.length) res.status(200).send(allPosts);
+    else res.status(200).send('No posts to fetch');
   } catch(err) {
     console.log('controller - failed to fetched all posts-', err);
     res.status(400).send(err.message);
