@@ -41,7 +41,7 @@ const Post = props => (
             key={comment._id}
             owner={comment.owner}
             comment={comment.comment}
-            date={comment.date}
+            createdAt={comment.createdAt}
           />
         ))
       }
