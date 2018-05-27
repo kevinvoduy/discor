@@ -12,8 +12,8 @@ const Feed = () => (
     </div>
     <div className="suggestions">
       <div>
-        <h5>suggestions</h5>
-        <h5>people you know know</h5>
+        <h5>Trending</h5>
+        <h5>People You May Know: 0</h5>
       </div>
     </div>
   </div>

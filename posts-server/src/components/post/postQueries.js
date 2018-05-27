@@ -37,9 +37,7 @@ export const getPostsQuery = () => (
     }
   })
   .populate({
-    path: 'comments',
-    select: ['owner', 'comment', 'createdAt'],
-    options: { limit: 4}
+    path: 'comments'
   })
   .limit(20)
   .sort({_id: -1})
