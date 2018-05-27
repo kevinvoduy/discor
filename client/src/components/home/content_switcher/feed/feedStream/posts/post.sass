@@ -3,7 +3,7 @@
 
 .post
   box-shadow: 0px 8px 24px 6px $shadow
-  margin-top: 3em
+  margin-top: 2.5em
   border-radius: 6px
 
   .content
@@ -12,31 +12,32 @@
     grid-template-rows: 60px
     align-items: center
     background-color: $white
-    padding: 1em 3.5em 2em 3.5em
+    padding: 1em 2.5em 1em 2.5em
     border-top-left-radius: 6px
     border-top-right-radius: 6px
 
     img
       max-height: $icon-size-user
-      border: 1px solid $gray
       border-radius: 50%
       background-color: $white
       box-shadow: 0px 4px 14px 2px $shadow
       position: relative
-      left: -88px
+      left: -70px
 
     h4
       color: $twitter-blue
 
     #createdAt
       text-align: right
+      font-size: $text-small
+      font-weight: 300
 
     #content
       grid-column: span 3
       margin: 0
 
   .comments
-    padding: 1em 3em 0 3em
+    padding: .5em 2.5em 0 2.5em
 
   button
     border: 1px solid transparent
@@ -51,3 +52,6 @@
     position: relative
     font-weight: 600
     text-transform: uppercase
+    &:hover
+      color: $white
+      background-color: $twitter-blue

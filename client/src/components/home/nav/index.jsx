@@ -7,7 +7,7 @@ const NavBar = () => {
       <a href="/">discor</a>
 
       <div className="search__bar">
-        <img src="https://www.freefavicon.com/freefavicons/animal/dou-shou-qi-dog-152-194532.png" alt="search" id="search__icon" />
+        <img src="assets/search.png" alt="search" id="search__icon" />
         <form autoComplete="off">
           <label htmlFor="search">
             <input type="text" placeholder="Search for people, events, and more..." name="search" />
