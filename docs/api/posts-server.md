@@ -7,6 +7,12 @@ npm i
 npm dev
 ```
 
+It is often times required to connect to mongoDB, so run the following in a new terminal window:
+
+```bash
+mongod
+```
+
 #API
 
 The API takes the following structure:
@@ -32,6 +38,7 @@ __Endpoints__
         body: {
           owner,
           content,
+          image,
         }
 ```
 
