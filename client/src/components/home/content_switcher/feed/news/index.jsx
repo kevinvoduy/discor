@@ -2,18 +2,20 @@ import React from 'react';
 import axios from 'axios';
 
 import './news.sass';
+import data from './news.json';
 
 class News extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [],
+      data: data.articles,
     };
     this.fetchArticles = this.fetchArticles.bind(this);
   }
 
   componentDidMount() {
-    this.fetchArticles();
+    // enable in production
+    // this.fetchArticles();
   }
 
   fetchArticles() {
