@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Landing from './components/landing';
 import Home from './components/home';
 
-import './global.sass';
+import './components/globals/globals.sass';
 
 const App = () => (
   <Switch>
