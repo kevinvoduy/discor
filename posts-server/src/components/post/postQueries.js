@@ -46,3 +46,6 @@ export const getPostsQuery = () => (
 //       $gte: new Date(new Date().setDate(new Date().getDate()-1))
 //     }
 //   })
+// .limit(20)
+// .sort({_id: -1})
+// )

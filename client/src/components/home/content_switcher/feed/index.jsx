@@ -1,6 +1,7 @@
 import React from 'react';
 import UploadContent from './uploadContent';
 import FeedStream from './feedStream';
+import News from './news';
 
 import './feed.sass';
 
@@ -12,7 +13,7 @@ const Feed = () => (
     </div>
     <div className="suggestions">
       <div>
-        <h5>Trending</h5>
+        <News />
         <h5>People You May Know: 0</h5>
       </div>
     </div>

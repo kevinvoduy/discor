@@ -4092,6 +4092,17 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../../../../../no
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/home/content_switcher/feed/news/news.sass":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js!./src/components/home/content_switcher/feed/news/news.sass ***!
+  \***********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"/* -- imports -- */\\n/* -- colors -- */\\n/* -- screen size -- */\\n/* -- typography -- */\\n/* -- weights: 900 -- */\\n/* -- weights: 300, 400, 700 -- */\\n/* -- std heights --*/\\nbody {\\n  background: white;\\n  margin: 0 auto;\\n  padding: 0;\\n  max-width: 1280px;\\n  font-family: \\\"Open Sans\\\", sans-serif; }\\n\\na {\\n  text-decoration: none; }\\n\\nul {\\n  text-decoration: none;\\n  list-style-type: none; }\\n\\n.news__feed img {\\n  width: 100%; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/feed/news/news.sass?./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/home/content_switcher/feed/uploadContent/uploadContent.sass":
 /*!*****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js!./src/components/home/content_switcher/feed/uploadContent/uploadContent.sass ***!
@@ -6870,7 +6881,30 @@ eval("\nvar content = __webpack_require__(/*! !../../../../../../../node_modules
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _uploadContent = __webpack_require__(/*! ./uploadContent */ \"./src/components/home/content_switcher/feed/uploadContent/index.jsx\");\n\nvar _uploadContent2 = _interopRequireDefault(_uploadContent);\n\nvar _feedStream = __webpack_require__(/*! ./feedStream */ \"./src/components/home/content_switcher/feed/feedStream/index.jsx\");\n\nvar _feedStream2 = _interopRequireDefault(_feedStream);\n\n__webpack_require__(/*! ./feed.sass */ \"./src/components/home/content_switcher/feed/feed.sass\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Feed = function Feed() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'feed' },\n    _react2.default.createElement(\n      'div',\n      { className: 'user__posts' },\n      _react2.default.createElement(_uploadContent2.default, null),\n      _react2.default.createElement(_feedStream2.default, null)\n    ),\n    _react2.default.createElement(\n      'div',\n      { className: 'suggestions' },\n      _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n          'h5',\n          null,\n          'Trending'\n        ),\n        _react2.default.createElement(\n          'h5',\n          null,\n          'People You May Know: 0'\n        )\n      )\n    )\n  );\n};\n\nexports.default = Feed;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/feed/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _uploadContent = __webpack_require__(/*! ./uploadContent */ \"./src/components/home/content_switcher/feed/uploadContent/index.jsx\");\n\nvar _uploadContent2 = _interopRequireDefault(_uploadContent);\n\nvar _feedStream = __webpack_require__(/*! ./feedStream */ \"./src/components/home/content_switcher/feed/feedStream/index.jsx\");\n\nvar _feedStream2 = _interopRequireDefault(_feedStream);\n\nvar _news = __webpack_require__(/*! ./news */ \"./src/components/home/content_switcher/feed/news/index.jsx\");\n\nvar _news2 = _interopRequireDefault(_news);\n\n__webpack_require__(/*! ./feed.sass */ \"./src/components/home/content_switcher/feed/feed.sass\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Feed = function Feed() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'feed' },\n    _react2.default.createElement(\n      'div',\n      { className: 'user__posts' },\n      _react2.default.createElement(_uploadContent2.default, null),\n      _react2.default.createElement(_feedStream2.default, null)\n    ),\n    _react2.default.createElement(\n      'div',\n      { className: 'suggestions' },\n      _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(_news2.default, null),\n        _react2.default.createElement(\n          'h5',\n          null,\n          'People You May Know: 0'\n        )\n      )\n    )\n  );\n};\n\nexports.default = Feed;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/feed/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/home/content_switcher/feed/news/index.jsx":
+/*!******************************************************************!*\
+  !*** ./src/components/home/content_switcher/feed/news/index.jsx ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\n__webpack_require__(/*! ./news.sass */ \"./src/components/home/content_switcher/feed/news/news.sass\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar IMG = 'https://s3.reutersmedia.net/resources/r/?m=02&d=20180531&t=2&i=1267664444&w=1200&r=LYNXNPEE4U036';\n// import PropTypes from 'prop-types';\n// import { bindActionCreators } from 'redux';\n// import { connect } from 'react-redux';\n\nvar News = function News() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'news__feed' },\n    _react2.default.createElement(\n      'h4',\n      null,\n      'News Feed'\n    ),\n    _react2.default.createElement('img', { src: IMG, alt: '' }),\n    _react2.default.createElement(\n      'p',\n      { id: 'details' },\n      'China\\'s vast manufacturing sector grew at the fastest pace in eight months in May, blowing past expectations and easing concerns...'\n    )\n  );\n};\n\n// News.propTypes = {\n//   article: PropTypes.string.isRequired,\n// };\n\nexports.default = News;\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/feed/news/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/home/content_switcher/feed/news/news.sass":
+/*!******************************************************************!*\
+  !*** ./src/components/home/content_switcher/feed/news/news.sass ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/postcss-loader/lib!../../../../../../node_modules/sass-loader/lib/loader.js!./news.sass */ \"./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/home/content_switcher/feed/news/news.sass\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/home/content_switcher/feed/news/news.sass?");
 
 /***/ }),
 
