@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './uploadContent.sass';
+import './createPost.sass';
 
-class UploadContent extends React.Component {
+class CreatePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +35,7 @@ class UploadContent extends React.Component {
 
   render() {
     return (
-      <div className="upload__content">
+      <div className="create__post">
         <div className="content__type">
           <img src='assets/communication.png' alt="quote" id="quote" /><p>Share an update</p>
           <img src='assets/technology.png' alt="camera" id="camera" /><p>Upload a photo</p>
@@ -64,7 +64,7 @@ class UploadContent extends React.Component {
 }
 
 
-UploadContent.propTypes = {
+CreatePost.propTypes = {
   username: PropTypes.string.isRequired,
 };
 
@@ -75,4 +75,4 @@ const mapStateToProps = state => {
 };
 
 
-export default connect(mapStateToProps)(UploadContent);
+export default connect(mapStateToProps)(CreatePost);

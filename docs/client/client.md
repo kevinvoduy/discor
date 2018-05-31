@@ -22,6 +22,8 @@ npm run build
         - feed stream
           - comments
           - posts
+        - news
+        - create post
       - inbox
       - people
       - premium

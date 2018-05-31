@@ -1,5 +1,5 @@
 import React from 'react';
-import UploadContent from './uploadContent';
+import CreatePost from './createPost';
 import FeedStream from './feedStream';
 import News from './news';
 
@@ -8,7 +8,7 @@ import './feed.sass';
 const Feed = () => (
   <div className="feed">
     <div className="user__posts">
-      <UploadContent />
+      <CreatePost />
       <FeedStream />
     </div>
     <div className="suggestions">
