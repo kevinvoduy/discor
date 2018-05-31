@@ -1,39 +1,47 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import './news.sass';
 
-const IMG = 'https://techcrunch.com/wp-content/uploads/2018/05/img_1281.jpg?w=561';
-const SRC = 'https://techcrunch.com/2018/05/30/uber-is-looking-at-adding-benefits-and-insurance-for-drivers/';
-const DETAILS = 'At the Code Conference tonight, Uber CEO Dara Khosrowshahi spoke about the company’s relationship with drivers, autonomous driving, uberEATS having a $6 billion bookings run rate, taking over as CEO and flying taxis, obviously.';
+class News extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+    };
+    this.fetchArticles = this.fetchArticles.bind(this);
+  }
 
-const IMG1 = 'https://techcrunch.com/wp-content/uploads/2018/02/gettyimages-836405266.jpg?w=615';
-const SRC1 = 'https://techcrunch.com/2018/05/30/even-more-money-for-senstime-ai-china/';
-const DETAILS1 = 'SenseTime, the world’s highest-valued AI company with a valuation of over $4.5 billion, is back in the money again. The company raised $600 million in an Alibaba-led financing round announced last month, and now it has added a further $620 million to that';
+  componentDidMount() {
+    this.fetchArticles();
+  }
 
-const News = () => (
-  <div className="news__feed">
-    <div className="article">
-      <a href={SRC}><img src={IMG} alt="" /></a>
-      <div className="article__details">
-        <p id="title"><strong>Uber is looking at adding benefits and insurance for drivers</strong></p>
-        <p id="details">{DETAILS.slice(0,104) + '...'}</p>
+  fetchArticles() {
+    axios.get('https://newsapi.org/v2/everything?q=apple&from=2018-05-30&to=2018-05-30&sortBy=popularity&apiKey=362b15f63c1a4372a36199dca8b4fa84')
+    .then(articles => {
+      this.setState({
+        data: articles.data.articles,
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div className="news__feed">
+        {
+          this.state.data.slice(0,5).map(article => (
+            <div className="article" key={article.author}>
+              <a href={article.url}><img src={article.urlToImage} alt="" /></a>
+              <div className="article__details">
+                <p id="title"><strong>{article.title}</strong></p>
+                <p id="details">{article.description.slice(0,98) + '...'}</p>
+              </div>
+            </div>
+          ))
+        }
       </div>
-    </div>
-
-    <div className="article">
-      <a href={SRC1}><img src={IMG1} alt="" /></a>
-      <div className="article__details">
-        <p id="title"><strong>Uber is looking at adding benefits and insurance for drivers</strong></p>
-        <p id="details">{DETAILS1.slice(0,104) + '...'}</p>
-      </div>
-    </div>
-  </div>
-);
-
-// News.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   details: PropTypes.string.isRequired,
-// };
+    );
+  }
+}
 
 export default News;
