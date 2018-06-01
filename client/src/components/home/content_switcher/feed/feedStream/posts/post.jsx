@@ -5,7 +5,7 @@ import moment from 'moment';
 import Comment from '../comments/comments';
 import './post.sass';
 
-const dog = 'https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif';
+const levy = 'https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif';
 
 moment.updateLocale('en', {
   relativeTime : {
@@ -28,7 +28,7 @@ moment.updateLocale('en', {
 const Post = props => (
   <div className="post">
     <div className="content">
-      <img src={dog} alt="" id="imageURL" />
+      <img src={levy} alt="" id="imageURL" />
       <h4 id="owner">{props.owner}</h4>
       <p id="createdAt">{moment(props.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow(true)}</p>
       <p id="content">{props.content}</p>
@@ -53,8 +53,6 @@ const Post = props => (
       <img src="assets/communication.png" alt="" id="comment" />
       <p>Comment</p>
     </div>
-
-    <button>Reply</button>
   </div>
 );
 
