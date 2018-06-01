@@ -66,7 +66,7 @@ server.listen(PORT, err => {
 	else success('successfully connected to server:', PORT);
 });
 
-//temp access
+// temp access
 app.get('/*', function(req, res) {
 	res.sendFile(path.join(__dirname, '../../client/public/index.html'));
 });

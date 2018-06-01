@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Slider from 'react-slick';
 
 import './news.sass';
 import data from './news.json';
@@ -28,19 +29,35 @@ class News extends React.Component {
   }
 
   render() {
+    let settings = {
+      dots: false,
+      infinite: true,
+      speed: 800,
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      draggable: false,
+      fade: true,
+      lazyLoad: 'ondemand'
+    };
     return (
       <div className="news__feed">
-        {
-          this.state.data.slice(0,5).map(article => (
-            <div className="article" key={article.author}>
-              <a href={article.url}><img src={article.urlToImage} alt="" /></a>
-              <div className="article__details">
-                <p id="title"><strong>{article.title}</strong></p>
-                <p id="details">{article.description.slice(0,98) + '...'}</p>
+        <Slider {...settings}>
+          {
+            this.state.data.slice(0,3).map(article => (
+              <div className="article" key={article.author}>
+                <a href={article.url}>
+                  <img src={article.urlToImage} alt="" />
+                </a>
+
+                <div className="article__details">
+                  <p id="title">{article.title}</p>
+                  <p id="details">{article.description.slice(0,118) + '...'}</p>
+                </div>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </Slider>
       </div>
     );
   }
