@@ -47,6 +47,13 @@ const Post = props => (
       }
     </div>
 
+    <div className="meta">
+      <img src="assets/heart.png" alt="" id="like" />
+      <p>Like</p>
+      <img src="assets/communication.png" alt="" id="comment" />
+      <p>Comment</p>
+    </div>
+
     <button>Reply</button>
   </div>
 );

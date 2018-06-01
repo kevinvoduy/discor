@@ -18,6 +18,9 @@ const Links = () => (
         <img src='assets/email.png' alt="" />
         <Link to="/home/inbox">Inbox</Link>
       </li>
+
+      <div className="divider" />
+
       <li>
         <img src='assets/crown.png' alt="" />
         <Link to="/home/premium">Premium</Link>
@@ -26,6 +29,10 @@ const Links = () => (
         <img src='assets/interface.png' alt="" />
         <Link to="/home/settings">Settings</Link>
       </li>
+
+      <div className="divider" />
+
+
     </ul>
   </div>
 );
