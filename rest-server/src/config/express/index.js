@@ -14,8 +14,8 @@ const middleware = [
 		methods: ['GET, POST, PUT, DELETE', 'OPTIONS']
 	}),
 	express.static(path.resolve(__dirname, '../../../../client/public')),
-
 ];
+
 class App {
 	constructor() {
 		this.express = express();

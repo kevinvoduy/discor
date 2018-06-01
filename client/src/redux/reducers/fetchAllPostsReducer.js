@@ -1,6 +1,6 @@
 export function postsHasErrored(state = false, action) {
   switch (action.type) {
-      case 'posts_HAS_ERRORED':
+      case 'POSTS_HAS_ERRORED':
           return action.hasErrored;
 
       default:
@@ -10,7 +10,7 @@ export function postsHasErrored(state = false, action) {
 
 export function postsIsLoading(state = false, action) {
   switch (action.type) {
-      case 'posts_IS_LOADING':
+      case 'POSTS_IS_LOADING':
           return action.isLoading;
 
       default:

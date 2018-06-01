@@ -1,6 +1,8 @@
 import http from 'http';
+import SocketIO from 'socket.io';
 import App from './config/express';
 import './config/mongo';
+import { Socket } from 'dgram';
 
 if (process.env.NODE_ENV !== 'production') {
 	require('babel-register');
@@ -8,8 +10,16 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = App.express;
-const server = http.createServer(app);
+const server = http.Server(app);
+const io = new SocketIO(server);
 const PORT = process.env.PORT || 3030;
+
+io.on('connection', socket => {
+	socket.on('new__post', post => {
+		console.log('socket - new post:', post);
+		io.broadcast.emit('new__post')
+	});
+});
 
 server.listen(PORT, err => {
 	if (err) throw new Error;
