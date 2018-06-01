@@ -28,8 +28,6 @@ class Home extends React.Component {
         <NavBar />
         <Links />
         <ContentSwitcher />
-        <button onClick={this.logOut} >Log out</button>
-        <p>Credits: FlatIcon.com and NewsApi.org</p>
       </div>
     );
   }
