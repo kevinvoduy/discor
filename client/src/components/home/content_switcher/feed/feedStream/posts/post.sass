@@ -44,17 +44,20 @@
   // likes and comments
   .meta
     padding-left: 2.5em
-    display: inline-flex
+    padding-right: 2.5em
+    display: grid
+    grid-template-columns: 1fr 58px
+    align-items: center
     background-color: $white
-    width: calc(100% - 2.5em)
     border-bottom-left-radius: 6px
     border-bottom-right-radius: 6px
 
     img
+      display: inline-flex
       height: 16px
+      position: relative
+      top: 3px
       padding-right: .7em
-      margin-top: auto
-      margin-bottom: auto
       &:hover
         cursor: pointer
 
@@ -62,7 +65,13 @@
       height: 18px
     p
       font-size: 12px
+      align-content: center
+      display: inline-flex
       color: $gray-dark
       padding-right: 2em
       &:hover
         cursor: pointer
+    .like__count
+      font-size: $text-small
+      text-align: right
+      font-weight: 300
