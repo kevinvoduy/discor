@@ -11,7 +11,7 @@ export const createPost = async(req, res) => {
     const postQuery = await createPostQuery(req.body);
     postQuery.save();
 
-    console.log('controller - successfully created post:\n', JSON.stringify(postQuery));
+    console.log('controller - successfully created post:\n', postQuery);
     res.status(200).send(postQuery);
   } catch(err) {
     console.log('controller - failed to create post -', err);

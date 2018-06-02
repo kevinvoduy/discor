@@ -1,10 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import broadcastPost from './createPost';
 import './createPost.sass';
+import { createPost } from '../../../../../redux/actions/createPostAction';
 
 class CreatePost extends React.Component {
   constructor(props) {
@@ -27,13 +27,7 @@ class CreatePost extends React.Component {
   submitContent(e) {
     e.preventDefault();
 
-    axios.post('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, image: this.state.imageURL })
-      .then(post => {
-        broadcastPost(post);
-      })
-      .catch(err => {
-        console.error('failed to create post:', err);
-      });
+    this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, image: this.state.imageURL });
   }
 
   render() {
@@ -69,13 +63,20 @@ class CreatePost extends React.Component {
 
 CreatePost.propTypes = {
   username: PropTypes.string.isRequired,
+  createPost: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => {
   return {
     username: state.username__store.username,
+    post: state.post,
   };
 };
 
+const matchDispatchToProps = dispatch => {
+  return bindActionCreators({
+    createPost: (url, payload) => createPost(url, payload),
+  }, dispatch);
+};
 
-export default connect(mapStateToProps)(CreatePost);
+export default connect(mapStateToProps, matchDispatchToProps)(CreatePost);

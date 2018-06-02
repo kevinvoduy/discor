@@ -23,6 +23,17 @@ class FeedStream extends React.Component {
     return (
       <div className="feed__stream">
         {
+          this.props.userPosts.map(post => (
+            <Post
+              key={post.post._id}
+              owner={post.post.owner}
+              createdAt={post.post.createdAt}
+              content={post.post.content}
+              comments={post.post.comments}
+            />
+          ))
+        }
+        {
           this.props.feedStream.map(post => (
             <Post
               key={post._id}
@@ -43,13 +54,15 @@ FeedStream.propTypes = {
   feedStream: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasErrored: PropTypes.bool.isRequired,
+  userPosts: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => {
   return {
     feedStream: state.posts,
     isLoading: state.postsIsLoading,
-    hasErrored: state.postsHasErrored
+    hasErrored: state.postsHasErrored,
+    userPosts: state.createPostSuccess,
   };
 };
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import broadcastPost from './createPost';
 
 export function createPostErrored(bool) {
   return {
@@ -14,20 +15,18 @@ export function createPostSuccess(post) {
   };
 }
 
-function createPost(url, data) {
+export function createPost(url, payload) {
   return (dispatch) => {
     dispatch({ type: 'CREATE_POST'});
-    const request = axios({
-      method: 'POST',
-      url: url,
-      payload: data,
-    });
+
+    const request = axios.post(url, payload);
 
     return request.then(
-      response => dispatch(createPostSuccess(response.data)),
+      response => {
+        broadcastPost(response.data);
+        dispatch(createPostSuccess(response.data));
+      },
       () => createPostErrored(true),
     );
   };
 }
-
-export default createPost;

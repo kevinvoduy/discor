@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3030;
 io.on('connection', socket => {
 	socket.on('new__post', post => {
 		console.log('socket - new post:', post);
-		io.broadcast.emit('new__post')
+		socket.broadcast.emit('new__post')
 	});
 });
 

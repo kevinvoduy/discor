@@ -11,7 +11,10 @@ export function createPostErrored(state = false, action) {
 export function createPostSuccess(state = [], action) {
   switch (action.type) {
     case 'CREATE_POST_SUCCESS':
-      return action.post;
+      return [
+        { post: action.post },
+        ...state
+      ];
 
       default:
         return state;
