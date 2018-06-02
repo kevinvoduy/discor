@@ -1,5 +1,10 @@
 import axios from 'axios';
-import broadcastPost from './createPost';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:3030');
+const broadcastPost = post => {
+  socket.emit('new__post', post);
+};
 
 export function createPostErrored(bool) {
   return {

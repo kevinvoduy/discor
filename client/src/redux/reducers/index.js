@@ -4,6 +4,7 @@ import usernameReducer from './usernameReducer';
 import authToggleReducer from './authToggleReducer';
 import { posts, postsHasErrored, postsIsLoading } from './fetchAllPostsReducer';
 import { createPostErrored, createPostSuccess, clearPosts} from './createPostReducer';
+// import updateCount from './postNotificationReducer';
 
 export default combineReducers({
   username__store: usernameReducer,
@@ -14,4 +15,5 @@ export default combineReducers({
   createPostErrored,
   createPostSuccess,
   clearPosts,
+  // updateCount,
 });

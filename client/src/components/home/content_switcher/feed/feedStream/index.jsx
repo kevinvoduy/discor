@@ -2,16 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import io from 'socket.io-client';
 
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
 import { clearUserPosts } from '../../../../../redux/actions/createPostAction';
 import Post from './posts/post';
 
+const socket = io('http://localhost:3030');
+
 class FeedStream extends React.Component {
   componentDidMount() {
     this.props.clearUserPosts(true);
     this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
-    // this.setFeedStreamToState();
+    this.getPostUpdates();
+  }
+
+  getPostUpdates() {
+    socket.on('new__posts', () => {
+      this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
+    });
   }
 
   render() {
@@ -25,7 +34,7 @@ class FeedStream extends React.Component {
 
     if (this.props.clearPosts) {
       return (
-        <div>
+        <div className="feed__stream">
           {
             this.props.feedStream.map(post => (
               <Post
@@ -77,6 +86,9 @@ FeedStream.propTypes = {
   hasErrored: PropTypes.bool.isRequired,
   userPosts: PropTypes.array.isRequired,
   clearPosts: PropTypes.bool.isRequired,
+  clearUserPosts: PropTypes.func.isRequired,
+  // updateCount: PropTypes.number.isRequired,
+  // updatePostCount: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => {
@@ -86,6 +98,7 @@ const mapStateToProps = state => {
     hasErrored: state.postsHasErrored,
     userPosts: state.createPostSuccess,
     clearPosts: state.clearPosts,
+    updateCount: state.updateCount,
   };
 };
 
@@ -93,6 +106,7 @@ const matchDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchFeedData: url => postsFetchData(url),
     clearUserPosts: bool => clearUserPosts(bool),
+    // updatePostCount: () => updatePostCount(),
   }, dispatch);
 };
 
