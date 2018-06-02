@@ -12,9 +12,19 @@ export function createPostSuccess(state = [], action) {
   switch (action.type) {
     case 'CREATE_POST_SUCCESS':
       return [
-        { post: action.post },
+        action.post,
         ...state
       ];
+
+      default:
+        return state;
+  }
+}
+
+export function clearPosts(state = false, action) {
+  switch (action.type) {
+    case 'CLEAR_USER_POSTS':
+      return action.created;
 
       default:
         return state;

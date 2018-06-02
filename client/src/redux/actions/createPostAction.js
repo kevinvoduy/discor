@@ -25,8 +25,16 @@ export function createPost(url, payload) {
       response => {
         broadcastPost(response.data);
         dispatch(createPostSuccess(response.data));
+        dispatch(clearUserPosts(false));
       },
       () => createPostErrored(true),
     );
+  };
+}
+
+export function clearUserPosts(bool) {
+  return {
+    type: 'CLEAR_USER_POSTS',
+    created: bool,
   };
 }

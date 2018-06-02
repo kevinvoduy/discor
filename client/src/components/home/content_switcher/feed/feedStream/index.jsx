@@ -4,10 +4,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
+import { clearUserPosts } from '../../../../../redux/actions/createPostAction';
 import Post from './posts/post';
 
 class FeedStream extends React.Component {
   componentDidMount() {
+    this.props.clearUserPosts(true);
     this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
     // this.setFeedStreamToState();
   }
@@ -20,16 +22,35 @@ class FeedStream extends React.Component {
     if (this.props.isLoading) {
         return <p>Loading…</p>;
     }
+
+    if (this.props.clearPosts) {
+      return (
+        <div>
+          {
+            this.props.feedStream.map(post => (
+              <Post
+                key={post._id}
+                owner={post.owner}
+                createdAt={post.createdAt}
+                content={post.content}
+                comments={post.comments}
+              />
+            ))
+          }
+        </div>
+      );
+    }
+
     return (
       <div className="feed__stream">
         {
           this.props.userPosts.map(post => (
             <Post
-              key={post.post._id}
-              owner={post.post.owner}
-              createdAt={post.post.createdAt}
-              content={post.post.content}
-              comments={post.post.comments}
+              key={post._id}
+              owner={post.owner}
+              createdAt={post.createdAt}
+              content={post.content}
+              comments={post.comments}
             />
           ))
         }
@@ -55,6 +76,7 @@ FeedStream.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   hasErrored: PropTypes.bool.isRequired,
   userPosts: PropTypes.array.isRequired,
+  clearPosts: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => {
@@ -63,12 +85,14 @@ const mapStateToProps = state => {
     isLoading: state.postsIsLoading,
     hasErrored: state.postsHasErrored,
     userPosts: state.createPostSuccess,
+    clearPosts: state.clearPosts,
   };
 };
 
 const matchDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchFeedData: url => postsFetchData(url),
+    clearUserPosts: bool => clearUserPosts(bool),
   }, dispatch);
 };
 
