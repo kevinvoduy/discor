@@ -54,9 +54,7 @@ const Post = props => (
         <img src="assets/communication.png" alt="" id="comment" />
         <p>Comment</p>
       </div>
-      <div className="like__count">
-
-      </div>
+      <div className="like__count" />
     </div>
   </div>
 );
