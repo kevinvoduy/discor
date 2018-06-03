@@ -5,6 +5,8 @@ import Slider from 'react-slick';
 import './news.sass';
 import data from './news.json';
 
+const key = process.env.NEWS_API_KEY;
+
 class News extends React.Component {
   constructor() {
     super();
@@ -20,7 +22,7 @@ class News extends React.Component {
   }
 
   fetchArticles() {
-    axios.get('https://newsapi.org/v2/everything?q=apple&from=2018-05-30&to=2018-05-30&sortBy=popularity&apiKey=362b15f63c1a4372a36199dca8b4fa84')
+    axios.get('https://newsapi.org/v2/everything?q=apple&from=2018-05-30&to=2018-05-30&sortBy=popularity&apiKey=' + key)
     .then(articles => {
       this.setState({
         data: articles.data.articles,
