@@ -43,6 +43,7 @@ class FeedStream extends React.Component {
                 createdAt={post.createdAt}
                 content={post.content}
                 comments={post.comments}
+                imageURL={post.imageURL}
               />
             ))
           }

@@ -28,9 +28,10 @@ moment.updateLocale('en', {
 const Post = props => (
   <div className="post">
     <div className="content">
-      <img src={levy} alt="" id="imageURL" />
+      <img src={levy} alt="" id="user__img" />
       <h4 id="owner">{props.owner}</h4>
       <p id="createdAt">{moment(props.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow(true)}</p>
+      <img src={props.imageURL} alt="" id="upload__img" />
       <p id="content">{props.content}</p>
     </div>
 
@@ -62,9 +63,13 @@ const Post = props => (
 Post.propTypes = {
   owner: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
-  // imageURL: PropTypes.string.isRequired,
+  imageURL: PropTypes.string,
   content: PropTypes.string.isRequired,
   comments: PropTypes.array.isRequired,
+};
+
+Post.defaultProps = {
+  imageURL: '',
 };
 
 export default Post;
