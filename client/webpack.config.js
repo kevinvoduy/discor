@@ -48,7 +48,10 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'NEWS_API_KEY': JSON.stringify(process.env.NEWS_API_KEY),
+      }
     }),
     new FriendlyErrorsWebpackPlugin(),
     new MiniCssExtractPlugin({

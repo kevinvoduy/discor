@@ -1,246 +1,126 @@
 {
     "status": "ok",
-    "totalResults": 2803,
+    "totalResults": 10,
     "articles": [
         {
             "source": {
-                "id": null,
-                "name": "Lifehacker.com"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "David Murphy",
-            "title": "What Are Your Must-Have Augmented Reality Apps?",
-            "description": "Oh, AR. It’s great to live in an era when we can use our smartphones to drop a giant dinosaur (or sleepy Snorlax ) in our actual world. Read more...",
-            "url": "https://lifehacker.com/what-are-your-must-have-augmented-reality-apps-1826427683",
-            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/s--xCrQNa0e--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/ktgnfqinpfuqdqzhrhja.jpg",
-            "publishedAt": "2018-05-30T20:00:00Z"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Lifehacker.com"
-            },
-            "author": "David Murphy",
-            "title": "How to Update Your BIOS to Protect Against Vulnerabilities",
-            "description": "Is it me, or are we seeing a more disclosures for big, scary vulnerabilities that affect your system’s core components? Just a week or so ago, Microsoft and Google announced more issues—Rogue System Register Read and Speculative Store Bypass—which are fancy-s…",
-            "url": "https://lifehacker.com/how-to-update-your-bios-to-protect-against-vulnerabilit-1826423812",
-            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/s--Z2UkOCPn--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/kf3gg5k7qtavcymqhrvs.jpg",
-            "publishedAt": "2018-05-30T18:30:00Z"
-        },
-        {
-            "source": {
-                "id": "engadget",
-                "name": "Engadget"
-            },
-            "author": "Rob LeFebvre",
-            "title": "Apple Music sets up publishing division as it chases down Spotify",
-            "description": "Apple Music has been on its way to overtake Spotify in terms of subscriber base for a while now. The service got a new boss, Oliver Schusser, this past April, as well. Now, Schusser's first major initiative appears to be the launch of Apple's own music publis…",
-            "url": "https://www.engadget.com/2018/05/30/apple-music-publishing-division/",
-            "urlToImage": "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&quality=80&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D960%252C656%252C0%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C1093%26image_uri%3Dhttp%253A%252F%252Fo.aolcdn.com%252Fhss%252Fstorage%252Fmidas%252F9e42c9dd8676974a1b4d4fc3c297ec39%252F202215689%252Fapplemusic.jpg%26client%3Da1acac3e1b3290917d92%26signature%3D34938b219ade0f20d9c66bdf9aeda9f060dd0872&client=cbc79c14efcebee57402&signature=0bc9ae3b5694a82c5a59ab6579b9fbbb39cb95e8",
-            "publishedAt": "2018-05-30T18:52:00Z"
-        },
-        {
-            "source": {
-                "id": "engadget",
-                "name": "Engadget"
-            },
-            "author": "Rachel England",
-            "title": "Apple's HomePod arrives in Canada, France and Germany this June",
-            "description": "Wedged in among Apple's wider iOS 11.4 announcement today comes the news that HomePod is launching in Germany, France and Canada on June 18. This is a significant market expansion, and one surely designed to boost sales of the Siri-powered smart speaker that …",
-            "url": "https://www.engadget.com/2018/05/30/apples-homepod-arrives-in-canada-france-and-germany-this-june/",
-            "urlToImage": "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&quality=80&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F76ec71eac9eeb569b66168e3ce636b40%2F206413449%2FHomePod.jpg&client=cbc79c14efcebee57402&signature=cb798c2306078f19980eca9c3edd5e27f8ea8bd0",
-            "publishedAt": "2018-05-30T11:01:00Z"
-        },
-        {
-            "source": {
-                "id": "engadget",
-                "name": "Engadget"
-            },
-            "author": "Cherlynn Low",
-            "title": "Google Assistant fired a gun: We need to talk",
-            "description": "For better or worse, Google Assistant can do it all. From mundane tasks like turning on your lights and setting reminders to convincingly mimicking human speech patterns, the AI helper is so capable it's scary. Its latest (unofficial) ability, though, is a bi…",
-            "url": "https://www.engadget.com/2018/05/30/google-assistant-fired-a-gun-we-need-to-talk/",
-            "urlToImage": "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&quality=80&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D3862%252C2578%252C0%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C1068%26image_uri%3Dhttp%253A%252F%252Fo.aolcdn.com%252Fhss%252Fstorage%252Fmidas%252Fdacbfa1cbd7cdda5739d2b43d78daaa%252F204430593%252F493499993.jpg%26client%3Da1acac3e1b3290917d92%26signature%3D7503885ad052e7aa1c0746b5a4ad469ade90de3a&client=cbc79c14efcebee57402&signature=867ad715eea1f0dc15bc994a2a962f6a84b452b9",
-            "publishedAt": "2018-05-30T19:30:00Z"
+            "author": "Brian Heater",
+            "title": "Microsoft is reportedly acquiring GitHub",
+            "description": "New reports out of Redmond this weekend have Microsoft set to purchase the popular coding site GitHub. Bloomberg is citing “people familiar with the matter,” stating that the deal could be announced as early as tomorrow. The new story follows similar reports …",
+            "url": "https://techcrunch.com/2018/06/03/microsoft-is-reportedly-acquiring-github/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/03/mvimg_20171129_165434.jpg?w=533",
+            "publishedAt": "2018-06-03T21:06:44Z"
         },
         {
             "source": {
                 "id": "techcrunch",
                 "name": "TechCrunch"
             },
-            "author": "Anthony Ha",
-            "title": "Apple is making a series about Emily Dickinson",
-            "description": "Apple announced today that it’s placed a straight-to-series order for Dickinson, a show that will star Hailee Steinfeld as poet Emily Dickinson. Steinfeld is an actress and singer who was Oscar-nominated for her performance in True Grit and more recently perf…",
-            "url": "http://techcrunch.com/2018/05/30/apple-dickinson/",
-            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/05/gettyimages-911887896.jpg?w=533",
-            "publishedAt": "2018-05-30T21:11:25Z"
+            "author": "Steve O'Hear",
+            "title": "White Star Capital raises new $180M fund to help startups go international",
+            "description": "Global venture capital firm White Star Capital has closed a second fund of $180 million, money it plans to invest in “transatlantic” companies that need help to go international. The VC already has a presence in London, New York, and Montreal, and as part if …",
+            "url": "https://techcrunch.com/2018/06/03/white-star-capital-ii/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/06/eric-martineau-fortin1.jpg?w=601",
+            "publishedAt": "2018-06-03T21:02:23Z"
         },
         {
             "source": {
                 "id": "techcrunch",
                 "name": "TechCrunch"
             },
-            "author": "Lucas Matney",
-            "title": "Google builds its cross-platform multiplayer AR tech into a doodling app",
-            "description": "At Google I/O earlier this month, the company announced Cloud Anchors, a tool that shares 3D data captured by a user’s smartphone with the cloud and can match that data up with another user to create a shared AR experience where each person’s phone is seeing …",
-            "url": "http://techcrunch.com/2018/05/30/google-builds-its-cross-platform-multiplayer-ar-tech-into-a-doodling-app/",
-            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/05/da5bz2f1yuuclz8uqsx9bn1zi_4y187ilyiaifkftkv6dzovdrwifb9mkt3blebljqxbddwbzl5ix5w2gfxt8airvpm6-yblwinwqurmtlmd3ohvg9mijxvjg3rielalvpvanund.gif?w=711",
-            "publishedAt": "2018-05-30T17:02:02Z"
+            "author": "Sanjit Dang",
+            "title": "The robot revolution is just beginning",
+            "description": "Sanjit Dang Contributor Share on Twitter Sanjit Dang is an investment director at Intel Capital. More posts by this contributor What’s holding back VR? Every year, Time magazine gets swamped with pitches from thousands of companies, all convinced their produc…",
+            "url": "https://techcrunch.com/2018/06/03/the-robot-revolution-is-just-beginning/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2015/01/jibo-kitchen-lights-up.jpeg?w=586",
+            "publishedAt": "2018-06-03T19:30:05Z"
         },
         {
             "source": {
-                "id": null,
-                "name": "Gizmodo.com"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "Jennings Brown",
-            "title": "We've Launched an Investigative Podcast About a Controversial Internet Spiritual Guru",
-            "description": "Teal Swan is an internet spiritual guru who produces hypnotic self-help YouTube videos aimed at people who are struggling with depression and suicidal thoughts. Many of her videos share unorthodox messages about mental health with her hundreds of thousands of…",
-            "url": "https://gizmodo.com/weve-launched-an-investigative-podcast-about-a-controve-1826416613",
-            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/s--POZWCCdh--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/vp2crbgdhzcomgjdak2i.jpg",
-            "publishedAt": "2018-05-30T15:31:00Z"
+            "author": "Jason Rowley",
+            "title": "VCs like what they are hearing out of the podcasting sector",
+            "description": "Podcasts are television for the earbud generation. And although many podcasters make money, typically through sponsorships, the podcasting industry (such as it is) hasn’t received much in the way of venture funding -- until quite recently.",
+            "url": "https://techcrunch.com/2018/06/03/vcs-like-what-they-are-hearing-out-of-the-podcasting-sector/",
+            "urlToImage": "https://techcrunch.com/wp-content/themes/techcrunch-2017/images/opengraph-default.png",
+            "publishedAt": "2018-06-03T18:11:13Z"
         },
         {
             "source": {
-                "id": null,
-                "name": "Gizmodo.com"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "AJ Dellinger",
-            "title": "Google is Refining Its Anti-Boob Algorithm After a Woman Flashed Google Maps",
-            "description": "A remote road in Pingtung County, Taiwan has suddenly become a highly-rated attraction on Google Maps for the thirstiest denizens of the internet thanks to a video uploaded by a tourist that shows her bare breast. Read more...",
-            "url": "https://gizmodo.com/google-is-refining-its-anti-boob-algorithm-after-a-woma-1826436523",
-            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/s--21RoqwPc--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/mmkvre2yhskrbhtlumur.jpg",
-            "publishedAt": "2018-05-30T23:30:00Z"
+            "author": "Gregory Manalo",
+            "title": "Former Twitter employees prove innovation isn't just for profit",
+            "description": "There’s no secret the tech industry suffers a reputation for harmfully disrupting a community. But not everyone in tech is to blame for the negative effects. In 2015 Ben Kovacs and Joel Lunenfeld founded the non-profit Guardian Gym, a buy-one give-one mixed m…",
+            "url": "https://techcrunch.com/2018/06/03/former-twitter-employees-prove-innovation-isnt-just-for-profit/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/06/screenshot-2018-06-02-22-25-13.png?w=715",
+            "publishedAt": "2018-06-03T18:00:12Z"
         },
         {
             "source": {
-                "id": null,
-                "name": "Gizmodo.com"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "Tom McKay",
-            "title": "Inspiring: Content Marketers Want to Buy Gawker and Make It Nice",
-            "description": "Gawker Media—Gizmodo’s former parent company which is now in bankruptcy proceedings following a lawsuit secretly funded by Peter Thiel—is up for sale, with a tentative auction date of July 21st. Fantastic news: There’s already a bidder with plans to purchase …",
-            "url": "https://gizmodo.com/inspiring-content-marketers-want-to-buy-gawker-and-mak-1826408001",
-            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/s--y3okTpYP--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/pb1olhpegpc0kimucqru.png",
-            "publishedAt": "2018-05-30T03:58:00Z"
+            "author": "Anthony Ha, Jordan Crook, Lucas Matney",
+            "title": "Original Content podcast: 'Arrested Development' struggles to shake off recent controversies",
+            "description": "Netflix’s revival of Arrested Development may have had a mixed reception from critics and fans, but the dysfunctional Bluth family isn’t done yet. Five years after the premiere of the much-anticipated fourth season, Arrested Development is back for season fiv…",
+            "url": "https://techcrunch.com/2018/06/03/original-content-arrested-development/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/06/ad_502_unit_00210r2.jpg?w=599",
+            "publishedAt": "2018-06-03T14:00:55Z"
         },
         {
             "source": {
-                "id": "mashable",
-                "name": "Mashable"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "Jake Krol",
-            "title": "Apple's WWDC surprise for the Apple Watch just leaked, and it's pretty cool",
-            "description": "It looks like Apple has something special in store for Pride Month. Just yesterday, iOS 11.4 and watchOS 4.3.1 began rolling out to users, and already 9to5Mac has spotted a hidden watch face in code. A new face with a stylized rainbow animation will arrive on…",
-            "url": "https://mashable.com/2018/05/30/pride-face-apple-watch/",
-            "urlToImage": "https://i.amz.mshcdn.com/a6pQylrDA40KdlC_bBJ4LaIXUtk=/1200x630/2018%2F05%2F30%2F75%2F20bccbb32d51431b9bc39f9c08801afb.49381.jpg",
-            "publishedAt": "2018-05-30T19:30:54Z"
+            "author": "Fen Zhao",
+            "title": "Will smart home tech make us care more about privacy?",
+            "description": "Fen Zhao Contributor Share on Twitter Fen Zhao is an early stage investor at Alpha Edison who previously developed public private partnerships at the National Science Foundation in the areas of data science and cybersecurity. For most people, the thought of a…",
+            "url": "https://techcrunch.com/2018/06/03/will-smart-home-tech-make-us-care-more-about-privacy/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/05/amazon-echo-listening.png?w=753",
+            "publishedAt": "2018-06-03T13:30:35Z"
         },
         {
             "source": {
-                "id": "mashable",
-                "name": "Mashable"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "Adam Rosenberg",
-            "title": "Steam's removal of the 'Active Shooter' game addresses a symptom, not the cause",
-            "description": "Let's be clear about one thing up front: There is no reasonable scenario where a video game about shooting up a high school is acceptable. None. How then did Active Shooter, a game that promised to let you play the role of a school shooter while tracking stat…",
-            "url": "https://mashable.com/2018/05/30/active-shooter-steam-game-removal-explained/",
-            "urlToImage": "https://i.amz.mshcdn.com/Bf1ZYkmRlhgj6D3VYpvUmcqEzh0=/1200x630/2018%2F05%2F30%2F1b%2F404393ff8a98459aa37f38c535152839.874e4.jpg",
-            "publishedAt": "2018-05-30T20:03:43Z"
+            "author": "Jon Evans",
+            "title": "Whither VR/AR?",
+            "description": "“Despite many pronouncements that 2016 was the year of VR, a more apt word for virtual reality might be absence,” The Economist observed caustically last summer, noting that during that year forecasts of combined sales of VR hardware and software dropped from…",
+            "url": "https://techcrunch.com/2018/06/03/i-said-whither-not-wither-but-now-that-you-mention-it/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/06/augmented.png?w=558",
+            "publishedAt": "2018-06-03T13:00:32Z"
         },
         {
             "source": {
-                "id": "mashable",
-                "name": "Mashable"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "Leah Stodart",
-            "title": "Which tablet to buy for your kid: These are 5 of the best out right now",
-            "description": "Kids are device-hungry nuts these days. Seriously, WTF happened to Sesame Street and a book before bedtime? But we digress. Technology has changed a lot since you were small. Your kids have probably mastered the features on your iPhone better than you have du…",
-            "url": "https://mashable.com/2018/05/30/best-tablets-for-kids-samsung-amazon/",
-            "urlToImage": "https://i.amz.mshcdn.com/E4JN2kAryLrrPXYrBx7ho1hCZZ4=/1200x630/2018%2F05%2F30%2Fd4%2F56e435797dcb44bfb1c232329734af09.5be1a.jpg",
-            "publishedAt": "2018-05-30T16:49:12Z"
+            "author": "TC Video",
+            "title": "Former Twitter employees prove innovation isn't just for profit",
+            "description": "In 2015 Ben Kovacs and Joel Lunenfeld founded the non-profit Guardian Gym, a buy-one give-one mixed martial arts gym/after-school program that now boasts over 300 adult members and youth mentees. on the Featureshow",
+            "url": "https://techcrunch.com/video-article/former-twitter-employees-prove-innovation-isnt-just-for-profit/",
+            "urlToImage": "https://img.vidible.tv/prod/2018-06/01/5b11a64ca3fc02729562e26f/5b11a6ed1aa5fc0f99c112aa_o_U_v1.jpg?w=640&h=360",
+            "publishedAt": "2018-06-03T02:36:27Z"
         },
         {
             "source": {
-                "id": "mashable",
-                "name": "Mashable"
+                "id": "techcrunch",
+                "name": "TechCrunch"
             },
-            "author": "Leah Stodart",
-            "title": "Which tablet to buy for your kid: These are 5 of the best out right now",
-            "description": "Kids are device-hungry nuts these days. Seriously, WTF happened to Sesame Street and a book before bedtime? But we digress. Technology has changed a lot since you were small. Your kids have probably mastered the features on your iPhone better than you have du…",
-            "url": "https://mashable.com/2012/11/30/the-best-tablets-for-kids/",
-            "urlToImage": "https://i.amz.mshcdn.com/E4JN2kAryLrrPXYrBx7ho1hCZZ4=/1200x630/2018%2F05%2F30%2Fd4%2F56e435797dcb44bfb1c232329734af09.5be1a.jpg",
-            "publishedAt": "2018-05-30T20:49:53Z"
-        },
-        {
-            "source": {
-                "id": "the-new-york-times",
-                "name": "The New York Times"
-            },
-            "author": "MICHAEL BARBARO",
-            "title": "The Daily: Listen to ‘The Daily’: Was Kevin Cooper Framed for Murder?",
-            "description": "The sole survivor of an attack in which four people were murdered identified the perpetrators as three white men. Why did a young black man end up on death row?",
-            "url": "https://www.nytimes.com/2018/05/30/podcasts/the-daily/kevin-cooper-death-row.html",
-            "urlToImage": "https://static01.nyt.com/images/2018/05/30/us/30Daily/30Daily-facebookJumbo.jpg",
-            "publishedAt": "2018-05-30T10:07:13Z"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Androidcentral.com"
-            },
-            "author": "Phil Nickinson",
-            "title": "Philo now has a referral program so you and a friend can save some cash on streaming TV",
-            "description": "There's no limit on the number of referrals you can get each month. Streaming upstart Philo today announced a referral program. Every time someone signs up using your individual referral code, you'll get a $5 credit on your bill, and your friend will get $5 o…",
-            "url": "https://www.androidcentral.com/philo-now-has-referral-program-so-you-and-friend-can-save-some-cash",
-            "urlToImage": "https://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/field/image/2018/05/home-page_top-3w9l.jpg?itok=NBlvFRCy",
-            "publishedAt": "2018-05-30T18:13:32Z"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Androidcentral.com"
-            },
-            "author": "Ara Wagoner",
-            "title": "YouTube Music vs. Spotify: Which is the better streaming music service?",
-            "description": "Can the biggest name in streaming video overtake the biggest name in streaming music? If there is a throne to be won in music streaming, Spotify won it years ago. They've got a great selection, they've somehow gotten a better reputation for algorithms than Go…",
-            "url": "https://www.androidcentral.com/youtube-music-vs-spotify",
-            "urlToImage": "https://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/article_images/2018/05/ytmusic-spotify-red-green-s9plus-htc10.jpg?itok=Upa9b833",
-            "publishedAt": "2018-05-30T14:00:02Z"
-        },
-        {
-            "source": {
-                "id": "the-guardian-au",
-                "name": "The Guardian (AU)"
-            },
-            "author": "Rosie Sykes",
-            "title": "Is Japanese knotweed driving you wild? Don't curse it – cook it",
-            "description": "Alys Fowler has suggested we eat our way out of our problem with this invasive weed: sweet, savoury or in vodka, here are five ways to enjoy it The scourge of homes and gardens, Japanese knotweed is pernicious and incredibly invasive, so much so that it needs…",
-            "url": "https://www.theguardian.com/lifeandstyle/shortcuts/2018/may/30/is-japanese-knotweed-driving-you-wild-dont-curse-it-cook-it",
-            "urlToImage": "https://i.guim.co.uk/img/media/6d0debcacc5afd2285beb307b2f688e8c8b49693/0_21_4000_2401/master/4000.jpg?w=1200&h=630&q=55&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly91cGxvYWRzLmd1aW0uY28udWsvMjAxOC8wMS8zMS9mYWNlYm9va19kZWZhdWx0LnBuZw&s=f6ea17ccd852b8617514450556218460",
-            "publishedAt": "2018-05-30T14:22:29Z"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Macrumors.com"
-            },
-            "author": "Juli Clover",
-            "title": "Apple Seeds First Beta of iOS 11.4.1 to Developers",
-            "description": "Apple today seeded the first beta of an upcoming iOS 11.4.1 update to developers, one day after releasing iOS 11.4, an update that introduced AirPlay 2 and Messages in iCloud. Registered developers can download the new iOS 11.4.1 beta from Apple's Developer C…",
-            "url": "https://www.macrumors.com/2018/05/30/apple-seeds-first-beta-of-ios-11-4-1/",
-            "urlToImage": "https://cdn.macrumors.com/article-new/2018/05/ios1141beta-800x457.jpg?retina",
-            "publishedAt": "2018-05-30T17:01:27Z"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Macrumors.com"
-            },
-            "author": "Juli Clover",
-            "title": "Hands-On With the OnePlus 6, the Latest Android Phone to Adopt a Notch",
-            "description": "OnePlus announced its new flagship phone, the OnePlus 6 on May 16, taking the opportunity to poke fun at Apple for removing the headphone jack from the iPhone while also copying a key Apple design -- the notch. The OnePlus 6 is the latest Android phone to ado…",
-            "url": "https://www.macrumors.com/2018/05/30/hands-on-with-the-oneplus-6/",
-            "urlToImage": "https://img.youtube.com/vi/Srg0_EJv4ng/0.jpg?retina",
-            "publishedAt": "2018-05-30T19:29:14Z"
+            "author": "Devin Coldewey",
+            "title": "It's OK to leave Facebook",
+            "description": "The slow-motion privacy train wreck that is Facebook has many users, perhaps you, thinking about leaving or at least changing the way you use the social network. Fortunately for everyone but Mark Zuckerberg, it's not nearly has hard to leave as it once was. T…",
+            "url": "https://techcrunch.com/2018/06/02/its-ok-to-leave-facebook/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/03/fbexitwide.jpg?w=753",
+            "publishedAt": "2018-06-02T19:46:15Z"
         }
     ]
 }
