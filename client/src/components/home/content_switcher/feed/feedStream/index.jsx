@@ -11,7 +11,6 @@ const socket = io('http://localhost:3030');
 
 class FeedStream extends React.Component {
   componentDidMount() {
-    // this.props.clearUserPosts(true);
     this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
     this.getPostUpdates();
   }
@@ -72,7 +71,6 @@ const mapStateToProps = state => {
 const matchDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchFeedData: url => postsFetchData(url),
-    // clearUserPosts: bool => clearUserPosts(bool),
     // updatePostCount: () => updatePostCount(),
   }, dispatch);
 };
