@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import upload from 'superagent';
 import Dropzone from 'react-dropzone';
+import sha256 from 'crypto-js/sha256';
 
 import './createPost.sass';
 import { createPost } from '../../../../../redux/actions/createPostAction';
@@ -30,18 +31,23 @@ class CreatePost extends React.Component {
 
   submitContent() {
     this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, imageURL: this.state.imageURL });
+
+    // resets
     document.getElementById('form').reset();
+    this.setState({
+      accepted: [],
+    });
   }
 
   uploadPhoto(files) {
     upload.post('http://localhost:3030/api/uploads/photo')
-    .attach('photo', files[0], files[0].name)
+    .attach('photo', files[0], sha256(files[0].name))
     .end((err, res) => {
       if (err) console.error('failed to upload', err);
       this.setState({
-        imageURL: 'https://s3-us-west-1.amazonaws.com/discor-photos/' + files[0].name,
+        imageURL: 'https://s3-us-west-1.amazonaws.com/discor-photos/' + sha256(files[0].name),
       });
-      console.log('state', this.state, res.text);
+      console.log(res.text);
     });
   }
 
