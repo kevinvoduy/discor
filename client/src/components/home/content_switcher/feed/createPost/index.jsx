@@ -17,6 +17,7 @@ class CreatePost extends React.Component {
       content: '',
       imageURL: '',
       accepted: [],
+      rejected: [],
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.submitContent = this.submitContent.bind(this);
@@ -64,9 +65,10 @@ class CreatePost extends React.Component {
           <Dropzone
             className="dropzone"
             disableClick
-            accept="image/jpeg, image/png"
+            accept="image/*"
             multiple={false}
-            onDrop={accepted => { this.setState({ accepted }); }}
+            maxSize={3000000}
+            onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
             onDropAccepted={this.uploadPhoto}
           >
             <form id="form">
@@ -87,6 +89,17 @@ class CreatePost extends React.Component {
                 return (
                   <div key={image.name}>
                     <p>✔{' '}{image.name}</p>
+                  </div>
+                );
+              })
+            }
+          </aside>
+          <aside className="rejected__file">
+            {
+              this.state.rejected.map(image => {
+                return (
+                  <div key={image.name}>
+                    <p>✘{' '}{image.name} - file exceeds 3mb limit!</p>
                   </div>
                 );
               })

@@ -11,7 +11,7 @@ AWS.config.update({
 
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 5000000}
+  limits: { fileSize: 3000000}
 });
 
 const router = express.Router();
