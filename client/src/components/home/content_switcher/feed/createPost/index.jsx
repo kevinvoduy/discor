@@ -65,9 +65,9 @@ class CreatePost extends React.Component {
           <Dropzone
             className="dropzone"
             disableClick
-            accept="image/*"
+            accept="image/gif, image/jpg, image/jpeg, image/png"
             multiple={false}
-            maxSize={3000000}
+            maxSize={5000000}
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
             onDropAccepted={this.uploadPhoto}
           >
@@ -76,7 +76,7 @@ class CreatePost extends React.Component {
                 <textarea
                   name="content"
                   type="text"
-                  placeholder="Write a post or try dropping an image here!"
+                  placeholder="Write a post or try dropping an image/gif here!"
                   onChange={this.onChangeHandler}
                 />
               </label>
@@ -99,7 +99,7 @@ class CreatePost extends React.Component {
               this.state.rejected.map(image => {
                 return (
                   <div key={image.name}>
-                    <p>✘{' '}{image.name} - file exceeds 3mb limit!</p>
+                    <p>✘{' '}{image.name} - Image exceeds 5mb limit!</p>
                   </div>
                 );
               })
