@@ -30,6 +30,7 @@ class CreatePost extends React.Component {
 
   submitContent() {
     this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, imageURL: this.state.imageURL });
+    document.getElementById('form').reset();
   }
 
   uploadPhoto(files) {
@@ -62,7 +63,7 @@ class CreatePost extends React.Component {
             onDrop={accepted => { this.setState({ accepted }); }}
             onDropAccepted={this.uploadPhoto}
           >
-            <form>
+            <form id="form">
               <label htmlFor="content">
                 <textarea
                   name="content"

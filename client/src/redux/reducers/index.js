@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import usernameReducer from './usernameReducer';
 import authToggleReducer from './authToggleReducer';
 import { posts, postsHasErrored, postsIsLoading } from './fetchAllPostsReducer';
-import { createPostErrored, createPostSuccess, clearPosts} from './createPostReducer';
+import { createPostErrored, createPostSuccess } from './createPostReducer';
 // import updateCount from './postNotificationReducer';
 
 export default combineReducers({
@@ -14,6 +14,5 @@ export default combineReducers({
   postsIsLoading,
   createPostErrored,
   createPostSuccess,
-  clearPosts,
   // updateCount,
 });

@@ -5,14 +5,13 @@ import { connect } from 'react-redux';
 import io from 'socket.io-client';
 
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
-import { clearUserPosts } from '../../../../../redux/actions/createPostAction';
 import Post from './posts/post';
 
 const socket = io('http://localhost:3030');
 
 class FeedStream extends React.Component {
   componentDidMount() {
-    this.props.clearUserPosts(true);
+    // this.props.clearUserPosts(true);
     this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
     this.getPostUpdates();
   }
@@ -32,38 +31,8 @@ class FeedStream extends React.Component {
         return <p>Loading…</p>;
     }
 
-    if (this.props.clearPosts) {
-      return (
-        <div className="feed__stream">
-          {
-            this.props.feedStream.map(post => (
-              <Post
-                key={post._id}
-                owner={post.owner}
-                createdAt={post.createdAt}
-                content={post.content}
-                comments={post.comments}
-                imageURL={post.imageURL}
-              />
-            ))
-          }
-        </div>
-      );
-    }
-
     return (
       <div className="feed__stream">
-        {
-          this.props.userPosts.map(post => (
-            <Post
-              key={post._id}
-              owner={post.owner}
-              createdAt={post.createdAt}
-              content={post.content}
-              comments={post.comments}
-            />
-          ))
-        }
         {
           this.props.feedStream.map(post => (
             <Post
@@ -72,6 +41,7 @@ class FeedStream extends React.Component {
               createdAt={post.createdAt}
               content={post.content}
               comments={post.comments}
+              imageURL={post.imageURL}
             />
           ))
         }
@@ -85,9 +55,6 @@ FeedStream.propTypes = {
   feedStream: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasErrored: PropTypes.bool.isRequired,
-  userPosts: PropTypes.array.isRequired,
-  clearPosts: PropTypes.bool.isRequired,
-  clearUserPosts: PropTypes.func.isRequired,
   // updateCount: PropTypes.number.isRequired,
   // updatePostCount: PropTypes.func.isRequired,
 };
@@ -98,7 +65,6 @@ const mapStateToProps = state => {
     isLoading: state.postsIsLoading,
     hasErrored: state.postsHasErrored,
     userPosts: state.createPostSuccess,
-    clearPosts: state.clearPosts,
     updateCount: state.updateCount,
   };
 };
@@ -106,7 +72,7 @@ const mapStateToProps = state => {
 const matchDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchFeedData: url => postsFetchData(url),
-    clearUserPosts: bool => clearUserPosts(bool),
+    // clearUserPosts: bool => clearUserPosts(bool),
     // updatePostCount: () => updatePostCount(),
   }, dispatch);
 };
