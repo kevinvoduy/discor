@@ -19,7 +19,7 @@ const router = express.Router();
 router.post('/photo', upload.single('photo'), (req, res) => {
   s3.upload({
     Bucket: 'discor-photos',
-    Key: 'photo',
+    Key: req.file.originalname,
     Body: req.file.buffer,
     ACL: 'public-read',
   }, err => {
