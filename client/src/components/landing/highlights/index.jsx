@@ -9,7 +9,7 @@ const Highlights = () => (
     <div className="bullets">
       {
         text.map(bullet => (
-          <div className="bullet" key="">
+          <div className="bullet" key={bullet.url}>
             <img src={bullet.url} alt="" id="header__icon" />
             <p id="header">{bullet.header}</p>
             <p id="text">{bullet.text}</p>

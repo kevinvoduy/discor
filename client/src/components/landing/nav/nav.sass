@@ -1,12 +1,12 @@
 @import '../../globals/globals.sass'
 
 .landing__nav
-  height: 3.5em
+  padding: 2em 2em 0 2em
   display: grid
-  grid-template-columns: 1fr 24em
+  grid-template-columns: 1fr 32em
 
   .logo
-    align-self: end
+    align-self: center
     font-family: $logo-font
     font-size: $text-x-large
     color: black
@@ -19,3 +19,8 @@
 
   a
     place-self: center
+    color: $gray
+    border: none
+
+    &:hover
+      color: $white

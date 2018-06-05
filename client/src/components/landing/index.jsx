@@ -5,6 +5,8 @@ import LandingNav from './nav';
 import Signup from './signup';
 import Highlights from './highlights';
 
+import './landing.sass';
+
 class Landing extends React.Component {
   constructor(props) {
     super(props);

@@ -53,7 +53,7 @@ class Signup extends React.Component {
     return (
       <div className="login__page" >
         <div className="form__container">
-          <p id="headline">Whole world in one single App</p>
+          <p id="headline">Whole world<br />in one single App</p>
           <p id="small__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus sodales arcu vel eleifend.</p>
           <form id="signup__form">
             <label htmlFor="username">
@@ -82,7 +82,7 @@ class Signup extends React.Component {
         </div>
 
         <div className="hero__image">
-          <img src="https://showbizpost.com/wp-content/uploads/2018/05/Levy-780x405.jpg" alt="" />
+          <img src="/assets/black.png" alt="" />
         </div>
       </div>
     );
