@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import LandingNav from './nav';
 import Signup from './signup';
+import Highlights from './highlights';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Landing extends React.Component {
       <div className="landing__page">
         <LandingNav />
         <Signup redirectHome={this.redirectHome} />
+        <Highlights />
       </div>
     );
   }
