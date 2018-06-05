@@ -46,34 +46,39 @@ class CTA extends React.Component {
   render() {
     return (
       <div className="cta">
-        <div className="cta__words">
-          <p id="cta__headline">Join the <strong>many users</strong> from all over the world</p>
-          <p id="cta__details">Quisque pharetra et lorem et aliquet. In nec erat at risus blandit ullamcorper.</p>
-          <p id="cta__details">Quisque gravida turpis sit amet fermentum lacinia. Nullam ac posuere quam. Integer vitae nibh elit.</p>
+        <div className="left">
+          <div className="cta__words">
+            <p id="cta__headline">Join the <strong>many users</strong><br />from all over the world</p>
+            <p id="cta__details">Quisque pharetra et lorem et aliquet. In nec erat at risus blandit ullamcorper. Quisque gravida turpis sit amet fermentum lacinia. Nullam ac posuere quam. Integer vitae nibh elit.</p>
+          </div>
+
+          <div className="cta__form">
+            <form id="form">
+              <label htmlFor="username">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  onChange={this.onChangeHandler}
+                />
+              </label>
+
+              <label htmlFor="password">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.onChangeHandler}
+                />
+              </label>
+            </form>
+
+            <button onClick={this.userSignup}>Sign Up</button>
+          </div>
         </div>
 
-        <div className="cta__form">
-          <form id="form">
-            <label htmlFor="username">
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                onChange={this.onChangeHandler}
-              />
-            </label>
-
-            <label htmlFor="password">
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={this.onChangeHandler}
-              />
-            </label>
-          </form>
-
-          <button onClick={this.userSignup}>Sign Up</button>
+        <div className="cta__image">
+          <img src="http://i0.wp.com/kingoftheflatscreen.com/wp-content/uploads/2017/11/2nhauwhr.jpg?w=1200" alt="" />
         </div>
       </div>
     );
