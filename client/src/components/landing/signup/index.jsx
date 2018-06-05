@@ -50,9 +50,9 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="login__page" >
-        <h1>Signup</h1>
+        <p id="headline">Whole world in one sinlge App</p>
         <div className="form__container">
-          <form>
+          <form id="signup__form">
             <label htmlFor="username">
               <input
                 type="text"
@@ -76,6 +76,10 @@ class Signup extends React.Component {
 
           <button onClick={this.userSignup}>Sign Up</button>
           <button onClick={this.logState}>Skip</button>
+        </div>
+
+        <div className="hero__image">
+          <img src="" alt="" />
         </div>
       </div>
     );

@@ -1,0 +1,21 @@
+@import '../../globals/globals.sass'
+
+.landing__nav
+  height: 3em
+  display: grid
+  grid-template-columns: 1fr 24em
+
+  .logo
+    align-self: end
+    font-family: $logo-font
+    font-size: $text-x-large
+    color: black
+    margin: 0
+    padding: 0
+
+.landing__links
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+
+  a
+    place-self: center

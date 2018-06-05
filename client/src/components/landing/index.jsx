@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import LandingNav from './nav';
 import Signup from './signup';
 
 class Landing extends React.Component {
@@ -15,8 +16,8 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Landing Page</h1>
+      <div className="landing__page">
+        <LandingNav />
         <Signup redirectHome={this.redirectHome} />
       </div>
     );
