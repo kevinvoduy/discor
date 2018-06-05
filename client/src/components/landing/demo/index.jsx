@@ -4,8 +4,13 @@ import './demo.sass';
 
 const Demo = () => (
   <div className="demo">
-    <img src="http://i0.wp.com/kingoftheflatscreen.com/wp-content/uploads/2017/11/2nhauwhr.jpg?w=1200" alt="" id="image1" />
-    <img src="http://i0.wp.com/kingoftheflatscreen.com/wp-content/uploads/2017/11/2nhauwhr.jpg?w=1200" alt="" id="image2" />
+    <div className="image back">
+      <img src="/assets/screen.png" alt="" />
+    </div>
+
+    <div className="image base">
+      <img src="/assets/screen.png" alt="" />
+    </div>
   </div>
 );
 

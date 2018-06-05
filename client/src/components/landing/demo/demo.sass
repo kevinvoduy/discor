@@ -1,2 +1,35 @@
 @import '../../globals/globals.sass'
 
+.demo
+  perspective: 1px
+  height: 80vh
+  overflow-x: hidden
+  overflow-y: auto
+  margin: 0 auto
+  padding: 0
+  min-width: $screen-small
+  background-image: url('/assets/squiggles.svg')
+  background-repeat: no-repeat
+  background-position: center
+  background-size: 120%
+
+  img
+    width: 700px
+    box-shadow: -10px 10px 17px 3px $shadow
+
+  .image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+  .base
+    transform: translateZ(-1px) scale(2) rotate(-20deg)
+    left: 35%
+    top: 25%
+
+  .back
+    transform: translateZ(-2px) scale(3) rotate(-20deg)
+    left: 55%
+    top: 40%
