@@ -36,7 +36,7 @@ export const dropDatabase = async() => {
 export const useDatabase = async() => {
   try {
     await db.queryAsync(
-      `USE IF EXISTS ${database}`
+      `USE ${database}`
     );
     success('using database:', database);
   } catch (err) {

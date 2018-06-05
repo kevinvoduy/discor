@@ -8,18 +8,20 @@ import {
   createMessagesTable,
   dropMessagesTable,
   createMessageRecipiantTable,
-  dropMessageRecipiantTable
+  dropMessageRecipiantTable,
+  createDatabase,
+  dropDatabase,
 } from '../../lib/SQL';
 
 const setup = async(err) => {
-  // await dropDatabase();
+  await dropDatabase();
   await dropCredentialsTable();
   await dropFriendsTable();
   await dropMessageRecipiantTable();
   await dropMessagesTable();
   await dropUserTable();
 
-  // await createDatabase();
+  await createDatabase();
   // await useDatabase();
   await createUserTable();
   await createCredentialsTable();
