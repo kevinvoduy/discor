@@ -7,6 +7,8 @@ import axios from 'axios';
 import saveUsernameAction from '../../../redux/actions/signupAction';
 import setLoginStateAction from '../../../redux/actions/authToggleAction';
 
+import './signup.sass';
+
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -50,8 +52,9 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="login__page" >
-        <p id="headline">Whole world in one sinlge App</p>
         <div className="form__container">
+          <p id="headline">Whole world in one single App</p>
+          <p id="small__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus sodales arcu vel eleifend.</p>
           <form id="signup__form">
             <label htmlFor="username">
               <input
@@ -66,7 +69,7 @@ class Signup extends React.Component {
 
             <label htmlFor="password">
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 onChange={this.onChangeHandler}
@@ -79,7 +82,7 @@ class Signup extends React.Component {
         </div>
 
         <div className="hero__image">
-          <img src="" alt="" />
+          <img src="https://showbizpost.com/wp-content/uploads/2018/05/Levy-780x405.jpg" alt="" />
         </div>
       </div>
     );
