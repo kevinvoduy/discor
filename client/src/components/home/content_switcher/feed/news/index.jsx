@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
+import moment from 'moment';
 
 import './news.sass';
 // enable in development
@@ -55,7 +56,8 @@ class News extends React.Component {
 
                 <div className="article__details">
                   <p id="title">{article.title}</p>
-                  <p id="details">{article.description.slice(0,118) + '...'}</p>
+                  <p id="details">{article.description.slice(0,128) + '...'}</p>
+                  <p id="createdAt">{moment(article.publishedAt).format('dddd, MMMM Do')} - {article.source.name}</p>
                 </div>
               </div>
             ))

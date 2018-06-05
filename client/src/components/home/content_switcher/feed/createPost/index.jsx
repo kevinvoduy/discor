@@ -31,22 +31,24 @@ class CreatePost extends React.Component {
   }
 
   submitContent() {
-    this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, imageURL: this.state.imageURL });
+    setTimeout(() => {
+      this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, imageURL: this.state.imageURL });
 
-    // resets
-    document.getElementById('form').reset();
-    this.setState({
-      accepted: [],
-    });
+      // resets
+      document.getElementById('form').reset();
+      this.setState({
+        accepted: [],
+      });
+    }, 1000);
   }
 
   uploadPhoto(files) {
     upload.post('http://localhost:3030/api/uploads/photo')
-    .attach('photo', files[0], sha256(files[0].name))
+    .attach('photo', files[0], sha256(files[0].name) + files[0].name)
     .end((err, res) => {
       if (err) console.error('failed to upload', err);
       this.setState({
-        imageURL: 'https://s3-us-west-1.amazonaws.com/discor-photos/' + sha256(files[0].name),
+        imageURL: 'https://s3-us-west-1.amazonaws.com/discor-photos/' + sha256(files[0].name) + files[0].name,
       });
       console.log(res.text);
     });
@@ -65,7 +67,7 @@ class CreatePost extends React.Component {
           <Dropzone
             className="dropzone"
             disableClick
-            accept="image/gif, image/jpg, image/jpeg, image/png"
+            accept="image/gif, image/jpeg, image/png"
             multiple={false}
             maxSize={5000000}
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
