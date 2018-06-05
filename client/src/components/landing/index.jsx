@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import LandingNav from './nav';
 import Signup from './signup';
 import Highlights from './highlights';
+import Footer from './footer';
 
 import './landing.sass';
 
@@ -23,6 +24,7 @@ class Landing extends React.Component {
         <LandingNav />
         <Signup redirectHome={this.redirectHome} />
         <Highlights />
+        <Footer />
       </div>
     );
   }
