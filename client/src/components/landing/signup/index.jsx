@@ -15,9 +15,10 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       password: '',
+      signupError: false,
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
-    this.logState = this.logState.bind(this);
+    this.bypassSignup = this.bypassSignup.bind(this);
     this.userSignup = this.userSignup.bind(this);
   }
 
@@ -27,7 +28,7 @@ class Signup extends React.Component {
     });
   }
 
-  logState() {
+  bypassSignup() {
     // bypass signup
     this.props.redirectHome();
   }
@@ -39,13 +40,17 @@ class Signup extends React.Component {
     };
     axios.post('/api/auth/signup', payload)
       .then(() => {
+        // clear sign up errors
+        this.setState({ signupError: false });
+
         // save username to redux
         this.props.saveUsername(this.state.username);
         this.props.setLoginState(true);
         this.props.redirectHome();
       })
       .catch(() => {
-        throw new Error('Username already in use');
+        this.setState({ signupFailed: true });
+        throw new Error('Failed to sign up user');
       });
   }
 
@@ -78,7 +83,7 @@ class Signup extends React.Component {
           </form>
 
           <button onClick={this.userSignup}>Sign Up</button>
-          <button onClick={this.logState}>Skip</button>
+          <button onClick={this.bypassSignup}>Skip</button>
         </div>
 
         <div className="hero__image">

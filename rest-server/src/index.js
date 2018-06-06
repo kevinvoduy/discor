@@ -1,11 +1,15 @@
 
 import http from 'http';
 import path from 'path';
-import graphqlHTTP from 'express-graphql';
+
 import App from './config/express';
-import schema from '../src/config/graphql/schema/user';
 import '../src/config/database/pg';
+
+// import graphqlHTTP from 'express-graphql';
+// import schema from '../src/config/graphql/schema/user';
 // import '../src/config/database/mongo';
+
+// this should be enabled in production
 // import '../src/config/database/setup';
 
 import { success } from '../src/lib/logger';

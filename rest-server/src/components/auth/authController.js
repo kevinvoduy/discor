@@ -12,7 +12,7 @@ const signupController = async(req, res) => {
     return res.status(200).send(result);
   } catch (err) {
     database('controller - failed to sign up user:', err);
-    return res.status(400).send('Could not sign up user');
+    return res.status(400).send('contoller - could not sign up user', err);
   }
 };
 
