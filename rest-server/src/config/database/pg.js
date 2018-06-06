@@ -20,7 +20,7 @@ const config = {
 const db = new Pool(config);
 
 db.on('connect', () => {
-  success('successfully connected to PostgreSQL:', config.database);
+  success('successfully connected to PostgreSQL:', process.env.LOCAL_DATABASE);
 });
 
 db.on('error', err => {
