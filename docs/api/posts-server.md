@@ -4,7 +4,7 @@ To begin developing on the posts server, run the following from the 'post-server
 
 ```bash
 npm i
-npm dev
+npm run dev
 ```
 
 It is often times required to connect to mongoDB, so run the following in a new terminal window:

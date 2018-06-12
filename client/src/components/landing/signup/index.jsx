@@ -15,7 +15,6 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       password: '',
-      signupError: false,
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.bypassSignup = this.bypassSignup.bind(this);
@@ -40,8 +39,6 @@ class Signup extends React.Component {
     };
     axios.post('/api/auth/signup', payload)
       .then(() => {
-        // clear sign up errors
-        this.setState({ signupError: false });
 
         // save username to redux
         this.props.saveUsername(this.state.username);
@@ -49,7 +46,6 @@ class Signup extends React.Component {
         this.props.redirectHome();
       })
       .catch(() => {
-        this.setState({ signupFailed: true });
         throw new Error('Failed to sign up user');
       });
   }
