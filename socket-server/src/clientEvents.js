@@ -1,7 +1,7 @@
 import log from './lib/log';
 
 const clientReady = ({ io, client }, payload) => {
-  log('client connected - id:', payload);
+  log('client ready - id:', payload);
 }
 
 const clientEmitters = {

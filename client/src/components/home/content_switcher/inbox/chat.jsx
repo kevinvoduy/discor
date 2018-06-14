@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class Chat extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class Chat extends React.Component {
 
   componentDidMount() {
     const { socket } = this.props;
+
     socket.on('connect', () => {
       socket.emit('client.ready', socket.id);
     });
@@ -17,7 +19,6 @@ class Chat extends React.Component {
     return (
       <div className="chat">
         <h3>Chat room</h3>
-        <h5>{this.props.socket.id}</h5>
       </div>
     );
   }
@@ -25,6 +26,13 @@ class Chat extends React.Component {
 
 Chat.propTypes =  {
   socket: PropTypes.object.isRequired,
+  // username: PropTypes.string.isRequired,
 };
 
-export default Chat;
+const mapStateToProps = state => {
+  return {
+    username: state.username__store.username,
+  };
+};
+
+export default connect(mapStateToProps)(Chat);
