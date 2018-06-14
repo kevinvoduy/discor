@@ -14,7 +14,7 @@ const io = SocketIO(server);
 const PORT = process.env.PORT || 3030;
 
 io.on('connection', socket => {
-	console.log('new connection');
+	console.log('Client Connected');
 	socket.on('new__post', post => {
 		console.log('broadcast - new post created');
 		socket.broadcast.emit('new__posts', post)

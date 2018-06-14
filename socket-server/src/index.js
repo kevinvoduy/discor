@@ -1,16 +1,21 @@
 import http from 'http';
 import SocketIO from 'socket.io';
+import log from './lib/log';
+
+require('dotenv').config();
 
 const server = http.Server();
 const io = SocketIO(server);
+const PORT = process.env.PORT || 3033;
 
 io.on('connection', client => {
-  client.removeAllListeners();
-  console.log('Socket-server - Client Connected');
+  console.log('socket-server - Client Connected');
+  client.on('hello', () => {
+    console.log('Hell');
+  });
 });
 
-const PORT = process.env.PORT || 3033;
 server.listen(PORT, err => {
-  if (err) console.log('Failed to connect to Socket-Server', error);
-  console.log('Successfully connected to socket-server:', PORT);
+  if (err) throw new Error;
+  else log('Successfully connected to socket-server:', PORT);
 });
