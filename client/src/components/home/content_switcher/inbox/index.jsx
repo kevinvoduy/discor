@@ -1,6 +1,8 @@
 import React from 'react';
 import io from 'socket.io-client';
 
+import Chat from './chat';
+
 class Inbox extends React.Component {
   constructor() {
     super();
@@ -11,17 +13,15 @@ class Inbox extends React.Component {
 
   componentWillMount() {
     const socket = io('http://localhost:3033');
-    socket.emit('hello');
-    this.setState({
-      socket,
-    });
+    this.setState({ socket: socket });
   }
 
   render() {
-    console.log('Socket id:', this.state.socket);
+    console.log('state', this.state);
     return (
       <div className="inbox">
         <h3>Inbox Component</h3>
+        <Chat socket={this.state.socket} />
       </div>
     );
   }
