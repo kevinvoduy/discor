@@ -54,7 +54,7 @@ class Signup extends React.Component {
     return (
       <div className="login__page" >
         <div className="form__container">
-          <p id="headline">Whole world<br />in one single App</p>
+          <p id="headline">The whole world<br />in one single App</p>
           <p id="small__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus sodales arcu vel eleifend.</p>
           <form id="signup__form">
             <label htmlFor="username">

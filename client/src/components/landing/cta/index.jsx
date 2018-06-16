@@ -48,7 +48,7 @@ class CTA extends React.Component {
       <div className="cta">
         <div className="left">
           <div className="cta__words">
-            <p id="cta__headline">Join the <strong>many users</strong><br />from all over the world</p>
+            <p id="cta__headline">Join the <span style={{ fontWeight: 500 }}>many users</span><br />from all over the world</p>
             <p id="cta__details">Quisque pharetra et lorem et aliquet. In nec erat at risus blandit ullamcorper. Quisque gravida turpis sit amet fermentum lacinia. Nullam ac posuere quam. Integer vitae nibh elit.</p>
           </div>
 
