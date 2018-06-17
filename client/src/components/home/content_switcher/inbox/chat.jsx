@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import './chat.sass';
+
 class Chat extends React.Component {
   constructor() {
     super();
@@ -24,12 +26,11 @@ class Chat extends React.Component {
       <div className="chat">
         <h3>Room ID: {this.state.socket.id}</h3>
         <div className="chat__room">
-
           <div className="message__area">
-            <div className="my_message">
+            <div className="message my__message">
               <p>This is from me</p>
             </div>
-            <div className="other__message">
+            <div className=" message other__message">
               <p>This is from somone else</p>
             </div>
           </div>

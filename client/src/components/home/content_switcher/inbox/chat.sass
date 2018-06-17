@@ -1,2 +1,54 @@
 @import '../../../globals/globals.sass'
 
+
+.chat
+  border-radius: 5px
+  background-color: green
+
+  // header
+  h3
+    margin: 0
+    padding: 1em
+    color: $white
+
+.chat__room
+  background-color: $white
+
+  .message__area
+    background-color: $gray
+
+    p
+      margin: 0
+      padding: 4px
+
+    .message
+      display: block
+      color: white
+      border-radius: 30px
+      padding: 0px 4px
+      margin: 2px 0
+      font-size: $text-small
+
+    .my__message
+      float: right
+      clear: both
+      background-color: $blue-dark
+
+    .other__message
+      float: left
+      clear: both
+      background-color: $twitter-blue
+
+  .submit__message
+    form
+      clear: both
+      background-color: green
+      border-bottom-right-radius: 5px
+      border-bottom-left-radius: 5px
+
+      input
+        border-radius: 5px
+        padding: 2px
+
+      button
+        border-radius: 30px
