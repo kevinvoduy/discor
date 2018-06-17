@@ -6,26 +6,28 @@
     },
     "extends": [
         "airbnb-base",
-        "eslint:recommended"
+        "eslint:recommended",
+        "plugin:node/recommended",
+        "plugin:import/warn",
+        "plugin:import/error"
+
     ],
     "parserOptions": {
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true
+            "experimentalObjectRestSpread": true,
+            "jsx": true
         },
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "node",
-        "jsx-a11y",
-        "import",
-        "jest"
+        "import"
     ],
     "rules": {
         "quotes": ["warn", "single"],
         "semi": "error",
         "no-console": "off",
         "node/exports-style": ["warn", "module.exports"],
-        "node/no-unsupported-features": ["off"]
+        "node/no-unsupported-features": ["on"]
     }
 }
