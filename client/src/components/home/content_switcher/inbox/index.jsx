@@ -21,7 +21,6 @@ class Inbox extends React.Component {
     console.log('state', this.state);
     return (
       <div className="inbox">
-        <h3>Inbox Component</h3>
         <Chat socket={this.state.socket} />
       </div>
     );
