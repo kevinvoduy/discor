@@ -10,7 +10,8 @@ const Comment = props => (
   <div className="comment">
     <img src={levy} alt="" id="imageURL" />
     <div className="name__comment">
-      <p><strong>{props.owner}</strong>{' '}{props.comment}</p>
+      <p><strong>{props.owner}</strong></p>
+      <p>{props.comment}</p>
     </div>
     <p id="createdAt">{moment(props.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow(true)}</p>
   </div>
