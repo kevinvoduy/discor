@@ -55,9 +55,9 @@ class News extends React.Component {
                 </a>
 
                 <div className="article__details">
-                  <p id="title">{article.title}</p>
-                  <p id="details">{article.description.slice(0,150) + '...'}</p>
                   <p id="createdAt">{moment(article.publishedAt).format('dddd, MMMM Do')} - {article.source.name}</p>
+                  <p id="title">{article.title.length>60 ? article.title.slice(0,55) + '...' : article.title}</p>
+                  <p id="details">{article.description.slice(0,150) + '...'}</p>
                 </div>
               </div>
             ))
