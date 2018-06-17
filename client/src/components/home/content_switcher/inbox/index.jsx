@@ -2,6 +2,7 @@ import React from 'react';
 import io from 'socket.io-client';
 
 import Chat from './chat';
+import './inbox.sass';
 
 class Inbox extends React.Component {
   constructor() {
