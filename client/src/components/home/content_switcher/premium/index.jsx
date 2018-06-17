@@ -1,8 +1,10 @@
 import React from 'react';
 
+import ComingSoon from '../../../globals/comingSoon';
+
 const Premium = () => (
   <div className="premium">
-    <h3>Premium Component</h3>
+    <ComingSoon />
   </div>
 );
 
