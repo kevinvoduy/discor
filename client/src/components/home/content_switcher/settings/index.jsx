@@ -1,8 +1,10 @@
 import React from 'react';
 
+import ComingSoon from '../../../globals/comingSoon';
+
 const Settings = () => (
   <div className="settings">
-    <h3>Settings Component</h3>
+    <ComingSoon />
   </div>
 );
 
