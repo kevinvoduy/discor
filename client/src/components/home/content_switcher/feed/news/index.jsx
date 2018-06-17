@@ -44,6 +44,7 @@ class News extends React.Component {
       fade: true,
       lazyLoad: 'ondemand'
     };
+
     return (
       <div className="news__feed">
         <Slider {...settings}>
@@ -57,7 +58,7 @@ class News extends React.Component {
                 <div className="article__details">
                   <p id="createdAt">{moment(article.publishedAt).format('dddd, MMMM Do')} - {article.source.name}</p>
                   <p id="title">{article.title.length>60 ? article.title.slice(0,55) + '...' : article.title}</p>
-                  <p id="details">{article.description.slice(0,150) + '...'}</p>
+                  <p id="details">{article.description.slice(0,90) + '...'}</p>
                 </div>
               </div>
             ))
