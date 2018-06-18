@@ -12,43 +12,40 @@
     color: $white
 
 .chat__room
-  background-color: $white
+  background-color: darkgreen
 
-  .message__area
-    background-color: $gray
+  p
+    margin: 0
+    padding: 4px
 
-    p
-      margin: 0
-      padding: 4px
+  ul
+    list-style: none
+    padding: 0
 
-    .message
-      display: block
-      color: white
+  .message
+    display: block
+    color: white
+    border-radius: 30px
+    padding: 0px 4px
+    margin: 2px 0
+    font-size: $text-small
+
+  .my__message
+    background-color: $blue-dark
+
+  .other__message
+    background-color: $twitter-blue
+
+.submit__message
+  form
+    clear: both
+    background-color: green
+    border-bottom-right-radius: 5px
+    border-bottom-left-radius: 5px
+
+    input
+      border-radius: 5px
+      padding: 2px
+
+    button
       border-radius: 30px
-      padding: 0px 4px
-      margin: 2px 0
-      font-size: $text-small
-
-    .my__message
-      float: right
-      clear: both
-      background-color: $blue-dark
-
-    .other__message
-      float: left
-      clear: both
-      background-color: $twitter-blue
-
-  .submit__message
-    form
-      clear: both
-      background-color: green
-      border-bottom-right-radius: 5px
-      border-bottom-left-radius: 5px
-
-      input
-        border-radius: 5px
-        padding: 2px
-
-      button
-        border-radius: 30px

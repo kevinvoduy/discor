@@ -8,7 +8,6 @@
         "airbnb-base",
         "eslint:recommended",
         "plugin:node/recommended",
-        "plugin:react/recommended",
         "plugin:jsx-a11y/recommended",
         "plugin:jest/recommended"
     ],
@@ -20,7 +19,6 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "node",
         "jsx-a11y",
         "import",
@@ -31,6 +29,6 @@
         "semi": "error",
         "no-console": "off",
         "node/exports-style": ["warn", "module.exports"],
-        "node/no-unsupported-features": ["off"]
+        "node/no-unsupported-features": "off"
     }
 }

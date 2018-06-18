@@ -8,7 +8,7 @@ const mongoDB = mongoose.connection;
 
 mongoDB.once('open', err => {
   console.log('successfully connected to MongoDB:', username);
-  if (err) error('failed to connect to MongoDB', err);
+  if (err) console.error('failed to connect to MongoDB', err);
 });
 
 mongoDB.on('error', console.error.bind(console, 'MongoDB connection error:'));

@@ -3,7 +3,7 @@ import {
   createCommentQuery,
   pushCommentQuery,
   getPostsQuery,
-} from "./postQueries";
+} from './postQueries';
 
 // creates a post
 export const createPost = async(req, res) => {
@@ -26,7 +26,8 @@ export const createComment = async(req, res) => {
     const comment = await createCommentQuery(req.body);
     comment.save();
 
-    const pushCommentToPost = await pushCommentQuery(req.body, comment);
+    // adds comment to post
+    await pushCommentQuery(req.body, comment);
 
     console.log('controller - successfully added comment to post:\n', comment['postID']);
     res.status(200).send(comment);
@@ -49,4 +50,4 @@ export const getPosts = async(req, res) => {
     console.log('controller - failed to fetched all posts-', err);
     res.status(400).send(err.message);
   }
-}
+};

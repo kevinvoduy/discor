@@ -8,8 +8,7 @@
         "airbnb-base",
         "eslint:recommended",
         "plugin:node/recommended",
-        "plugin:import/warn",
-        "plugin:import/error"
+        "plugin:import/recommended"
 
     ],
     "parserOptions": {
@@ -28,6 +27,6 @@
         "semi": "error",
         "no-console": "off",
         "node/exports-style": ["warn", "module.exports"],
-        "node/no-unsupported-features": ["on"]
+        "node/no-unsupported-features": "off"
     }
 }

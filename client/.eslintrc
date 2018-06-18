@@ -26,6 +26,7 @@
       "quotes": ["warn", "single"],
       "semi": "error",
       "no-console": "off",
-      "react/forbid-prop-types": "off"
+      "react/forbid-prop-types": "off",
+      "no-undef": "warn"
   }
 }

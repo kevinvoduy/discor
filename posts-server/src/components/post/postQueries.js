@@ -8,7 +8,7 @@ export const createPostQuery = ({ owner, content, imageURL }) => (
     content,
     imageURL,
   })
-)
+);
 
 // creates a comment
 export const createCommentQuery = ({ postID, owner, comment }) => {
@@ -18,7 +18,7 @@ export const createCommentQuery = ({ postID, owner, comment }) => {
     comment,
   });
   return newComment;
-}
+};
 
 // adds the comment to the post
 export const pushCommentQuery = ({ postID}, comment) => (
@@ -27,7 +27,7 @@ export const pushCommentQuery = ({ postID}, comment) => (
       comments: comment
     }
   })
-)
+);
 
 // gets all posts from last 24 hrs
 export const getPostsQuery = () => (
@@ -37,7 +37,7 @@ export const getPostsQuery = () => (
   })
   .limit(20)
   .sort({_id: -1})
-)
+);
 
 // gets all posts from last 24 hrs
 // export const getPostsQuery = () => (

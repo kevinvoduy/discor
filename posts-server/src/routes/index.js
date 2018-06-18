@@ -5,6 +5,6 @@ import uploadsRouter from '../components/upload/uploadRouter';
 const router = express.Router();
 
 router.use('/posts', postRouter);
-router.use('/uploads', uploadsRouter)
+router.use('/uploads', uploadsRouter);
 
 export default router;
