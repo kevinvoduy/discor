@@ -11,7 +11,7 @@ class Chat extends React.Component {
       socket: '',
       messages: [
         {
-          name: this.props.username,
+          name: 'kevin',
           message: 'Im dark blue',
         },
         {
@@ -53,7 +53,7 @@ class Chat extends React.Component {
     const { socket } = this.props;
 
     // emit message to everyone else
-    socket.emit('chat.message', { name: this.props.username, message: this.state.message });
+    socket.emit('chat.message', { name: 'kevin', message: this.state.message });
 
     // resets
     this.setState({ message: '' });
