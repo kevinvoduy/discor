@@ -11,12 +11,12 @@ class Chat extends React.Component {
       socket: '',
       messages: [
         {
-          name: 'kevinvo1234',
-          message: 'hello',
+          name: this.props.username,
+          message: 'Im dark blue',
         },
         {
-          name: 'donnie',
-          message: 'hi back',
+          name: 'guest',
+          message: 'Theyre light blue',
         }
       ],
       message: '',
@@ -32,6 +32,13 @@ class Chat extends React.Component {
       socket.emit('client.ready', socket.id);
       this.setState({ socket: socket });
     });
+
+    // appends messages to chat
+    socket.on('chat.broadcast.message', message => {
+      this.setState({
+        messages: [ ...this.state.messages, { name: message.name, message: message.message }],
+      });
+    });
   }
 
   onChangeHandler(e) {
@@ -43,17 +50,10 @@ class Chat extends React.Component {
   sendMessage(e) {
     e.preventDefault();
     if (this.state.message === '') return;
-
-    // append message to chat
-    this.props.socket.on('chat.message', message => {
-      console.log('emitted message:', message);
-      this.setState({
-        messages: [...this.state.messages, message],
-      });
-    });
+    const { socket } = this.props;
 
     // emit message to everyone else
-    this.props.socket.emit('chat.message', this.state.message);
+    socket.emit('chat.message', { name: this.props.username, message: this.state.message });
 
     // resets
     this.setState({ message: '' });
@@ -63,7 +63,7 @@ class Chat extends React.Component {
   render() {
     return (
       <div className="chat">
-        <h3>Room ID: {this.state.socket.id}</h3>
+        <h3>Client ID: {this.state.socket.id}</h3>
         <div className="chat__room">
 
           <div className="message__area">
