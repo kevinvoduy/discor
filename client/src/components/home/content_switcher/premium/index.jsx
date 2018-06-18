@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ComingSoon from '../../../globals/comingSoon';
+import ComingSoon from '../../../globals/comingSoon/comingSoon';
 
 const Premium = () => (
   <div className="premium">

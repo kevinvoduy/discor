@@ -2,6 +2,7 @@ import React from 'react';
 import io from 'socket.io-client';
 
 import Chat from './chat';
+import ErrorBoundary from '../../../globals/errorHandler';
 import './inbox.sass';
 
 class Inbox extends React.Component {
@@ -21,7 +22,9 @@ class Inbox extends React.Component {
     console.log('state', this.state);
     return (
       <div className="inbox">
-        <Chat socket={this.state.socket} />
+        <ErrorBoundary>
+          <Chat socket={this.state.socket} />
+        </ErrorBoundary>
       </div>
     );
   }

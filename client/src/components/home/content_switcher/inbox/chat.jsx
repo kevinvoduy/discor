@@ -11,7 +11,7 @@ class Chat extends React.Component {
       socket: '',
       messages: [
         {
-          name: 'kevin',
+          name: this.props.username,
           message: 'Im dark blue',
         },
         {
