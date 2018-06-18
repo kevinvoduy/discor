@@ -12,22 +12,22 @@ const Links = () => (
       </li>
       <li>
         <img src='assets/delivery-man.png' alt="" />
-        <Link to="/home/people">People</Link>
+        <Link to="/people">People</Link>
       </li>
       <li>
         <img src='assets/email.png' alt="" />
-        <Link to="/home/inbox">Inbox</Link>
+        <Link to="/inbox">Inbox</Link>
       </li>
 
       <div className="divider" />
 
       <li>
         <img src='assets/crown.png' alt="" />
-        <Link to="/home/premium">Premium</Link>
+        <Link to="/premium">Premium</Link>
       </li>
       <li>
         <img src='assets/interface.png' alt="" />
-        <Link to="/home/settings">Settings</Link>
+        <Link to="/settings">Settings</Link>
       </li>
 
       <div className="divider" />

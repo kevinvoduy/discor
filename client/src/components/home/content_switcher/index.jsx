@@ -11,10 +11,10 @@ import './content_switcher.sass';
 const ContentSwitcher = () => (
   <div className="content__switcher">
     <Switch>
-      <Route path="/home/people" component={People} />
-      <Route path="/home/inbox" component={Inbox} />
-      <Route path="/home/premium" component={Premium} />
-      <Route path="/home/settings" component={Settings} />
+      <Route path="/people" component={People} />
+      <Route path="/inbox" component={Inbox} />
+      <Route path="/premium" component={Premium} />
+      <Route path="/settings" component={Settings} />
       <Route path="/home" component={Feed} />
     </Switch>
   </div>

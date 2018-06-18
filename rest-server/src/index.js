@@ -71,7 +71,7 @@ server.listen(PORT, err => {
 });
 
 // temp access
-app.get('/*', (req, res) => {
+app.all('/*', (req, res) => {
 	res.sendFile(path.resolve(__dirname, '../../client/public/index.html'));
 });
 

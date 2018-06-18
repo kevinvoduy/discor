@@ -21,8 +21,6 @@ io.on('connection', socket => {
 	});
 });
 
-
-
 server.listen(PORT, err => {
 	if (err) throw new Error;
 	else console.log('successfully connected to posts server:', PORT);
