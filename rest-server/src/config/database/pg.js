@@ -27,7 +27,7 @@ db.on('error', err => {
   error('error in pg:', err);
 });
 
-db.connect((err) => {
+db.connect(err => {
   if (err) throw err;
 });
 

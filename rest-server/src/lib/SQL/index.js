@@ -51,12 +51,12 @@ export const createUserTable = async() => {
     await db.queryAsync(
       `
       CREATE TABLE IF NOT EXISTS users
-      (
-        id SERIAL,
-        username VARCHAR(25) UNIQUE NOT NULL,
-        CONSTRAINT users_pk
-          PRIMARY KEY(id)
-      )
+        (
+          id SERIAL,
+          username VARCHAR(25) UNIQUE NOT NULL,
+          CONSTRAINT users_pk
+            PRIMARY KEY(id)
+        )
       `
     );
     success('created users table');
@@ -83,13 +83,13 @@ export const createCredentialsTable = async() => {
     await db.queryAsync(
       `
       CREATE TABLE IF NOT EXISTS credentials
-      (
-        id SERIAL,
-        user_id INT NOT NULL,
-        hash VARCHAR(25) NOT NULL,
-        CONSTRAINT fk_users_id
-          FOREIGN KEY(user_id) REFERENCES users(id)
-      )
+        (
+          id SERIAL,
+          user_id INT NOT NULL,
+          hash VARCHAR(25) NOT NULL,
+          CONSTRAINT fk_users_id
+            FOREIGN KEY(user_id) REFERENCES users(id)
+        )
       `
     );
     success('created credentials table');
@@ -116,15 +116,15 @@ export const createFriendsTable = async() => {
     await db.queryAsync(
       `
       CREATE TABLE IF NOT EXISTS friends
-      (
-        id SERIAL,
-        user_id INT NOT NULL,
-        friend_id INT NOT NULL,
-        CONSTRAINT fk_user_id
-          FOREIGN KEY(user_id) REFERENCES users(id),
-        CONSTRAINT fk_friend_id
-          FOREIGN KEY(friend_id) REFERENCES users(id)
-      )
+        (
+          id SERIAL,
+          user_id INT NOT NULL,
+          friend_id INT NOT NULL,
+          CONSTRAINT fk_user_id
+            FOREIGN KEY(user_id) REFERENCES users(id),
+          CONSTRAINT fk_friend_id
+            FOREIGN KEY(friend_id) REFERENCES users(id)
+        )
       `
     );
     success('created friends table');
@@ -151,15 +151,18 @@ export const createMessagesTable = async() => {
     await db.queryAsync(
       `
       CREATE TABLE IF NOT EXISTS messages
-      (
-        id SERIAL,
-        creator_id INT NOT NULL,
-        message VARCHAR(255) NOT NULL,
-        CONSTRAINT messages_pk
-          PRIMARY KEY(id),
-        CONSTRAINT fk_creator_id
-          FOREIGN KEY(creator_id) REFERENCES users(id)
-      )
+        (
+          id SERIAL,
+          room_id INT NOT NULL,
+          creator_id INT NOT NULL,
+          message VARCHAR(255) NOT NULL,
+          CONSTRAINT messages_pk
+            PRIMARY KEY(id),
+          CONSTRAINT fk_creator_id
+            FOREIGN KEY(creator_id) REFERENCES users(id),
+          CONSTRAINT fk_room_id
+            FOREIGN KEY(room_id) REFERENCES chat_rooms(id)
+        )
       `
     );
     success('created messages table');
@@ -186,21 +189,21 @@ export const createMessageRecipiantTable = async() => {
     await db.queryAsync(
       `
       CREATE TABLE IF NOT EXISTS message_recipiant
-      (
-        id SERIAL,
-        recipiant_id INT NOT NULL,
-        message_id INT NOT NULL,
-        is_read bool,
-        CONSTRAINT fk_recipiant_id
-          FOREIGN KEY(recipiant_id) REFERENCES users(id),
-        CONSTRAINT fk_message_id
-          FOREIGN KEY(message_id) REFERENCES messages(id)
-      )
+        (
+          id SERIAL,
+          recipiant_id INT NOT NULL,
+          message_id INT NOT NULL,
+          is_read bool,
+          CONSTRAINT fk_recipiant_id
+            FOREIGN KEY(recipiant_id) REFERENCES users(id),
+          CONSTRAINT fk_message_id
+            FOREIGN KEY(message_id) REFERENCES messages(id)
+        )
       `
     );
-    success('created message_recipiant table');
+    success('created message recipiant table');
   } catch(err) {
-    error('failed to create message_recipiant table -', err);
+    error('failed to create message recipiant table -', err);
   }
 };
 
@@ -209,8 +212,46 @@ export const dropMessageRecipiantTable = async() => {
     await db.queryAsync(
       'DROP TABLE IF EXISTS message_recipiant'
     );
-    warning('dropped message_recipiant table');
+    warning('dropped message recipiant table');
   } catch(err) {
-    error('failed to drop message_recipiant table -', err);
+    error('failed to drop message recipiant table -', err);
+  }
+};
+
+// CHAT ROOMS
+
+export const createChatRoomsTable = async() => {
+  try {
+    await db.queryAsync(
+      `
+      CREATE TABLE IF NOT EXISTS chat_rooms
+        (
+          id SERIAL,
+          room_id INT NOT NULL,
+          sender_1 INT NOT NULL,
+          sender_2 INT NOT NULL,
+          CONSTRAINT chat_rooms_pk
+            PRIMARY KEY(id),
+          CONSTRAINT fk_sender_1
+            FOREIGN KEY(sender_1) REFERENCES users(id),
+          CONSTRAINT fk_sender_2
+            FOREIGN KEY(sender_2) REFERENCES users(id)
+        )
+      `
+    );
+    success('created chat rooms table');
+  } catch(err) {
+    error('failed to drop chat rooms table -', err);
+  }
+};
+
+export const dropChatRoomsTable = async() => {
+  try {
+    await db.queryAsync(
+      'DROP TABLE IF EXISTS chat_rooms'
+    );
+    warning('dropped chat room table');
+  } catch(err) {
+    error('failed to drop chat rooms table -', err);
   }
 };
