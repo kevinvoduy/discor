@@ -13,6 +13,8 @@ class Inbox extends React.Component {
       socket: null,
       messages: messages,
     };
+    this.reply = this.reply.bind(this);
+    this.showUnreadMessages = this.showUnreadMessages.bind(this);
   }
 
   componentWillMount() {
@@ -20,15 +22,25 @@ class Inbox extends React.Component {
     this.setState({ socket: socket });
   }
 
-  render() {
-    const levy = 'https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif';
+  reply() {
+    console.log('hello');
+  }
 
+  showUnreadMessages() {
+    if (messages.filter(i => i.status == 'New').length > 0) {
+      return '(' + (messages.filter(i=>i.status === 'New')).length + ')';
+    } else {
+     return '';
+    }
+  }
+
+  render() {
     return (
       <div className="inbox">
         <ErrorBoundary>
           <div className="header">
             <div className="inbox__heading">
-              <h3>Inbox (2)</h3>
+              <h3>Inbox {this.showUnreadMessages()}</h3>
             </div>
             <div className="new__message">
               <button>+ New Message</button>
@@ -39,7 +51,7 @@ class Inbox extends React.Component {
             {
               this.state.messages.map(message => {
                 return (
-                  <div className="message" key={message.id}>
+                  <div className="message" key={message.id} onClick={this.reply} onKeyUp={this.reply} role="menuitem" tabIndex="0">
                     <div className="icon">
                       <img src={message.userImg} alt="ico" />
                     </div>
