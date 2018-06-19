@@ -1,7 +1,9 @@
 import React from 'react';
 import io from 'socket.io-client';
+import moment from 'moment';
 
 import ErrorBoundary from '../../../globals/errorHandler';
+import messages from './inbox.json';
 import './inbox.sass';
 
 class Inbox extends React.Component {
@@ -9,6 +11,7 @@ class Inbox extends React.Component {
     super();
     this.state = {
       socket: null,
+      messages: messages,
     };
   }
 
@@ -33,70 +36,36 @@ class Inbox extends React.Component {
           </div>
 
           <div className="messages">
-            <div className="message">
-              <div className="icon">
-                <img src={levy} alt="ico" />
-              </div>
-              <div className="name">
-                <p><strong>Kevin Vo</strong></p>
-                <p style={{ color: 'Tomato' }}>Unread</p>
-              </div>
-              <div className="details">
-                <p><strong>We need the lease documents</strong></p>
-                <p>Hi there Justin, we would like to get our lease...</p>
-              </div>
-              <div className="meta">
-                <p>20 min ago</p>
-              </div>
-              <div className="show__more">
-                <img src="" alt="ico" />
-              </div>
-            </div>
-
-            <div className="message">
-              <div className="icon">
-                <img src={levy} alt="ico" />
-              </div>
-              <div className="name">
-                <p><strong>Kevin Vo</strong></p>
-                <p style={{ color: 'lawngreen' }}>Replied</p>
-              </div>
-              <div className="details">
-                <p><strong>We need the lease documents</strong></p>
-                <p>Hi there Justin, we would like to get our lease...</p>
-              </div>
-              <div className="meta">
-                <p>20 min ago</p>
-              </div>
-              <div className="show__more">
-                <img src="" alt="ico" />
-              </div>
-            </div>
-
-            <div className="message">
-              <div className="icon">
-                <img src={levy} alt="ico" />
-              </div>
-              <div className="name">
-                <p><strong>Kevin Vo</strong></p>
-                <p style={{ color: 'gray' }}>Read</p>
-              </div>
-              <div className="details">
-                <p><strong>We need the lease documents</strong></p>
-                <p>Hi there Justin, we would like to get our lease...</p>
-              </div>
-              <div className="meta">
-                <p>20 min ago</p>
-              </div>
-              <div className="show__more">
-                <img src="" alt="ico" />
-              </div>
-            </div>
+            {
+              this.state.messages.map(message => {
+                return (
+                  <div className="message" key={message.id}>
+                    <div className="icon">
+                      <img src={message.userImg} alt="ico" />
+                    </div>
+                    <div className="name">
+                      <p><strong>{message.name}</strong></p>
+                      <p style={{ color: 'Tomato' }}>{message.status}</p>
+                    </div>
+                    <div className="details">
+                      <p><strong>{message.subject}</strong></p>
+                      <p>{(message.content.length<60) ? message.content : message.content.slice(0, 60)+ '...' }</p>
+                    </div>
+                    <div className="meta">
+                      <p>{moment(message.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow()}</p>
+                    </div>
+                    <div className="show__more">
+                      <img src="" alt="ico" />
+                    </div>
+                  </div>
+                );
+              })
+            }
           </div>
 
           <div className="pages">
             <div className="page__text">
-              <p>Showing 0-6 out of 24</p>
+              <p>Showing 0-{messages.length} out of {messages.length}</p>
             </div>
             <div className="pagenation">
               <a href="/home">1</a>
