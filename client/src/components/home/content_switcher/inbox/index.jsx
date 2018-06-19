@@ -52,23 +52,29 @@ class Inbox extends React.Component {
               this.state.messages.map(message => {
                 return (
                   <div className="message" key={message.id} onClick={this.reply} onKeyUp={this.reply} role="menuitem" tabIndex="0">
+
                     <div className="icon">
                       <img src={message.userImg} alt="ico" />
                     </div>
+
                     <div className="name">
-                      <p><strong>{message.name}</strong></p>
-                      <p style={{ color: 'Tomato' }}>{message.status}</p>
+                      <p>{message.name}</p>
+                      <p style={{ color: 'silver', fontSize: '14px' }}>{message.status}</p>
                     </div>
+
                     <div className="details">
-                      <p><strong>{message.subject}</strong></p>
-                      <p>{(message.content.length<60) ? message.content : message.content.slice(0, 60)+ '...' }</p>
+                      <p>{message.subject}</p>
+                      <p style={{ color: 'silver', fontSize: '14px' }}>{(message.content.length <= 70) ? message.content : message.content.slice(0, 70)+ '...' }</p>
                     </div>
+
                     <div className="meta">
                       <p>{moment(message.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow()}</p>
                     </div>
+
                     <div className="show__more">
                       <img src="assets/more.png" alt="ico" />
                     </div>
+
                   </div>
                 );
               })

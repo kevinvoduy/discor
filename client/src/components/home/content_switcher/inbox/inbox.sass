@@ -1,7 +1,7 @@
 @import '../../../globals/globals.sass'
 
 $primary: tomato
-$secondary: grassgreen
+$secondary: hotpink
 $accent: blue
 
 .inbox
@@ -20,29 +20,36 @@ $accent: blue
   .inbox__heading
     font-size: $text-large
 
+    h3
+      font-weight: 300
+
   button
     padding: 1em
     width: 10em
     font-size: $text-small
     font-weight: 300
     color: $white
-    background: $primary
-    border-radius: 5px
+    background: linear-gradient(to bottom right, $primary, $secondary);
     border: none
+    border-radius: 40px
+    box-shadow: 0px 4px 18px -2px $secondary
     outline-color: $primary
     cursor: pointer
 
 // middle section
 .messages
   color: black
-  background: $white
 
   .message
     display: grid
     grid-template-columns: 2fr 3fr 9fr 1.5fr 1fr
     align-items: center
     padding: 1em 0
-    border-bottom: 2px solid $gray
+    margin-bottom: .5em
+    background: $white
+    border-left: 3px solid transparent
+    border-radius: 6px
+    box-shadow: 0 4px 8px -2px $shadow
     cursor: pointer
     transition: transform .1s ease
     outline: none
@@ -50,22 +57,27 @@ $accent: blue
     &:hover
       transform: scale(1.02)
       background: $white
-      box-shadow: 0px 4px 16px 2px $shadow
-      border-left: 3px solid $primary
+      box-shadow: 0px 4px 12px $shadow
       border-top: $white
 
     &:focus
       transform: scale(1.02)
       background: $white
-      box-shadow: 0px 4px 16px 2px $shadow
-      border-left: 3px solid $primary
+      box-shadow: 0px 4px 12px $shadow
       border-top: $white
 
-    > div
-      margin: 0 8px
+    .new__message
+      border-left: 3px solid $primary
+
+    .replied__message
+      border-left: 3px solid $secondary
+
+    .read__message
+      border-left: 3px solid transparent
 
     p
       margin: 0.25em
+      font-weight: 400
 
     .icon
       margin: 0 0 0 1em
