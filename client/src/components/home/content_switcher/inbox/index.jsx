@@ -67,7 +67,7 @@ class Inbox extends React.Component {
                       <p>{moment(message.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow()}</p>
                     </div>
                     <div className="show__more">
-                      <img src="" alt="ico" />
+                      <img src="assets/more.png" alt="ico" />
                     </div>
                   </div>
                 );

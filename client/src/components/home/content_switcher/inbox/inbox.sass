@@ -29,7 +29,7 @@ $accent: blue
     background: $primary
     border-radius: 5px
     border: none
-    outline: none
+    outline-color: $primary
     cursor: pointer
 
 // middle section
@@ -39,12 +39,13 @@ $accent: blue
 
   .message
     display: grid
-    grid-template-columns: 2fr 3fr 9fr 2fr 1fr
+    grid-template-columns: 2fr 3fr 9fr 1.5fr 1fr
     align-items: center
     padding: 1em 0
     border-bottom: 2px solid $gray
     cursor: pointer
     transition: transform .1s ease
+    outline: none
 
     &:hover
       transform: scale(1.02)
@@ -75,17 +76,20 @@ $accent: blue
         border-radius: 50%
         height: 3em
 
-    .name
-      flex-grow: 1
-
     .details
       justify-self: stretch
 
-    .meta
-      flex-grow: 1
+    .show__more img
+      height: 24px
+      widht: 24px
+      border-radius: 50%
+      position: relative
+      top: 4px
+      padding: 4px
+      transition: transform .1s ease-in-out
 
-    .show__more
-      flex-grow: 1
+      &:hover
+        transform: scale(1.3)
 
 // lower section
 .pages
