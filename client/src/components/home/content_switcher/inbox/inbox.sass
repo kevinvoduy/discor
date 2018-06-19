@@ -1,5 +1,89 @@
 @import '../../../globals/globals.sass'
 
 .inbox
-  text-align: center
-  margin: 2em 12em
+  margin: 2em 0
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 4em 1fr 4em
+
+// top section
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 2em
+
+  .inbox__heading
+    font-size: $text-large
+
+  button
+    padding: 1em
+    width: 10em
+    font-size: $text-small
+    font-weight: 300
+    color: $white
+    background: tomato
+    border-radius: 5px
+    border: none
+    outline: none
+    cursor: pointer
+
+// middle section
+.messages
+  color: black
+  background: $white
+
+  .message
+    display: grid
+    grid-template-columns: 2fr 3fr 9fr 2fr 1fr
+    align-items: center
+    padding: 1em 0
+    border-bottom: 2px solid $gray
+    cursor: pointer
+    transition: transform .1s ease
+
+    &:hover
+      transform: scale(1.02)
+      background: $white
+      box-shadow: 0px 4px 16px 2px $shadow
+      border-left: 3px solid tomato
+      border-top: transparent
+
+    > div
+      margin: 0 8px
+
+    p
+      margin: 0.25em
+
+    .icon
+      margin: 0 0 0 1em
+      padding: 0
+
+      img
+        border: none
+        border-radius: 50%
+        height: 3em
+
+    .name
+      flex-grow: 1
+
+    .details
+      justify-self: stretch
+
+    .meta
+      flex-grow: 1
+
+    .show__more
+      flex-grow: 1
+
+// lower section
+.pages
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 2em 0
+
+  .pagenation
+
+    > a
+      margin: 0 0 0 2em
