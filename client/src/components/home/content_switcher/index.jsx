@@ -13,6 +13,7 @@ const ContentSwitcher = () => (
     <Switch>
       <Route path="/people" component={People} />
       <Route path="/inbox" component={Inbox} />
+      <Route path="/chat" component={Inbox} />
       <Route path="/premium" component={Premium} />
       <Route path="/settings" component={Settings} />
       <Route path="/home" component={Feed} />

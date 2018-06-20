@@ -8,26 +8,26 @@ const Links = () => (
     <ul>
       <li>
         <img src='assets/favorite.png' alt="" />
-        <Link to="/home">Feed</Link>
+        <Link to="/home" href="/home">Feed</Link>
       </li>
       <li>
         <img src='assets/delivery-man.png' alt="" />
-        <Link to="/people">People</Link>
+        <Link to="/people" href="/people">People</Link>
       </li>
       <li>
         <img src='assets/email.png' alt="" />
-        <Link to="/inbox">Inbox</Link>
+        <Link to="/inbox" href="/inbox">Inbox</Link>
       </li>
 
       <div className="divider" />
 
       <li>
         <img src='assets/crown.png' alt="" />
-        <Link to="/premium">Premium</Link>
+        <Link to="/premium" href="premium">Premium</Link>
       </li>
       <li>
         <img src='assets/interface.png' alt="" />
-        <Link to="/settings">Settings</Link>
+        <Link to="/settings" href="/settings">Settings</Link>
       </li>
 
       <div className="divider" />

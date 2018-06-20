@@ -8,6 +8,7 @@ import './components/globals/globals.sass';
 
 const App = () => (
   <Switch>
+    <Route path='/chat' component={Home} />
     <Route path='/people' component={Home} />
     <Route path='/inbox' component={Home} />
     <Route path='/premium' component={Home} />

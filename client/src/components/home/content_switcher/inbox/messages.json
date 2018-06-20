@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Christine",
+    "name": "Christine Vincent",
     "userImg": "https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif",
     "status": "New",
     "subject": "We need the lease documents",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "name": "Donnie",
+    "name": "Donnie Stephanie",
     "userImg": "https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif",
     "status": "Replied",
     "subject": "Maintenence Request",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "Christina",
+    "name": "Christina Dunno",
     "userImg": "https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif",
     "status": "Read",
     "subject": "We need the lease documents",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "name": "Kevin",
+    "name": "Kevin Alone",
     "userImg": "https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif",
     "status": "Read",
     "subject": "Need recipe for chop salad",
