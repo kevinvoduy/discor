@@ -19,9 +19,9 @@ const setup = async(err) => {
   await dropDatabase();
   await dropCredentialsTable();
   await dropFriendsTable();
-  await dropChatRoomsTable();
   await dropMessageRecipiantTable();
   await dropMessagesTable();
+  await dropChatRoomsTable();
   await dropUserTable();
 
   await createDatabase();
