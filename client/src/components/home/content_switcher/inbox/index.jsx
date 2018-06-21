@@ -2,8 +2,8 @@ import React from 'react';
 import io from 'socket.io-client';
 import { Switch, Route } from 'react-router-dom';
 
-import Messages from './messages';
-import Chat from './chat';
+import Messages from './messages/messages';
+import Chat from './chat/chat';
 
 class Inbox extends React.Component {
   constructor() {

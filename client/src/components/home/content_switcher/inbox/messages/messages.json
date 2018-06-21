@@ -15,11 +15,12 @@
     "status": "Replied",
     "subject": "Maintenence Request",
     "content": "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.",
+    "members": ["Kevin Vo", "Donnie Vo", "Christine Vo"],
     "createdAt": "2018-06-18 08:10:45"
   },
   {
     "id": 3,
-    "name": "Christina Dunno",
+    "name": "Christina Tinderman",
     "userImg": "https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif",
     "status": "Read",
     "subject": "We need the lease documents",
@@ -33,6 +34,7 @@
     "status": "Read",
     "subject": "Need recipe for chop salad",
     "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    "members": ["Bond"],
     "createdAt": "2018-06-15 02:20:25"
   }
 ]

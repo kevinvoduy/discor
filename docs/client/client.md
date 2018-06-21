@@ -24,8 +24,10 @@ npm run build
           - posts
         - news
         - create post
-      - inbox
       - people
+      - inbox
+        - messages(mail)
+        - chat client
       - premium
       - settings
     - navbar

@@ -38,8 +38,6 @@ $accent: hotpink
 
 // middle section
 .messages
-  color: black
-
   .message
     display: grid
     grid-template-columns: 2fr 3fr 9fr 1fr 1fr
@@ -52,18 +50,21 @@ $accent: hotpink
     box-shadow: 0 4px 8px -2px $shadow
     transition: transform .1s ease
     outline: none
+    color: black
 
     &:hover
       transform: scale(1.02)
       background: $white
       box-shadow: 0px 4px 12px $shadow
       border-top: $white
+      color: black
 
     &:focus
       transform: scale(1.02)
       background: $white
       box-shadow: 0px 4px 12px $shadow
       border-top: $white
+      color: black
 
     .new__message
       border-left: 3px solid $primary

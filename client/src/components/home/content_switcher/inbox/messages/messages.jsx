@@ -50,23 +50,31 @@ class Messages extends React.Component {
               return (
                 <div className="message" key={message.id}>
 
-                  <div className="icon">
-                    <Link to="/chat" href="/chat"><img src={message.userImg} alt="ico" /></Link>
-                  </div>
+                  <Link to="/chat" href="/chat">
+                    <div className="icon">
+                      <img src={message.userImg} alt="ico" />
+                    </div>
+                  </Link>
 
-                  <div className="name">
-                    <p>{message.name}</p>
-                    <p style={{ color: 'silver', fontSize: '14px' }}>{message.status}</p>
-                  </div>
+                  <Link to="/chat" href="/chat">
+                    <div className="name">
+                      <p>{message.name}</p>
+                      <p style={{ color: 'silver', fontSize: '14px' }}>{message.status}</p>
+                    </div>
+                  </Link>
 
-                  <div className="details">
-                    <p>{message.subject}</p>
-                    <p style={{ color: 'silver', fontSize: '14px' }}>{(message.content.length <= 70) ? message.content : message.content.slice(0, 70)+ '...' }</p>
-                  </div>
+                  <Link to="/chat" href="/chat">
+                    <div className="details">
+                      <p>{message.subject}</p>
+                      <p style={{ color: 'silver', fontSize: '14px' }}>{(message.content.length <= 70) ? message.content : message.content.slice(0, 70)+ '...' }</p>
+                    </div>
+                  </Link>
 
-                  <div className="meta">
-                    <p>{moment(message.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow()}</p>
-                  </div>
+                  <Link to="/chat" href="/chat">
+                    <div className="meta">
+                      <p>{moment(message.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow()}</p>
+                    </div>
+                  </Link>
 
                   <div className="show__more">
                     <img src="assets/more.png" alt="ico" />
