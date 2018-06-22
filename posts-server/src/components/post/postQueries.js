@@ -21,7 +21,7 @@ export const createCommentQuery = ({ postID, owner, comment }) => {
 };
 
 // adds the comment to the post
-export const pushCommentQuery = ({ postID}, comment) => (
+export const pushCommentQuery = ({ postID }, comment) => (
   Post.findByIdAndUpdate(postID, {
     $push: {
       comments: comment

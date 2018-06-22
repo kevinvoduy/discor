@@ -10,13 +10,16 @@ const ThreadSchema = new mongoose.Schema({
   },
   members: [
     {
-      name: String,
-      imageUrl: String,
+      type: String,
     }
   ],
   status: {
     type: String,
     enum: ['New', 'Replied', 'Read'],
+  },
+  subject: {
+    type: String,
+    required: true,
   },
   content: {
     type: String,

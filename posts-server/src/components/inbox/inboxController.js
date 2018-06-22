@@ -1,10 +1,18 @@
-import createThreadQuery from './inboxQueries';
+import {
+  createThreadQuery,
+  createInboxQuery,
+  pushThreadToInbox,
+} from './inboxQueries';
 
 // create new thread
-const createThread = async(req, res) => {
+export const createThread = async(req, res) => {
   try {
     const newThread = await createThreadQuery(req.body);
-    console.log('new thread', newThread);
+    newThread.save();
+
+    // push thread to inbox
+    await pushThreadToInbox(req.body, newThread);
+
     console.log('successfully created thread');
     res.status(200).send(newThread);
   } catch(err) {
@@ -13,4 +21,16 @@ const createThread = async(req, res) => {
   }
 };
 
-export default createThread;
+// create inbox
+export const createInbox = async(req, res) => {
+  try {
+    const newInbox = await createInboxQuery(req.body);
+    newInbox.save();
+
+    console.log('successfully created inbox');
+    res.status(200).send(newInbox);
+  } catch(err) {
+    console.error('failed to created inbox -', err);
+    res.status(500);
+  }
+};
