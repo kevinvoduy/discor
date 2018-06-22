@@ -8,7 +8,7 @@ const ThreadSchema = new mongoose.Schema({
   creator_id: {
     type: String,
   },
-  recipient: {
+  recipient_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'inbox',
   },
@@ -20,7 +20,7 @@ const ThreadSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  content: {
+  message: {
     type: String,
   },
   createdAt: {

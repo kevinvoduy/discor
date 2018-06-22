@@ -8,9 +8,8 @@ export const createThreadQuery = payload => (
     recipient_id: payload.recipient_id,
     status: payload.status,
     subject: payload.subject,
-    content: payload.content,
+    message: payload.message,
     createdAt: payload.createdAt,
-    messages: payload.messages,
   })
 );
 
