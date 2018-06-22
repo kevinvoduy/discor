@@ -28,7 +28,7 @@ export const createInbox = async(req, res) => {
     newInbox.save();
 
     console.log('successfully created inbox');
-    res.status(200).send(newInbox);
+    res.status(200);
   } catch(err) {
     console.error('failed to created inbox -', err);
     res.status(500);
