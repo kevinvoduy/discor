@@ -2,9 +2,10 @@ import {
   createThreadQuery,
   createInboxQuery,
   pushThreadToInbox,
+  pushThreadToRecipient,
 } from './inboxQueries';
 
-// create new thread
+// create thread
 export const createThread = async(req, res) => {
   try {
     const newThread = await createThreadQuery(req.body);
@@ -12,6 +13,9 @@ export const createThread = async(req, res) => {
 
     // push thread to inbox
     await pushThreadToInbox(req.body, newThread);
+
+    // push thread to recipient inboxes
+    await pushThreadToRecipient(req.body, newThread);
 
     console.log('successfully created thread');
     res.status(200).send(newThread);
@@ -28,7 +32,7 @@ export const createInbox = async(req, res) => {
     newInbox.save();
 
     console.log('successfully created inbox');
-    res.status(200);
+    res.status(200).send(newInbox);
   } catch(err) {
     console.error('failed to created inbox -', err);
     res.status(500);

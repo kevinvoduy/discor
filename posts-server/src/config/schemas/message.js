@@ -1,14 +1,18 @@
 import mongoose from 'mongoose';
 
 const MessageSchema = new mongoose.Schema({
-  owner: {
+  name: {
     type: String,
     required: [true, 'message needs an owner']
   },
-  imageUrl: {
+  userImg: {
     type: String,
   },
-  message: {
+  status: {
+    type: String,
+    enum: ['New', 'Read'],
+  },
+  content: {
     type: String,
     required: [true, 'message needs a message']
   },

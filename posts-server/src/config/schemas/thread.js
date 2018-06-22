@@ -8,11 +8,10 @@ const ThreadSchema = new mongoose.Schema({
   creator_id: {
     type: String,
   },
-  members: [
-    {
-      type: String,
-    }
-  ],
+  recipient: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'inbox',
+  },
   status: {
     type: String,
     enum: ['New', 'Replied', 'Read'],
