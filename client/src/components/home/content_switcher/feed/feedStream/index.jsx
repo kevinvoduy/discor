@@ -6,6 +6,7 @@ import io from 'socket.io-client';
 
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
 import Post from './posts/post';
+import mockPosts from './posts.json';
 
 const socket = io('http://localhost:3030');
 
@@ -33,10 +34,11 @@ class FeedStream extends React.Component {
     return (
       <div className="feed__stream">
         {
-          this.props.feedStream.map(post => (
+          mockPosts.map(post => (
             <Post
               key={post._id}
               owner={post.owner}
+              userImg={post.userImg}
               createdAt={post.createdAt}
               content={post.content}
               comments={post.comments}
@@ -51,7 +53,7 @@ class FeedStream extends React.Component {
 
 FeedStream.propTypes = {
   fetchFeedData: PropTypes.func.isRequired,
-  feedStream: PropTypes.array.isRequired,
+  // feedStream: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasErrored: PropTypes.bool.isRequired,
   // updateCount: PropTypes.number.isRequired,

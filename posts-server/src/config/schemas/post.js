@@ -5,6 +5,9 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: [true, 'this post needs an orginal creator'],
   },
+  userImg: {
+    type: String,
+  },
   content: {
     type: String,
   },

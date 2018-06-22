@@ -32,7 +32,6 @@ const Links = () => (
 
       <div className="divider" />
 
-
     </ul>
   </div>
 );

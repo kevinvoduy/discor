@@ -5,8 +5,6 @@ import moment from 'moment';
 import Comment from '../comments/comments';
 import './post.sass';
 
-const levy = 'https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif';
-
 moment.updateLocale('en', {
   relativeTime : {
       past:   '%s ago',
@@ -18,8 +16,8 @@ moment.updateLocale('en', {
       hh: '%dh',
       d:  '1d',
       dd: '%dd',
-      M:  '1mo',
-      MM: '%dmo',
+      M:  '1m',
+      MM: '%dm',
       y:  '1y',
       yy: '%dy'
   }
@@ -30,7 +28,7 @@ const Post = props => {
     return (
       <div className="post">
         <div className="content">
-          <img src={levy} alt="" id="user__img" />
+          <img src={props.userImg} alt="" id="user__img" />
           <h4 id="owner">{props.owner}</h4>
           <p id="createdAt">{moment(props.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow(true)}</p>
           <img src={props.imageURL} alt="" id="upload__img" />
@@ -43,6 +41,7 @@ const Post = props => {
               <Comment
                 key={comment._id}
                 owner={comment.owner}
+                userImg={comment.userImg}
                 comment={comment.comment}
                 createdAt={comment.createdAt}
               />
@@ -65,7 +64,7 @@ const Post = props => {
   return (
     <div className="post">
       <div className="content">
-        <img src={levy} alt="" id="user__img" />
+        <img src={props.userImg} alt="" id="user__img" />
         <h4 id="owner">{props.owner}</h4>
         <p id="createdAt">{moment(props.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow(true)}</p>
         <p id="content">{props.content}</p>
@@ -77,6 +76,7 @@ const Post = props => {
             <Comment
               key={comment._id}
               owner={comment.owner}
+              userImg={comment.userImg}
               comment={comment.comment}
               createdAt={comment.createdAt}
             />
@@ -103,6 +103,11 @@ Post.propTypes = {
   imageURL: PropTypes.string,
   content: PropTypes.string.isRequired,
   comments: PropTypes.array.isRequired,
+  userImg: PropTypes.string,
+};
+
+Post.defaultProps = {
+  userImg: ''
 };
 
 Post.defaultProps = {
