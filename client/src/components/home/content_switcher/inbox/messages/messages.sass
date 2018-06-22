@@ -52,6 +52,7 @@ $accent: hotpink
     outline: none
     color: black
 
+
     &:hover
       transform: scale(1.02)
       background: $white
@@ -66,14 +67,6 @@ $accent: hotpink
       border-top: $white
       color: black
 
-    .new__message
-      border-left: 3px solid $primary
-
-    .replied__message
-      border-left: 3px solid $secondary
-
-    .read__message
-      border-left: 3px solid transparent
 
     p
       margin: 0.25em
@@ -111,6 +104,15 @@ $accent: hotpink
 
       &:hover
         transform: scale(1.3) rotate(90deg)
+
+  .message.new__message
+    border-left: 4px solid $primary
+
+  .message.replied__message
+    border-left: 4px solid $secondary
+
+  .message.read__message
+    border-left: 4px solid transparent
 
 // lower section
 .pages

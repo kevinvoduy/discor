@@ -14,11 +14,19 @@ class Messages extends React.Component {
     this.reply = this.reply.bind(this);
     this.showMore = this.showMore.bind(this);
     this.showUnreadMessages = this.showUnreadMessages.bind(this);
+    this.setAsNew = this.setAsNew.bind(this);
+  }
+
+  setAsNew(status) {
+    if (status === 'New' ) return 'message new__message';
+    if (status === 'Replied') return 'message replied__message';
+    else return 'message';
   }
 
   reply() {
     console.log('hello');
   }
+
 
   showMore() {
     console.log('more');
@@ -48,7 +56,7 @@ class Messages extends React.Component {
           {
             this.state.messages.map(message => {
               return (
-                <div className="message" key={message.id}>
+                <div className={this.setAsNew(message.status)} key={message.id}>
 
                   <Link to="/chat" href="/chat">
                     <div className="icon">
