@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import LandingNav from './nav';
-import Signup from './signup';
+import Login from './login';
 import Highlights from './highlights';
 import Demo from './demo';
 import CTA from './cta';
@@ -24,7 +24,7 @@ class Landing extends React.Component {
     return (
       <div className="landing__page">
         <LandingNav />
-        <Signup redirectHome={this.redirectHome} />
+        <Login redirectHome={this.redirectHome} />
         <Highlights />
         <Demo />
         <CTA redirectHome={this.redirectHome} />

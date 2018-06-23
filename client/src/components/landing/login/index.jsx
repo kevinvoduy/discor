@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import 'smoothscroll';
 
 import saveUsernameAction from '../../../redux/actions/signupAction';
 import setLoginStateAction from '../../../redux/actions/authToggleAction';
 
-import './signup.sass';
+import './login.sass';
 
-class Signup extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,7 +79,8 @@ class Signup extends React.Component {
             </label>
           </form>
 
-          <button onClick={this.userSignup}>Sign Up</button>
+          <button onClick={this.userSignup}>Login</button>
+          <a href="#cta"><button>Sign up</button></a>
           <button onClick={this.bypassSignup}>Skip</button>
         </div>
 
@@ -90,7 +92,7 @@ class Signup extends React.Component {
   }
 }
 
-Signup.propTypes = {
+Login.propTypes = {
   saveUsername: PropTypes.func.isRequired,
   redirectHome: PropTypes.func.isRequired,
   setLoginState: PropTypes.func.isRequired,
@@ -110,4 +112,4 @@ const matchDispatchToProps = dispatch => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps, matchDispatchToProps)(Signup);
+export default connect(mapStateToProps, matchDispatchToProps)(Login);

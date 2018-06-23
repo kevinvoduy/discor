@@ -14,6 +14,8 @@ class CTA extends React.Component {
     super(props);
     this.state = {
       username: '',
+      firstName: '',
+      lastName: '',
       password: '',
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
@@ -28,7 +30,9 @@ class CTA extends React.Component {
 
   userSignup() {
     const payload = {
+      firstName: this.state.firstName,
       username: this.state.username,
+      lastName: this.state.lastName,
       password: this.state.password,
     };
     axios.post('/api/auth/signup', payload)
@@ -45,7 +49,7 @@ class CTA extends React.Component {
 
   render() {
     return (
-      <div className="cta">
+      <div className="cta" id="cta">
         <div className="left">
           <div className="cta__words">
             <p id="cta__headline">Join the <span style={{ fontWeight: 500 }}>many users</span><br />from all over the world</p>
@@ -54,6 +58,24 @@ class CTA extends React.Component {
 
           <div className="cta__form">
             <form id="form">
+              <label htmlFor="firstName">
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={this.onChangeHandler}
+                />
+              </label>
+
+              <label htmlFor="lastName">
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={this.onChangeHandler}
+                />
+              </label>
+
               <label htmlFor="username">
                 <input
                   type="text"
@@ -62,6 +84,7 @@ class CTA extends React.Component {
                   onChange={this.onChangeHandler}
                 />
               </label>
+
 
               <label htmlFor="password">
                 <input
