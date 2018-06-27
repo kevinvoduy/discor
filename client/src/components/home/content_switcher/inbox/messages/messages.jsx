@@ -11,6 +11,7 @@ class Messages extends React.Component {
     this.state = {
       messages: messages,
     };
+    this.messageIsRead = this.messageIsRead.bind(this);
     this.reply = this.reply.bind(this);
     this.showMore = this.showMore.bind(this);
     this.showUnreadMessages = this.showUnreadMessages.bind(this);
@@ -21,6 +22,10 @@ class Messages extends React.Component {
     if (status === 'New' ) return 'message new__message';
     if (status === 'Replied') return 'message replied__message';
     else return 'message';
+  }
+
+  messageIsRead(message) {
+    console.log('message is read', message);
   }
 
   reply() {
