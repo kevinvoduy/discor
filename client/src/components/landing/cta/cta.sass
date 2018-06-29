@@ -1,14 +1,18 @@
 @import '../../globals/globals.sass'
 
 .cta
-  padding: 0 10em 0 10em
-  margin: 8em auto
+  padding: 10em 8em 10em 10em
+  margin: 0 auto
   min-width: $screen-small
   max-width: $screen-large
   display: grid
-  grid-template-columns: 400px 1fr
-  grid-column-gap: 4em
+  grid-template-columns: 500px 1fr
+  grid-column-gap: 2em
   overflow: hidden
+  background-image: url('/assets/user-bubble.svg')
+  background-repeat: no-repeat
+  background-position: right
+  background-size: 58vh auto
 
   .left
     margin: auto auto
@@ -51,4 +55,4 @@
     justify-self: end
 
     img
-      height: 50vh
+      height: 45vh
