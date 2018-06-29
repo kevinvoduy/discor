@@ -29,6 +29,9 @@ class News extends React.Component {
       this.setState({
         data: articles.data.articles,
       });
+    })
+    .catch(err=> {
+      console.log('failed to fetch news data', err);
     });
   }
 
