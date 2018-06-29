@@ -58,7 +58,7 @@ class Messages extends React.Component {
               return (
                 <div className={this.setAsNew(message.status)} key={message.id}>
 
-                  <Link to={{ pathname: '/chat', state:{ messageProps: {message} }}} href="/chat" >
+                  <Link to={{ pathname: '/chat', state:{ messageProps: {message}, read: false }}} href="/chat" >
                     <div className="icon">
                       <img src={message.userImg} alt="ico" />
                     </div>

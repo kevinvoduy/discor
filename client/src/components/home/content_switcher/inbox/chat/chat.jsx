@@ -15,11 +15,15 @@ class Chat extends React.Component {
       message: '',
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.messageStatus = this.messageStatus.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
   }
 
   componentDidMount() {
     const { socket } = this.props;
+
+    // sets message state to READ
+    this.messageStatus();
 
     // est. socket connection
     socket.on('connect', () => {
@@ -38,6 +42,12 @@ class Chat extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+
+  messageStatus() {
+    if (this.props.location.state.messageProps.message.status === 'New') {
+      this.props.location.state.messageProps.message.status = 'Read';
+    }
   }
 
   sendMessage(e) {

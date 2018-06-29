@@ -57,13 +57,13 @@ class News extends React.Component {
               this.state.articles.map(article => (
                 <div className="article" key={article.url}>
                   <a href={article.url}>
-                    <img src={article.urlToImage} alt="" />
+                    <img src={article.urlToImage?article.urlToImage:'/assets/no-image.jpg'} alt="" />
                   </a>
 
                   <div className="article__details">
                     <p id="createdAt">{moment(article.publishedAt).format('dddd, MMMM Do')} - {article.source.name}</p>
-                    <p id="title">{article.title.length>75 ? article.title.slice(0,75) + '...' : article.title}</p>
-                    <p id="details">{article.description.slice(0,75) + '...'}</p>
+                    <p id="title">{article.title.length > 75 ? article.title.slice(0,75) + '...' : article.title}</p>
+                    <p id="details">{article.description ? article.description.slice(0,75) + '...' : ''}</p>
                   </div>
                 </div>
               ))
