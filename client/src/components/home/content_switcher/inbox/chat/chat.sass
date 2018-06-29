@@ -10,7 +10,7 @@
     border: none
     outline: none
     overflow: auto
-    height: calc(100vh - 158px)
+    height: calc(100vh - 176px)
 
     // header
     .chat__header
@@ -43,7 +43,6 @@
       border-top-right-radius: 22px
       border-top-left-radius: 22px
       box-shadow: 4px 5px 12px $shadow
-      color: white
       font-size: $text-medium
       font-weight: 300
       margin: 1em 1em 0 1em
@@ -67,16 +66,18 @@
       line-height: 1.2em
 
     .my__message
-      background-color: $blue
+      background: linear-gradient(to bottom right, $twitter-blue, $blue);
       border-bottom-right-radius: 0
       border-bottom-left-radius: 22px
+      color: $white
       float: right
       clear: both
 
     .other__message
-      background: linear-gradient(to bottom right, $twitter-blue, $blue);
+      background: linear-gradient(to bottom right, tomato, hotpink);
       border-bottom-left-radius: 0
       border-bottom-right-radius: 22px
+      color: white
       float: left
       clear: both
 
@@ -84,7 +85,7 @@
     border-top: 2px solid $gray
     outline: none
     position: absolute
-    bottom: 48px
+    bottom: 54px
     width: 54%
 
     form
