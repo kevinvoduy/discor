@@ -11,7 +11,7 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      socket: '',
+      // socket: '',
       messages: [
         {
           id: 1,
@@ -38,7 +38,7 @@ class Chat extends React.Component {
     // est. socket connection
     socket.on('connect', () => {
       socket.emit('client.ready', socket.id);
-      this.setState({ socket: socket });
+      // this.setState({ socket: socket });
     });
 
     // appends messages to chat
@@ -47,6 +47,8 @@ class Chat extends React.Component {
         messages: [ ...this.state.messages, { name: message.name, message: message.message }],
       });
     });
+
+    console.log('chat getting message props', this.props.location.state.messageProps);
   }
 
   onChangeHandler(e) {
@@ -69,13 +71,15 @@ class Chat extends React.Component {
   }
 
   render() {
+    const { subject } = this.props.location.state.messageProps.message;
+
     return (
       <div className="main">
         <div className="chat">
 
           <div className="chat__header">
             <Link to="/inbox" href="/inbox"><button onClick={this.goBack}>{'<'}</button></Link>
-            <h3>Client ID: {this.state.socket.id}</h3>
+            <h3>{subject}</h3>
           </div>
 
           <div className="chat__room">
@@ -135,7 +139,7 @@ class Chat extends React.Component {
         </div>
 
         <div className="profile">
-          <Profile />
+          <Profile message={this.props.location.state.messageProps.message} />
         </div>
       </div>
     );
@@ -145,7 +149,8 @@ class Chat extends React.Component {
 Chat.propTypes =  {
   socket: PropTypes.object.isRequired,
   username: PropTypes.string.isRequired,
-  // room: PropTypes.string.isRequired,
+  messageProps: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => {

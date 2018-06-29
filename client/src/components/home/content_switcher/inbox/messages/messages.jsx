@@ -6,12 +6,11 @@ import './messages.sass';
 import messages from './messages.json';
 
 class Messages extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       messages: messages,
     };
-    this.messageIsRead = this.messageIsRead.bind(this);
     this.reply = this.reply.bind(this);
     this.showMore = this.showMore.bind(this);
     this.showUnreadMessages = this.showUnreadMessages.bind(this);
@@ -24,17 +23,13 @@ class Messages extends React.Component {
     else return 'message';
   }
 
-  messageIsRead(message) {
-    console.log('message is read', message);
-  }
-
   reply() {
     console.log('hello');
   }
 
 
   showMore() {
-    console.log('more');
+    console.log('props', this.props);
   }
 
   showUnreadMessages() {
@@ -53,7 +48,7 @@ class Messages extends React.Component {
             <h3>Inbox {this.showUnreadMessages()}</h3>
           </div>
           <div className="new__message">
-            <button>+ New Message</button>
+            <button onClick={this.showMore}>+ New Message</button>
           </div>
         </div>
 
@@ -63,27 +58,27 @@ class Messages extends React.Component {
               return (
                 <div className={this.setAsNew(message.status)} key={message.id}>
 
-                  <Link to="/chat" href="/chat">
+                  <Link to={{ pathname: '/chat', state:{ messageProps: {message} }}} href="/chat" >
                     <div className="icon">
                       <img src={message.userImg} alt="ico" />
                     </div>
                   </Link>
 
-                  <Link to="/chat" href="/chat">
+                  <Link to={{ pathname: '/chat', state:{ messageProps: {message} }}} href="/chat" >
                     <div className="name">
                       <p>{message.name}</p>
                       <p style={{ color: 'silver', fontSize: '14px' }}>{message.status}</p>
                     </div>
                   </Link>
 
-                  <Link to="/chat" href="/chat">
+                  <Link to={{ pathname: '/chat', state:{ messageProps: {message} }}} href="/chat" >
                     <div className="details">
                       <p>{message.subject}</p>
                       <p style={{ color: 'silver', fontSize: '14px' }}>{(message.content.length <= 70) ? message.content : message.content.slice(0, 70)+ '...' }</p>
                     </div>
                   </Link>
 
-                  <Link to="/chat" href="/chat">
+                  <Link to={{ pathname: '/chat', state:{ messageProps: {message} }}} href="/chat" >
                     <div className="meta">
                       <p>{moment(message.createdAt, 'YYYY-MM-DD h:mm:ss Z').fromNow()}</p>
                     </div>

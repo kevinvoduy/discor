@@ -10,7 +10,6 @@ class Inbox extends React.Component {
     super();
     this.state = {
       socket: null,
-      room_id: '123abc',
     };
   }
 
@@ -19,10 +18,11 @@ class Inbox extends React.Component {
     this.setState({ socket: socket });
   }
 
+
   render() {
     return (
       <Switch>
-        <Route path="/chat" render={() => <Chat socket={this.state.socket} room={this.state.room_id} />} />
+        <Route path="/chat" render={() => <Chat socket={this.state.socket} />} />
         <Route path="/inbox" component={Messages} />
       </Switch>
     );
