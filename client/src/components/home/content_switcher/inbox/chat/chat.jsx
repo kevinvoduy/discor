@@ -80,7 +80,7 @@ class Chat extends React.Component {
         <div className="chat" id="chat">
 
           <div className="chat__header">
-            <Link to="/inbox" href="/inbox"><button onClick={this.goBack}>{'<'}</button></Link>
+            <Link to="/inbox" href="/inbox"><button onClick={this.goBack}>←</button></Link>
             <h3>{subject}</h3>
           </div>
 

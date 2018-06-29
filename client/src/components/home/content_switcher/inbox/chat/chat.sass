@@ -6,7 +6,6 @@
   height: 90vh
 
   .chat
-    background-color: $white
     border: none
     outline: none
     overflow: auto
@@ -15,15 +14,17 @@
     // header
     .chat__header
       display: flex
-      border-bottom: 2px solid $gray
-      box-shadow: 0 2px 16px -2px $shadow
-      background: $white
+      border-bottom: 2px solid $gray-dark
+      // background: $white
+      align-items: center
 
       button
         background: transparent
         border: none
         cursor: pointer
         font-size: $text-large
+        margin-left: 1em
+        padding: 0
         outline: none
 
       h3
@@ -31,7 +32,6 @@
         padding: 1em
 
   .chat__room
-    background-color: $white
     outline: none
 
     .message__area
@@ -74,10 +74,10 @@
       clear: both
 
     .other__message
-      background: linear-gradient(to bottom right, tomato, hotpink);
+      background: linear-gradient(to bottom right, gainsboro, silver);
       border-bottom-left-radius: 0
       border-bottom-right-radius: 22px
-      color: white
+      color: black
       float: left
       clear: both
 
@@ -89,7 +89,7 @@
     width: 54%
 
     form
-      background-color: white
+      // background-color: white
       border: none
       clear: both
       display: flex
@@ -97,6 +97,7 @@
       outline: none
 
       #input
+        background: transparent
         border: none
         border-bottom-left-radius: 6px
         outline: none
