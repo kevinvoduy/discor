@@ -10,7 +10,7 @@
     border: none
     outline: none
     overflow: auto
-    height: calc(100vh - 160px)
+    height: calc(100vh - 158px)
 
     // header
     .chat__header
@@ -35,20 +35,21 @@
     outline: none
 
     .message__area
-      height: calc(100vh - 15em)
       display: inline-block
       width: 100%
 
     .message
       display: block
-      border-top-right-radius: 18px
-      border-top-left-radius: 18px
+      border-top-right-radius: 22px
+      border-top-left-radius: 22px
+      box-shadow: 4px 5px 12px $shadow
       color: white
       font-size: $text-medium
       font-weight: 300
-      margin: .5em
-      padding: 1em
+      margin: 1em 1em 0 1em
       max-width: 70%
+      min-width: 35%
+      padding: 1em
 
     .message__header
       display: flex
@@ -61,19 +62,21 @@
         font-weight: 300
 
     p
-      margin: 1em 0 0 0
+      margin: .5em 0 0 0
+      font-size: $text-large
+      line-height: 1.2em
 
     .my__message
-      background-color: $blue-dark
+      background-color: $blue
       border-bottom-right-radius: 0
-      border-bottom-left-radius: 18px
+      border-bottom-left-radius: 22px
       float: right
       clear: both
 
     .other__message
-      background-color: $twitter-blue
+      background: linear-gradient(to bottom right, $twitter-blue, $blue);
       border-bottom-left-radius: 0
-      border-bottom-right-radius: 18px
+      border-bottom-right-radius: 22px
       float: left
       clear: both
 
@@ -98,7 +101,8 @@
         outline: none
         padding: 1em 2em
         width: 100%
-        font-size: $text-medium
+        font-size: 20px
+        font-weight: 300
 
 
       #submit
@@ -110,6 +114,7 @@
         margin: .5em
         padding: .5em
         width: 10em
-        font-size: $text-medium
+        font-size: 16px
+
         &:focus
           outline-color: lightgreen

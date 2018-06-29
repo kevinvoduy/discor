@@ -47,8 +47,6 @@ class Chat extends React.Component {
         messages: [ ...this.state.messages, { name: message.name, message: message.message }],
       });
     });
-
-    console.log('chat getting message props', this.props.location.state.messageProps);
   }
 
   onChangeHandler(e) {
@@ -63,11 +61,15 @@ class Chat extends React.Component {
     const { socket } = this.props;
 
     // emit message to everyone else
-    socket.emit('chat.message', { name: 'kevinvoduy', message: this.state.message });
+    socket.emit('chat.message', { name: this.props.username, message: this.state.message });
 
     // resets
     this.setState({ message: '' });
     document.getElementById('form').reset();
+
+    const scroll = document.getElementById('chat');
+    scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight + 91;
+    console.log(scroll.scrollTop);
   }
 
   render() {
@@ -75,7 +77,7 @@ class Chat extends React.Component {
 
     return (
       <div className="main">
-        <div className="chat">
+        <div className="chat" id="chat">
 
           <div className="chat__header">
             <Link to="/inbox" href="/inbox"><button onClick={this.goBack}>{'<'}</button></Link>
@@ -89,12 +91,12 @@ class Chat extends React.Component {
                   if (message.name === this.props.username) {
                     return (
 
-                      <div className="message my__message" key={message.id}>
+                      <div className="message my__message" key={Date.now}>
                         <div className="message__header">
                           <h5 style={{ marginRight: '4em' }}>{message.name}</h5>
                           <h5>{moment(message.createdAt).format('h:mm a')}</h5>
                         </div>
-                        {message.message}
+                        <p>{message.message}</p>
                       </div>
 
                     );

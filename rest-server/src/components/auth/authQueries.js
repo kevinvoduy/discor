@@ -18,8 +18,8 @@ const signupQuery = async(payload) => {
     await db.queryAsync(passwordQuery);
     return 'Success. User added!';
   } catch(err) {
-    database('queries - failed to add user to db');
-    throw new Error('queries - failed to add user to db', 'use different username');
+    database('queries - failed to add user to db', err);
+    new Error('queries - failed to add user to db');
   }
 };
 
