@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 
+import Profile from './profile';
 import './chat.sass';
 
 class Chat extends React.Component {
@@ -134,7 +135,7 @@ class Chat extends React.Component {
         </div>
 
         <div className="profile">
-          <h1>Profile</h1>
+          <Profile />
         </div>
       </div>
     );

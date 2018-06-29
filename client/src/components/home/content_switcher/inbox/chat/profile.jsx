@@ -1,25 +1,42 @@
 import React from 'react';
 
+import './profile.sass';
+
 const Profile = () => (
   <div className="profile">
     <div className="user__info">
-      <img src="" alt="" id="userImg" />
+      <h1>Profile</h1>
+      <img src="http://www.philadelphiacorporateheadshots.org/wp-content/gallery/people/True-Capital-July-2014-36-Square.jpg" alt="" id="user__img" />
       <h5>James Velle</h5>
       <p>robertatimms@gmail.com</p>
       <p>+1 31 217 8736</p>
 
       <div className="contact__buttons">
-        <img src="" alt="phone" id="icon" />
-        <img src="" alt="email" id="icon" />
+        <img src="/assets/config.png" alt="phone" id="icon" />
+        <img src="/assets/communication.png" alt="email" id="icon" />
       </div>
     </div>
 
     <div className="images">
       <h5>Shared Images</h5>
-      <img src="" alt="" id="shared__image" />
-      <img src="" alt="" id="shared__image" />
-      <img src="" alt="" id="shared__image" />
-      <img src="" alt="" id="shared__image" />
+      <div className="shared__images">
+        <div className="column">
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+        </div>
+        <div className="column">
+          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+        </div>
+      </div>
     </div>
   </div>
 );
