@@ -4,12 +4,22 @@ import './demo.sass';
 
 const Demo = () => (
   <div className="demo">
-    <div className="image back">
-      <img src="/assets/screen.png" alt="" />
+    <div className="image">
+      <img src="/assets/inbox.png" alt="" />
     </div>
 
-    <div className="image base">
-      <img src="/assets/screen.png" alt="" />
+    <div className="demo__highlights">
+      <div className="detail">
+        <img src="/assets/draw.png" alt="" />
+        <h5>Send Messages</h5>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+      </div>
+
+      <div className="detail">
+        <img src="/assets/delivery-man.png" alt="" />
+        <h5>Create New Connections!</h5>
+        <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
     </div>
   </div>
 );

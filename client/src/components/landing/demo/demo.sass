@@ -1,31 +1,49 @@
 @import '../../globals/globals.sass'
 
 .demo
-  perspective: 1px
+  display: grid
+  grid-template-columns: 800px minmax(300px, 1fr)
+  align-content: center
   height: 80vh
-  overflow-x: hidden
-  overflow-y: auto
   margin: 0 auto
-  padding: 0 10em
-  min-width: $screen-small
+  padding: 0 8em 0 6em
   background-image: url('/assets/squiggles.svg')
   background-repeat: no-repeat
   background-position: center
   background-size: 120%
 
-  img
-    width: 700px
-    box-shadow: -2px 2px 8px 2px $shadow
-
   .image
-    position: absolute
+    img
+      width: 100%
+      margin-top: 2em
 
-  .base
-    transform: translateZ(-1px) scale(2) rotate(-20deg)
-    left: 15%
-    top: 25%
+  .demo__highlights
+    padding: 0
+    margin: 0
+    text-align: left
+    justify-content: center
+    margin: auto 0
 
-  .back
-    transform: translateZ(-2px) scale(3) rotate(-20deg)
-    left: 40%
-    top: 45%
+    .detail
+      margin: 3em 0
+
+      img
+        height: $icon-size
+        display: inline-block
+        position: relative
+        left: 1em
+
+      h5
+        display: inline-block
+        font-size: $text-large
+        font-weight: 300
+        margin: 0
+        position: relative
+        left: 1.5em
+        top: -8px
+
+      p
+        font-size: $text-small
+        font-weight: 300
+        margin: 8px 0 0 0
+
