@@ -21,13 +21,13 @@ const Profile = (props) => (
     <div className="images">
       <h5>Shared Images</h5>
       <div className="shared__images">
-        <div className="column">
+        <div className="column left">
           <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
           <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
           <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
           <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
         </div>
-        <div className="column">
+        <div className="column right">
           <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
           <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
           <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />

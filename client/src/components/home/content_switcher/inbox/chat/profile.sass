@@ -1,9 +1,9 @@
 @import '../../../../globals/globals.sass'
 
 .profile
-  text-align: center
-  padding-left: 2em
+  margin-left: 16px
   overflow: auto
+  text-align: center
 
   .user__info
     h1
@@ -44,8 +44,10 @@
 
       .column
         flex: 50%
-        max-width: 46%
-        padding: 0 4px
+        max-width: calc(50% - 4px)
+
+      .left
+        padding-right: 8px
 
       img
         border-radius: 6px
@@ -55,4 +57,4 @@
         padding-top: 4px
 
         &:hover
-          transform: scale(1.05)
+          transform: scale(1.03)

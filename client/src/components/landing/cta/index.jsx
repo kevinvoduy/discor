@@ -64,6 +64,8 @@ class CTA extends React.Component {
                   name="firstName"
                   placeholder="First Name"
                   onChange={this.onChangeHandler}
+                  className="half"
+                  style={{ marginRight: '.4em' }}
                 />
               </label>
 
@@ -73,6 +75,7 @@ class CTA extends React.Component {
                   name="lastName"
                   placeholder="Last Name"
                   onChange={this.onChangeHandler}
+                  className="half"
                 />
               </label>
 
@@ -82,6 +85,7 @@ class CTA extends React.Component {
                   name="username"
                   placeholder="Username"
                   onChange={this.onChangeHandler}
+                  className="full"
                 />
               </label>
 
@@ -92,6 +96,7 @@ class CTA extends React.Component {
                   name="password"
                   placeholder="Password"
                   onChange={this.onChangeHandler}
+                  className="full"
                 />
               </label>
             </form>
