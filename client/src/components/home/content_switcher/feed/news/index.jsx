@@ -5,7 +5,7 @@ import moment from 'moment';
 
 import './news.sass';
 // enable in development
-import data from './news.json';
+// import data from './news.json';
 
 const key = process.env.NEWS_API_KEY;
 
@@ -13,21 +13,22 @@ class News extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: data.articles,
+      // data: data.articles,
+      articles: []
     };
     this.fetchArticles = this.fetchArticles.bind(this);
   }
 
   componentDidMount() {
     // enable in production
-    // this.fetchArticles();
+    this.fetchArticles();
   }
 
   fetchArticles() {
-    axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + key)
+    axios.get('https://newsapi.org/v2/top-headlines?country=us&pagesize=5&apiKey=' + key)
     .then(articles => {
       this.setState({
-        data: articles.data.articles,
+        articles: articles.data.articles,
       });
     })
     .catch(err=> {
@@ -48,27 +49,35 @@ class News extends React.Component {
       lazyLoad: 'ondemand'
     };
 
-    return (
-      <div className="news__feed">
-        <Slider {...settings}>
-          {
-            this.state.data.slice(0,3).map(article => (
-              <div className="article" key={article.author}>
-                <a href={article.url}>
-                  <img src={article.urlToImage} alt="" />
-                </a>
+    if (this.state.articles) {
+      return (
+        <div className="news__feed">
+          <Slider {...settings}>
+            {
+              this.state.articles.map(article => (
+                <div className="article" key={article.url}>
+                  <a href={article.url}>
+                    <img src={article.urlToImage} alt="" />
+                  </a>
 
-                <div className="article__details">
-                  <p id="createdAt">{moment(article.publishedAt).format('dddd, MMMM Do')} - {article.source.name}</p>
-                  <p id="title">{article.title.length>75 ? article.title.slice(0,75) + '...' : article.title}</p>
-                  <p id="details">{article.description.slice(0,75) + '...'}</p>
+                  <div className="article__details">
+                    <p id="createdAt">{moment(article.publishedAt).format('dddd, MMMM Do')} - {article.source.name}</p>
+                    <p id="title">{article.title.length>75 ? article.title.slice(0,75) + '...' : article.title}</p>
+                    <p id="details">{article.description.slice(0,75) + '...'}</p>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
-        </Slider>
-      </div>
-    );
+              ))
+            }
+          </Slider>
+        </div>
+      );
+    } else {
+      return (
+        <div className="news__feed">
+          <h5>loading articles...</h5>
+        </div>
+      );
+    }
   }
 }
 
