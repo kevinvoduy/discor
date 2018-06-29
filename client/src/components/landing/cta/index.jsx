@@ -101,7 +101,7 @@ class CTA extends React.Component {
         </div>
 
         <div className="cta__image">
-          <img src="http://i0.wp.com/kingoftheflatscreen.com/wp-content/uploads/2017/11/2nhauwhr.jpg?w=1200" alt="" />
+          <img src="assets/user-bubbles.png" alt="" />
         </div>
       </div>
     );
