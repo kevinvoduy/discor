@@ -11,21 +11,7 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // socket: '',
-      messages: [
-        {
-          id: 1,
-          name: 'kevinvoduy',
-          message: 'Im dark blue',
-          createdAt: '2018-07-19 18:10:34',
-        },
-        {
-          id: 2,
-          name: 'guest',
-          message: 'Theyre light blue',
-          createdAt: '2018-07-19 18:25:34',
-        }
-      ],
+      messages: [this.props.location.state.messageProps.message],
       message: '',
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
@@ -38,13 +24,12 @@ class Chat extends React.Component {
     // est. socket connection
     socket.on('connect', () => {
       socket.emit('client.ready', socket.id);
-      // this.setState({ socket: socket });
     });
 
     // appends messages to chat
     socket.on('chat.broadcast.message', message => {
       this.setState({
-        messages: [ ...this.state.messages, { name: message.name, message: message.message }],
+        messages: [ ...this.state.messages, { name: message.name, content: message.content }],
       });
     });
   }
@@ -61,15 +46,15 @@ class Chat extends React.Component {
     const { socket } = this.props;
 
     // emit message to everyone else
-    socket.emit('chat.message', { name: this.props.username, message: this.state.message });
+    socket.emit('chat.message', { name: this.props.username, content: this.state.message });
 
     // resets
     this.setState({ message: '' });
     document.getElementById('form').reset();
 
+    // scroll to bottom
     const scroll = document.getElementById('chat');
-    scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight + 91;
-    console.log(scroll.scrollTop);
+    scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
   }
 
   render() {
@@ -96,7 +81,7 @@ class Chat extends React.Component {
                           <h5 style={{ marginRight: '4em' }}>{message.name}</h5>
                           <h5>{moment(message.createdAt).format('h:mm a')}</h5>
                         </div>
-                        <p>{message.message}</p>
+                        <p>{message.content}</p>
                       </div>
 
                     );
@@ -110,7 +95,7 @@ class Chat extends React.Component {
                           <h5 style={{ marginRight: '4em' }}>{message.name}</h5>
                           <h5>{moment(message.createdAt).format('h:mm a')}</h5>
                         </div>
-                        <p>{message.message}</p>
+                        <p>{message.content}</p>
                       </div>
 
                     );

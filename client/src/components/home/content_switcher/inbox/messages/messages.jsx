@@ -99,9 +99,8 @@ class Messages extends React.Component {
             <p>Showing 0-{messages.length} out of {messages.length}</p>
           </div>
           <div className="pagenation">
-            <a href="/home">1</a>
-            <a href="/home">2</a>
-            <a href="/home">3</a>
+            <a href="/inbox">1</a>
+            <a href="/inbox">2</a>
           </div>
         </div>
       </div>
