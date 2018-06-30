@@ -153,9 +153,9 @@ Chat.propTypes =  {
 
 const mapStateToProps = state => {
   return {
-    username: state.username__store.username,
-    firstname: state.username__store.firstname,
-    lastname: state.username__store.lastname,
+    username: state.signup.username,
+    firstname: state.signup.firstname,
+    lastname: state.signup.lastname,
   };
 };
 

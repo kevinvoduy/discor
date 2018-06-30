@@ -42,13 +42,13 @@ class Login extends React.Component {
     this.props.loginAuth('api/auth/login', payload)
       .then(res => {
         if (res.loginAuthSuccess === 200) {
-          this.props.saveUsername(this.state.username);
+          this.props.saveUsername({username: this.state.username, firstname: '', lastname: ''});
           this.props.setLoginState(true);
           this.props.redirectHome();
         }
       })
       .catch(err => {
-        console.log('errored', err);
+        console.log('Login errored', err);
       });
   }
 
@@ -102,7 +102,7 @@ Login.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    username: state.username__store.username,
+    username: state.signup.username,
     loginAuthSuccess: state.loginAuthSuccess,
     isLoggedIn: state.isLoggedIn__store.isLoggedIn,
   };

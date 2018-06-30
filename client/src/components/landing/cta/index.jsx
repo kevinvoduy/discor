@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import saveUsernameAction from '../../../redux/actions/signupAction';
+import { saveUsernameAction } from '../../../redux/actions/signupAction';
 import setLoginStateAction from '../../../redux/actions/authToggleAction';
 
 import './cta.sass';
@@ -30,16 +30,20 @@ class CTA extends React.Component {
 
   userSignup() {
     const payload = {
-      firstname: this.state.firstname,
       username: this.state.username,
+      firstname: this.state.firstname,
       lastname: this.state.lastname,
       password: this.state.password,
     };
     axios.post('/api/auth/signup', payload)
       .then(() => {
         // save username to redux
-        const { firstname, lastname, username } = this.state;
-        this.props.saveUsername({firstname, lastname, username});
+        const { username, firstname, lastname } = this.state;
+
+        console.log('before');
+        this.props.saveUsername({username, firstname, lastname});
+        console.log('after');
+
         this.props.setLoginState(true);
         this.setState({ password: '' });
         this.props.redirectHome();
@@ -123,9 +127,9 @@ CTA.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    username: state.username__store.username,
-    firstname: state.username__store.firstname,
-    lastname: state.username__store.lastname,
+    username: state.signup.username,
+    firstname: state.signup.firstname,
+    lastname: state.signup.lastname,
     isLoggedIn: state.isLoggedIn__store.isLoggedIn,
   };
 };

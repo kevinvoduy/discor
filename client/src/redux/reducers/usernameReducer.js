@@ -1,4 +1,5 @@
 export function signup (state={}, action) {
+  console.log('reducer payload', action.payload);
   switch(action.type) {
     case 'SAVE_USERNAME':
       return Object.assign({}, state, {

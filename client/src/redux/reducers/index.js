@@ -19,7 +19,7 @@ import {
 // import updateCount from './postNotificationReducer';
 
 export default combineReducers({
-  username__store: signup,
+  signup,
   isLoggedIn__store: authToggleReducer,
   posts,
   postsHasErrored,

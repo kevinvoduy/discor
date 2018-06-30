@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-export const saveUsernameAction = data => {
+export function saveUsernameAction(data) {
+  console.log('action payload', data);
   return {
     type: 'SAVE_USERNAME',
     payload: data,
   };
-};
+}
 
 export function loginAuthErroed(bool) {
   return {
