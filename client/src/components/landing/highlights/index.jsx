@@ -4,7 +4,7 @@ import text from './highlights.json';
 import './highlights.sass';
 
 const Highlights = () => (
-  <div className="highlights">
+  <div className="highlights" id="highlights">
     <p id="question">What can you do with discor?</p>
     <div className="bullets">
       {

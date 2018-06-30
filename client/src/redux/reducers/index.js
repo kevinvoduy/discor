@@ -1,13 +1,25 @@
 import { combineReducers } from 'redux';
 
-import usernameReducer from './usernameReducer';
 import authToggleReducer from './authToggleReducer';
-import { posts, postsHasErrored, postsIsLoading } from './fetchAllPostsReducer';
-import { createPostErrored, createPostSuccess } from './createPostReducer';
+import {
+  signup,
+  loginAuthErrored,
+  loginAuthSuccess
+} from './usernameReducer';
+import {
+  posts,
+  postsHasErrored,
+  postsIsLoading
+} from './fetchAllPostsReducer';
+import {
+  createPostErrored,
+  createPostSuccess
+} from './createPostReducer';
+
 // import updateCount from './postNotificationReducer';
 
 export default combineReducers({
-  username__store: usernameReducer,
+  username__store: signup,
   isLoggedIn__store: authToggleReducer,
   posts,
   postsHasErrored,
@@ -15,4 +27,6 @@ export default combineReducers({
   createPostErrored,
   createPostSuccess,
   // updateCount,
+  loginAuthSuccess,
+  loginAuthErrored,
 });

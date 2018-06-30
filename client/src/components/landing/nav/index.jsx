@@ -8,9 +8,9 @@ const LandingNav = () => (
       <a href="/">discor</a>
     </div>
     <div className="landing__links">
-      <a href="/">Features</a>
-      <a href="/">How It Works</a>
-      <a href="/">About</a>
+      <a href="#highlights">Features</a>
+      <a href="#demo">How It Works</a>
+      <a href="#cta">About</a>
     </div>
   </div>
 );

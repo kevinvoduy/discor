@@ -3,7 +3,7 @@ import React from 'react';
 import './demo.sass';
 
 const Demo = () => (
-  <div className="demo">
+  <div className="demo" id="demo">
     <div className="image">
       <img src="/assets/inbox.png" alt="" />
     </div>
