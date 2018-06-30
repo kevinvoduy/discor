@@ -56,7 +56,7 @@ class Chat extends React.Component {
     const { socket } = this.props;
 
     // emit message to everyone else
-    socket.emit('chat.message', { name: this.props.username, content: this.state.message });
+    socket.emit('chat.message', { name: this.props.firstname + ' ' + this.props.lastname, content: this.state.message });
 
     // resets
     this.setState({ message: '' });
@@ -83,7 +83,7 @@ class Chat extends React.Component {
             <div className="message__area">
               {
                 this.state.messages.map(message => {
-                  if (message.name === this.props.username) {
+                  if (message.name === this.props.firstname + ' ' + this.props.lastname) {
                     return (
 
                       <div className="message my__message" key={Date.now}>
@@ -145,7 +145,8 @@ class Chat extends React.Component {
 
 Chat.propTypes =  {
   socket: PropTypes.object.isRequired,
-  username: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
   messageProps: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
@@ -153,6 +154,8 @@ Chat.propTypes =  {
 const mapStateToProps = state => {
   return {
     username: state.username__store.username,
+    firstname: state.username__store.firstname,
+    lastname: state.username__store.lastname,
   };
 };
 

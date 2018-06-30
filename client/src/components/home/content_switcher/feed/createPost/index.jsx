@@ -13,7 +13,6 @@ class CreatePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      owner: this.props.username,
       content: '',
       imageURL: '',
       accepted: [],
@@ -31,8 +30,9 @@ class CreatePost extends React.Component {
   }
 
   submitContent() {
+    const fullname = this.props.firstname + ' ' + this.props.lastname;
     setTimeout(() => {
-      this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: this.state.owner, content: this.state.content, imageURL: this.state.imageURL });
+      this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: fullname, content: this.state.content, imageURL: this.state.imageURL });
 
       // resets
       document.getElementById('form').reset();
@@ -120,13 +120,16 @@ class CreatePost extends React.Component {
 
 
 CreatePost.propTypes = {
-  username: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
   createPost: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => {
   return {
     username: state.username__store.username,
+    firstname: state.username__store.firstname,
+    lastname: state.username__store.lastname,
     post: state.post,
   };
 };
