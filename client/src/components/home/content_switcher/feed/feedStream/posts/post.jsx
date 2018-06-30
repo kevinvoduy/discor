@@ -54,7 +54,7 @@ const Post = props => {
             <img src="assets/heart.png" alt="" id="like" />
             <p>Like</p>
             <img src="assets/communication.png" alt="" id="comment" />
-            <p>Comment</p>
+            <p>Reply</p>
           </div>
           <div className="like__count" />
         </div>
@@ -88,8 +88,8 @@ const Post = props => {
         <div className="buttons">
           <img src="assets/heart.png" alt="" id="like" />
           <p>Like</p>
-          <img src="assets/communication.png" alt="" id="comment" />
-          <p>Comment</p>
+          <img src="assets/communication.png" alt="" id="comment" style={{ top: '5px'}} />
+          <p>Reply</p>
         </div>
         <div className="like__count" />
       </div>

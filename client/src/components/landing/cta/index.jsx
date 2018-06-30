@@ -14,8 +14,8 @@ class CTA extends React.Component {
     super(props);
     this.state = {
       username: '',
-      firstName: '',
-      lastName: '',
+      firstname: '',
+      lastname: '',
       password: '',
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
@@ -30,16 +30,18 @@ class CTA extends React.Component {
 
   userSignup() {
     const payload = {
-      firstName: this.state.firstName,
+      firstname: this.state.firstname,
       username: this.state.username,
-      lastName: this.state.lastName,
+      lastname: this.state.lastname,
       password: this.state.password,
     };
     axios.post('/api/auth/signup', payload)
       .then(() => {
         // save username to redux
-        this.props.saveUsername(this.state.username);
+        const { firstname, lastname, username } = this.state;
+        this.props.saveUsername({firstname, lastname, username});
         this.props.setLoginState(true);
+        this.setState({ password: '' });
         this.props.redirectHome();
       })
       .catch(() => {
@@ -58,10 +60,10 @@ class CTA extends React.Component {
 
           <div className="cta__form">
             <form id="form">
-              <label htmlFor="firstName">
+              <label htmlFor="firstname">
                 <input
                   type="text"
-                  name="firstName"
+                  name="firstname"
                   placeholder="First Name"
                   onChange={this.onChangeHandler}
                   className="half"
@@ -69,10 +71,10 @@ class CTA extends React.Component {
                 />
               </label>
 
-              <label htmlFor="lastName">
+              <label htmlFor="lastname">
                 <input
                   type="text"
-                  name="lastName"
+                  name="lastname"
                   placeholder="Last Name"
                   onChange={this.onChangeHandler}
                   className="half"
@@ -122,6 +124,8 @@ CTA.propTypes = {
 const mapStateToProps = state => {
   return {
     username: state.username__store.username,
+    firstname: state.username__store.firstname,
+    lastname: state.username__store.lastname,
     isLoggedIn: state.isLoggedIn__store.isLoggedIn,
   };
 };

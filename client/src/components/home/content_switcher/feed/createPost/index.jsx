@@ -61,6 +61,7 @@ class CreatePost extends React.Component {
           <img src='assets/communication.png' alt="quote" id="quote" /><p>Share an update</p>
           <img src='assets/technology.png' alt="camera" id="camera" /><p>Upload a photo</p>
           <img src='assets/draw.png' alt="pencil" id="pencil" /><p>Share a post</p>
+          <span className="arrow" />
         </div>
 
         <div className="input__form">

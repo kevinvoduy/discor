@@ -1,7 +1,7 @@
-export const addUsername = ({ username }) => {
+export const addUsername = ({ username, firstname, lastname }) => {
   return `
-    INSERT INTO users (username, user_uid)
-    VALUES ('${username}', '${username}')
+    INSERT INTO users (username, user_uid, firstname, lastname)
+    VALUES ('${username}', '${username}', '${firstname}', '${lastname}')
     RETURNING id
   `;
 };
