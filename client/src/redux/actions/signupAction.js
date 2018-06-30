@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export function saveUsernameAction(data) {
-  console.log('action payload', data);
   return {
     type: 'SAVE_USERNAME',
     payload: data,

@@ -1,7 +1,5 @@
 import signupQuery from './authQueries';
 import {
-  success,
-  error,
   database,
  } from '../../lib/logger';
 
@@ -21,10 +19,10 @@ export const signupController = async(req, res) => {
 export const loginController = async(req, res) => {
   try {
     console.log('req.body', req.body);
-    success('controller - successfully logged user');
+    database('controller - successfully logged user');
     return res.status(200).send('data');
   } catch(err) {
-    error('controller - failed to logged user:', err);
+    database('controller - failed to logged user:', err);
     return res.status(400);
   }
 };

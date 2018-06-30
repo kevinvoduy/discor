@@ -54,9 +54,9 @@ export const createUserTable = async() => {
         (
           id SERIAL,
           user_uid VARCHAR(16) UNIQUE NOT NULL,
-          username VARCHAR(25) UNIQUE NOT NULL,
-          firstname VARCHAR(25),
-          lastname VARCHAR(30),
+          username VARCHAR(16) UNIQUE NOT NULL,
+          firstname VARCHAR(20),
+          lastname VARCHAR(20),
           CONSTRAINT users_pk
             PRIMARY KEY(id)
         )
