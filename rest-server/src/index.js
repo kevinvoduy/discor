@@ -1,7 +1,6 @@
 
 import http from 'http';
 import path from 'path';
-import serverless from 'serverless-http';
 
 import App from './config/express';
 import '../src/config/database/pg';
@@ -32,4 +31,4 @@ app.all('/*', (req, res) => {
 	res.sendFile(path.resolve(__dirname, '../../client/public/index.html'));
 });
 
-module.exports.handler = serverless(app);
+module.exports = { app: app, serve: server };
