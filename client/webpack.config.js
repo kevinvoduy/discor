@@ -76,6 +76,9 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   watch: false,
+  stats: {
+    children: false
+  },
   performance: {
     hints: false,
   },
