@@ -20,6 +20,8 @@ io.on('connection', socket => {
   });
 });
 
+io.origins('*:*');
+
 server.listen(PORT, err => {
   if (err) throw new Error;
   else log('Successfully connected to socket-server:', PORT);
