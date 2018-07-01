@@ -13,8 +13,8 @@ const socket = io(`${url.postServer}`);
 
 class FeedStream extends React.Component {
   componentDidMount() {
-    this.props.fetchFeedData(`${url.postServer}/api/posts/getPosts`);
-    this.getPostUpdates();
+    // this.props.fetchFeedData(`${url.postServer}/api/posts/getPosts`);
+    // this.getPostUpdates();
   }
 
   getPostUpdates() {
