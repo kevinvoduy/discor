@@ -38,7 +38,8 @@
     "smoothscroll": "^0.4.0",
     "socket.io-client": "^2.1.1",
     "superagent": "^3.8.3",
-    "uglify-js": "^3.3.21"
+    "uglify-js": "^3.3.21",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -51,6 +52,7 @@
     "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "eslint": "^5.0.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
