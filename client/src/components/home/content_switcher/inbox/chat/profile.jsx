@@ -13,8 +13,8 @@ const Profile = (props) => (
       <p>+1 31 217 8736</p>
 
       <div className="contact__buttons">
-        <img src="/assets/config.png" alt="phone" id="icon" />
-        <img src="/assets/communication.png" alt="email" id="icon" />
+        <img src="/assets/phone.svg" alt="phone" id="icon" />
+        <img src="/assets/mail.svg" alt="email" id="icon" />
       </div>
     </div>
 
@@ -24,12 +24,8 @@ const Profile = (props) => (
         <div className="column left">
           <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
           <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
-          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
-          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
         </div>
         <div className="column right">
-          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
-          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
           <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
           <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
         </div>
