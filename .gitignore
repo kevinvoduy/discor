@@ -64,3 +64,5 @@ typings/
 
 # .DS_store
 *.DS_Store
+
+bundle.js
