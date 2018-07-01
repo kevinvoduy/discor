@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const username = 'discor';
 
-mongoose.connect(`mongodb://localhost:27017/${username}`);
+// mongoose.connect(`mongodb://localhost:27017/${username}`);
 mongoose.Promise = global.Promise;
 const mongoDB = mongoose.connection;
 
