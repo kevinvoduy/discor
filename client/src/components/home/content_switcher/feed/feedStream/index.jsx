@@ -7,18 +7,19 @@ import io from 'socket.io-client';
 import { postsFetchData } from '../../../../../redux/actions/fetchAllPostsAction';
 import Post from './posts/post';
 import mockPosts from './posts.json';
+import url from '../../../../globals/urlPrefix';
 
-const socket = io('http://localhost:3030');
+const socket = io(`${url.postServer}`);
 
 class FeedStream extends React.Component {
   componentDidMount() {
-    this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
+    this.props.fetchFeedData(`${url.postServer}/api/posts/getPosts`);
     this.getPostUpdates();
   }
 
   getPostUpdates() {
     socket.on('new__posts', () => {
-      this.props.fetchFeedData('http://localhost:3030/api/posts/getPosts');
+      this.props.fetchFeedData(`${url.postServer}/api/posts/getPosts`);
     });
   }
 

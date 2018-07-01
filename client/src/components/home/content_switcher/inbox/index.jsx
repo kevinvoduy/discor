@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Messages from './messages/messages';
 import Chat from './chat/chat';
+import url from '../../../globals/urlPrefix';
 
 class Inbox extends React.Component {
   constructor() {
@@ -14,7 +15,7 @@ class Inbox extends React.Component {
   }
 
   componentWillMount() {
-    const socket = io('http://localhost:3033');
+    const socket = io(`${url.sockServer}`);
     this.setState({ socket: socket });
   }
 

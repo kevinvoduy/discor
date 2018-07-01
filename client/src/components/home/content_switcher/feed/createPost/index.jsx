@@ -6,8 +6,9 @@ import upload from 'superagent';
 import Dropzone from 'react-dropzone';
 import sha256 from 'crypto-js/sha256';
 
-import './createPost.sass';
 import { createPost } from '../../../../../redux/actions/createPostAction';
+import url from '../../../../globals/urlPrefix';
+import './createPost.sass';
 
 class CreatePost extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class CreatePost extends React.Component {
   submitContent() {
     const fullname = this.props.firstname + ' ' + this.props.lastname;
     setTimeout(() => {
-      this.props.createPost('http://localhost:3030/api/posts/createPost', { owner: fullname, content: this.state.content, imageURL: this.state.imageURL });
+      this.props.createPost(`${url.postServer}/api/posts/createPost`, { owner: fullname, content: this.state.content, imageURL: this.state.imageURL });
 
       // resets
       document.getElementById('form').reset();
@@ -43,7 +44,7 @@ class CreatePost extends React.Component {
   }
 
   uploadPhoto(files) {
-    upload.post('http://localhost:3030/api/uploads/photo')
+    upload.post(`${url.postServer}/api/uploads/photo`)
     .attach('photo', files[0], sha256(files[0].name) + files[0].name)
     .end((err, res) => {
       if (err) console.error('failed to upload', err);

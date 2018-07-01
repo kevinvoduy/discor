@@ -52,6 +52,12 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         'NEWS_API_KEY': JSON.stringify(process.env.NEWS_API_KEY),
+        'DEV_REST': JSON.stringify(process.env.DEV_REST),
+        'PRO_REST': JSON.stringify(process.env.PRO_REST),
+        'DEV_POST': JSON.stringify(process.env.DEV_POST),
+        'PRO_POST': JSON.stringify(process.env.PRO_POST),
+        'DEV_SOCK': JSON.stringify(process.env.DEV_SOCK),
+        'PRO_SOCK': JSON.stringify(process.env.PRO_SOCK),
       }
     }),
     new FriendlyErrorsWebpackPlugin(),
