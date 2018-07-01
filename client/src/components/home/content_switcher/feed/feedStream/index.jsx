@@ -37,7 +37,7 @@ class FeedStream extends React.Component {
           this.props.feedStream.map(post => (
             <Post
               key={post._id}
-              owner={post.owner}
+              owner={post.owner===' '?this.props.username:post.owner}
               userImg={post.userImg}
               createdAt={post.createdAt}
               content={post.content}
@@ -66,6 +66,7 @@ class FeedStream extends React.Component {
 
 FeedStream.propTypes = {
   fetchFeedData: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
   feedStream: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasErrored: PropTypes.bool.isRequired,
@@ -80,6 +81,7 @@ const mapStateToProps = state => {
     hasErrored: state.postsHasErrored,
     userPosts: state.createPostSuccess,
     updateCount: state.updateCount,
+    username: state.signup.username,
   };
 };
 
