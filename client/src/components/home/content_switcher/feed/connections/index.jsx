@@ -6,7 +6,7 @@ import './connections.sass';
 const Connections = (props) => {
   return (
     <div className="connections">
-      <h3>People You May Know</h3>
+      <h3>People you may know</h3>
       <div className="suggested__people">
         {
           props.users.results.map(user => (

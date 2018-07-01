@@ -11,13 +11,13 @@ const Demo = () => (
     <div className="demo__highlights">
       <div className="detail">
         <img src="/assets/draw.png" alt="" />
-        <h5>Send Messages</h5>
+        <h5>Send messages</h5>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
       </div>
 
       <div className="detail">
         <img src="/assets/delivery-man.png" alt="" />
-        <h5>Create New Connections!</h5>
+        <h5>Make new connections</h5>
         <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       </div>
     </div>
