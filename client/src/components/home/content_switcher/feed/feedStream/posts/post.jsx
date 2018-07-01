@@ -51,9 +51,9 @@ const Post = props => {
 
         <div className="meta">
           <div className="buttons">
-            <img src="assets/heart.png" alt="" id="like" />
+            <img src="/assets/like.svg" alt="" id="like" />
             <p>Like</p>
-            <img src="assets/communication.png" alt="" id="comment" />
+            <img src="/assets/incoming.svg" alt="" id="comment" />
             <p>Reply</p>
           </div>
           <div className="like__count" />
@@ -86,9 +86,9 @@ const Post = props => {
 
       <div className="meta">
         <div className="buttons">
-          <img src="assets/heart.png" alt="" id="like" />
+          <img src="/assets/like.svg" alt="" id="like" />
           <p>Like</p>
-          <img src="assets/communication.png" alt="" id="comment" style={{ top: '5px'}} />
+          <img src="/assets/incoming.svg" alt="" id="comment" style={{ top: '5px'}} />
           <p>Reply</p>
         </div>
         <div className="like__count" />

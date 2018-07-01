@@ -7,7 +7,7 @@ const NavBar = () => {
       <a href="/">discor</a>
 
       <div className="search__bar">
-        <img src="assets/search.png" alt="search" id="search__icon" />
+        <img src="assets/search.svg" alt="search" id="search__icon" />
         <form autoComplete="off">
           <label htmlFor="search">
             <input type="text" placeholder="Search for people, events, and more..." name="search" />
@@ -16,7 +16,7 @@ const NavBar = () => {
       </div>
 
       <div className="user__icon">
-        <img src="https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif" alt="user img" id="user__image" />
+        <img src="/assets/user.svg" alt="user img" id="user__image" />
       </div>
     </div>
   );

@@ -4,33 +4,22 @@
 /* -- update, photo, or post area -- */
 .content__type
   display: grid
-  grid-template-columns: repeat(3, 36px 2fr)
+  grid-template-columns: repeat(3, 38px 1fr)
   grid-template-rows: 40px
   align-items: center
   margin-bottom: .8em
+  margin-left: 3em
 
-  #quote
-    max-height: 34px
-  //   background-color: yellow
-  //   box-shadow: 0px 1px 3px 1px gold
-
-  #camera
-    max-height: $icon-size
-  //   background-color: violet
-  //   box-shadow: 0px 1px 3px 1px magenta
-
-  #pencil
-    max-height: 28px
-    margin-left: 6px
-  //   background-color: aquamarine
-  //   box-shadow: 0px 1px 3px 1px lightskyblue
+  img
+    max-height: 36px
+    max-width: 36px
 
   span
     position: absolute
     width: 20px
     height: 20px
     top: 84px
-    left: 12%
+    left: 16%
     box-shadow: 0 0 12px $shadow
     z-index: 0
     display: block

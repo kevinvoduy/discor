@@ -11,41 +11,47 @@
     max-width: 85%
 
   li
-    padding: 8px 20px
-    margin: 1em 0
+    align-items: center
     background-color: transparent
-    font-size: $text-small
-    font-weight: 600
     border: 1px solid transparent
     display: flex
-    align-items: center
+    font-size: $text-small
+    font-weight: 500
+    padding: 8px 20px
+    margin: 1em 0
     position: relative
 
     &:hover
-      background-color: $gray
-      border: 1px solid $gray
+      background: linear-gradient(to bottom right, $twitter-blue, $blue);
+      border: 1px solid $twitter-blue
       border-radius: 40px
       box-shadow: 0px 6px 14px -3px $shadow
 
+      a
+        color: $white
+        font-weight: 500
+
+      img
+        filter: invert(100%)
+
   #notification
     &::after
-      background: $twitter-blue
-      height: 1em
-      width: 1em
+      background: $blue
       border-radius: 50%
       content: '2'
       color: $white
-      position: absolute
-      text-align: center
-      padding: 0px 3px 5px 3px
       font-size: $text-small
       font-weight: 400
+      height: 1em
+      padding: 0px 3px 5px 3px
+      position: absolute
+      text-align: center
       right: 10px
-      visibility: visible
+      width: 1em
 
   a
-    padding-top: 1px
     color: black
+    padding-top: 1px
 
   img
     max-height: 22px

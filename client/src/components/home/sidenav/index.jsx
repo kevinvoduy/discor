@@ -7,26 +7,24 @@ const Links = () => (
   <div className="links">
     <ul>
       <li>
-        <img src='assets/favorite.png' alt="" />
+        <img src='/assets/news.svg' alt="" />
         <Link to="/home" href="/home">Feed</Link>
       </li>
       <li>
-        <img src='assets/delivery-man.png' alt="" />
+        <img src='/assets/avatar.svg' alt="" />
         <Link to="/people" href="/people">People</Link>
       </li>
       <li id="notification">
-        <img src='assets/email.png' alt="" />
+        <img src='/assets/folder.svg' alt="" />
         <Link to="/inbox" href="/inbox">Inbox</Link>
       </li>
 
       <div className="divider" />
 
       <li>
-        <img src='assets/crown.png' alt="" />
-        <Link to="/premium" href="premium">Premium</Link>
+        <Link to="/premium" href="premium">Go Premium</Link>
       </li>
       <li>
-        <img src='assets/interface.png' alt="" />
         <Link to="/settings" href="/settings">Settings</Link>
       </li>
 
