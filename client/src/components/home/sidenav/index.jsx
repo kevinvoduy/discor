@@ -14,7 +14,7 @@ const Links = () => (
         <img src='assets/delivery-man.png' alt="" />
         <Link to="/people" href="/people">People</Link>
       </li>
-      <li>
+      <li id="notification">
         <img src='assets/email.png' alt="" />
         <Link to="/inbox" href="/inbox">Inbox</Link>
       </li>

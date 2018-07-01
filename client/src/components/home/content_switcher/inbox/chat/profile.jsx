@@ -9,7 +9,7 @@ const Profile = (props) => (
       <h1>Profile</h1>
       <img src={props.message.userImg} alt='' id='user__img' />
       <h5>{props.message.name}</h5>
-      <p>robertatimms@gmail.com</p>
+      <p>HelloFrom@discor.com</p>
       <p>+1 31 217 8736</p>
 
       <div className="contact__buttons">

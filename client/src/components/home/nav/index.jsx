@@ -16,7 +16,6 @@ const NavBar = () => {
       </div>
 
       <div className="user__icon">
-        <img src="https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif" alt="" id="notification" />
         <img src="https://frostsnow.com/uploads/biography/2017/11/16/levy-tran.gif" alt="user img" id="user__image" />
       </div>
     </div>
