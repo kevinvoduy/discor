@@ -30,7 +30,10 @@
     "joi": "^13.2.0",
     "mongoose": "^5.0.15",
     "nodemon": "^1.17.5",
-    "pg": "^7.4.1"
+    "pg": "^7.4.1",
+    "serverless": "^1.27.3",
+    "serverless-finch": "^2.2.0",
+    "serverless-http": "^1.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -46,6 +49,8 @@
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
     "prettier": "^1.12.0",
+    "serverless-offline": "^3.25.5",
+    "serverless-webpack": "^5.1.5",
     "supertest": "^3.0.0"
   }
 }

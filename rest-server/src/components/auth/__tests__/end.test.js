@@ -6,6 +6,8 @@ const app = require('../../../').app;
 const server = require('../../../').serve;
 
 const payload = {
+  firstname: 'test',
+  lastname: 'user',
   username: 'testuser',
   password: 'password',
 };
