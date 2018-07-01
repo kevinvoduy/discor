@@ -53,7 +53,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log('env', process.env);
     return (
       <div className="login__page" >
         <div className="form__container">
