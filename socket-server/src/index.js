@@ -1,5 +1,4 @@
 import http from 'http';
-import SocketIO from 'socket.io';
 import { each } from 'lodash';
 
 import clientEvents from './clientEvents';
@@ -8,8 +7,8 @@ import log from './lib/log';
 require('dotenv').config();
 
 const server = http.Server();
-const io = SocketIO(server);
 const PORT = process.env.PORT || 3033;
+const io = require('socket.io').listen(server);
 
 io.on('connection', socket => {
   socket.removeAllListeners;
