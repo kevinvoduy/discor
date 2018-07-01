@@ -1,8 +1,8 @@
-export const addUsername = ({ username, firstname, lastname }) => {
+export const addUsername = ({ username, firstname, lastname }, uuid) => {
   return `
-    INSERT INTO users (username, user_uid, firstname, lastname)
-    VALUES ('${username}', '${username}', '${firstname}', '${lastname}')
-    RETURNING id
+    INSERT INTO users (username, uuid, firstname, lastname)
+    VALUES ('${username}', '${uuid}', '${firstname}', '${lastname}')
+    RETURNING uuid
   `;
 };
 
@@ -11,6 +11,6 @@ export const addUsername = ({ username, firstname, lastname }) => {
 export const addPassword = (id, { password }) => {
   return `
     INSERT INTO credentials (user_id, hash)
-    VALUES (${id}, '${password}')
+    VALUES ('${id}', '${password}')
   `;
 };

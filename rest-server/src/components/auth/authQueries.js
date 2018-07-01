@@ -1,3 +1,4 @@
+import uuidv4 from 'uuid/v4';
 import db from '../../config/database/pg';
 import {
   addUsername,
@@ -10,11 +11,12 @@ import {
 const signupQuery = async(payload) => {
   try {
     // add username to users table, returns id
-    const usernameQuery =  addUsername(payload);
-    const { rows: [{ id }] } = await db.queryAsync(usernameQuery);
+    const id = uuidv4();
+    const usernameQuery =  addUsername(payload, id);
+    const { rows: [{ uuid }] } = await db.queryAsync(usernameQuery);
 
     // adds password to credentials table
-    const passwordQuery = addPassword(id, payload);
+    const passwordQuery = addPassword(uuid, payload);
     await db.queryAsync(passwordQuery);
     return 'Success. User added!';
   } catch(err) {
