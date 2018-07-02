@@ -12,7 +12,8 @@ const io = require('socket.io').listen(server);
 
 io.on('connection', socket => {
   socket.removeAllListeners;
-  // log('socket-server - client connected');
+  console.log('socket-server - client connected');
+  console.log('handshake', socket.handshake.headers);
 
   each(clientEvents, (handler, event) => {
     socket.on(event, handler.bind(null, { io, socket }));
