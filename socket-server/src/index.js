@@ -12,6 +12,7 @@ const io = require('socket.io').listen(server);
 
 io.on('connection', socket => {
   socket.removeAllListeners;
+  console.log('socket server: client connected');
 
   each(clientEvents, (handler, event) => {
     socket.on(event, handler.bind(null, { io, socket }));

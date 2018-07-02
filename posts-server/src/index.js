@@ -2,7 +2,10 @@ import http from 'http';
 import SocketIO from 'socket.io';
 import App from './config/express';
 
-// development
+// dynamo: prod
+import './config/dynamo';
+
+// mongodb: dev
 import './config/mongo';
 
 // if (process.env.NODE_ENV !== 'production') {
