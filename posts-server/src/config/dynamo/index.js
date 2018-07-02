@@ -1,6 +1,8 @@
 import aws from 'aws-sdk';
 
-aws.config.update({ region: 'us-west-2' });
+aws.config.update({
+  region: 'us-west-2',
+});
 
 var ddb = new aws.DynamoDB({apiVersion: '2012-08-10'});
 

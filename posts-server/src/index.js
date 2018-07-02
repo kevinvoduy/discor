@@ -3,7 +3,7 @@ import SocketIO from 'socket.io';
 import App from './config/express';
 
 // dynamo: prod
-import './config/dynamo';
+// import './config/dynamo';
 
 // mongodb: dev
 import './config/mongo';

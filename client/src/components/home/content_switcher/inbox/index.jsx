@@ -15,7 +15,7 @@ class Inbox extends React.Component {
   }
 
   componentWillMount() {
-    const socket = io.connect(`${url.sockServer}`);
+    const socket = io.connect('http://ec2-13-57-209-184.us-west-1.compute.amazonaws.com/3033');
     this.setState({ socket: socket });
   }
 

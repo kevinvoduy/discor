@@ -10,7 +10,7 @@ const server = http.Server();
 const PORT = process.env.PORT || 3033;
 const io = require('socket.io').listen(server);
 
-io.on('connection', socket => {
+io.sockets.on('connection', socket => {
   socket.removeAllListeners;
   console.log('socket server: client connected');
 
