@@ -1,11 +1,11 @@
 import log from './lib/log';
 
 const clientReady = ({ io, socket }, payload) => {
-  log('client ready - id:', payload);
+  console.log('client ready - id:', payload);
 };
 
 const chatMessage = ({ io, socket }, payload) => {
-  log('chat message:', payload);
+  console.log('chat message:', payload);
   io.emit('chat.broadcast.message', payload);
 };
 
