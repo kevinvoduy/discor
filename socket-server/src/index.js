@@ -19,7 +19,7 @@ io.on('connection', socket => {
   });
 });
 
-io.origins('http://ec2-13-57-209-184.us-west-1.compute.amazonaws.com');
+io.origins('*:*');
 
 server.listen(PORT, err => {
   if (err) throw new Error;
