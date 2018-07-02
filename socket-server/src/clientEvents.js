@@ -5,7 +5,7 @@ const clientReady = ({ io, socket }, payload) => {
 };
 
 const chatMessage = ({ io, socket }, payload) => {
-  console.log('chat message:', payload);
+  log('chat message:', payload);
   io.emit('chat.broadcast.message', payload);
 };
 
