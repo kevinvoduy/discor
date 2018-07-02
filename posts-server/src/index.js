@@ -3,10 +3,10 @@ import SocketIO from 'socket.io';
 import App from './config/express';
 import './config/mongo';
 
-if (process.env.NODE_ENV !== 'production') {
-	require('babel-register');
-	require('babel-polyfill');
-}
+// if (process.env.NODE_ENV !== 'production') {
+// 	require('babel-register');
+// 	require('babel-polyfill');
+// }
 
 const app = App.express;
 const server = http.Server(app);

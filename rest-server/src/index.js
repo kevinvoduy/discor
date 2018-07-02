@@ -10,10 +10,10 @@ import '../src/config/database/pg';
 
 import { success } from '../src/lib/logger';
 
-if (process.env.NODE_ENV !== 'production') {
-	require('babel-register');
-	require('babel-polyfill');
-}
+// if (process.env.NODE_ENV !== 'production') {
+// 	require('babel-register');
+// 	require('babel-polyfill');
+// }
 
 const app = App.express;
 
