@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const server = http.Server();
 const PORT = process.env.PORT || 3033;
-const io = require('socket.io')(server,{ path: '/socket.io' });
+const io = require('socket.io')(server,{ path: '/socket.io', transports: ['polling', 'websocket'] });
 
 io.sockets.on('connection', socket => {
   socket.removeAllListeners;
