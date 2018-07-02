@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.250.1",
+    "aws-sdk": "^2.266.1",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "bluebird": "^3.5.1",
