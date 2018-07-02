@@ -18,17 +18,9 @@ const config = {
 
 const db = new Pool(config);
 
-db.on('connect', () => {
+db.on('connect', err => {
   success('successfully connected to PostgreSQL:', process.env.LOCAL_DATABASE);
-});
-
-db.on('error', err => {
-  new Error('psql error -', err);
-});
-
-db.connect(err => {
   if (err) throw err;
-  success('psql success');
 });
 
 Promise.promisifyAll(db);
