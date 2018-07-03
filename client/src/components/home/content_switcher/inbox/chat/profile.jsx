@@ -22,12 +22,13 @@ const Profile = (props) => (
       <h5>Shared Images</h5>
       <div className="shared__images">
         <div className="column left">
-          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
-          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
+          <img src="https://images.pexels.com/photos/1005456/pexels-photo-1005456.jpeg?auto=compress&cs=tinysrgb&h=375&w=630" alt="" id="shared__image" />
+          <img src="https://images.pexels.com/photos/990349/pexels-photo-990349.jpeg?auto=compress&cs=tinysrgb&h=375&w=630" alt="" id="shared__image" />
         </div>
         <div className="column right">
-          <img src="https://www.quackit.com/pix/samples/24m.jpg" alt="" id="shared__image" />
-          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="" id="shared__image" />
+          <img src="https://images.pexels.com/photos/951235/pexels-photo-951235.jpeg?auto=compress&cs=tinysrgb&h=375&w=630" alt="" id="shared__image" />
+          <img src="https://images.pexels.com/photos/1194406/pexels-photo-1194406.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630" alt="" id="shared__image" />
+          <img src="https://images.pexels.com/photos/1192106/pexels-photo-1192106.jpeg?auto=compress&cs=tinysrgb&h=375&w=630" alt="" id="shared__image" />
         </div>
       </div>
     </div>

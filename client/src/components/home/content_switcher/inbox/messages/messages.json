@@ -4,17 +4,8 @@
     "name": "Kevin V",
     "userImg": "http://www.philadelphiacorporateheadshots.org/wp-content/gallery/people/True-Capital-July-2014-36-Square.jpg",
     "status": "New",
-    "subject": "Welcome! Thank you for signing up",
+    "subject": "Welcome! Thank you for signing up.",
     "content": "Hopefully you've already had a chance to get an idea on how discor works. If not, a great place to start is by uploading your first post! Try uploading an image or gif by dragging and dropping it in the main feed. Cheers!",
     "createdAt": "2018-06-18 09:35:45"
-  },
-  {
-    "id": 2,
-    "name": "Danielle Washington",
-    "userImg": "http://www.philadelphiacorporateheadshots.org/wp-content/gallery/people/Lisa-Monk-Janet-May-2014-253.jpg",
-    "status": "New",
-    "subject": "Maintenence Request",
-    "content": "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.",
-    "createdAt": "2018-06-18 08:10:45"
   }
 ]
