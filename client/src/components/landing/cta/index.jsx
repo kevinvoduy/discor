@@ -40,11 +40,9 @@ class CTA extends React.Component {
         // save username to redux
         const { username, firstname, lastname } = this.state;
 
-        console.log('before');
         this.props.saveUsername({username, firstname, lastname});
-        console.log('after');
-
         this.props.setLoginState(true);
+
         this.setState({ password: '' });
         this.props.redirectHome();
       })

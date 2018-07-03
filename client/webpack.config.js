@@ -3,6 +3,8 @@ const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 require('dotenv').config();
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -67,6 +69,11 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'public/assets', to: 'assets' }
     ]),
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true
+    }),
+    new OptimizeCSSAssetsPlugin({})
   ],
   optimization: {
     minimize: process.env.NODE_ENV === 'production' ? true : false,
