@@ -13,8 +13,8 @@ const socket = io(`${url.postServer}`);
 
 class FeedStream extends React.Component {
   componentDidMount() {
-    // this.props.fetchFeedData(`${url.postServer}/api/posts/getPosts`);
-    // this.getPostUpdates();
+    this.props.fetchFeedData(`${url.postServer}/api/posts/getPosts`);
+    this.getPostUpdates();
   }
 
   getPostUpdates() {
@@ -35,6 +35,19 @@ class FeedStream extends React.Component {
     return (
       <div className="feed__stream">
         {
+          this.props.feedStream.map(post => (
+            <Post
+              key={post._id}
+              owner={post.owner===' '?this.props.username:post.owner}
+              userImg={post.userImg}
+              createdAt={post.createdAt}
+              content={post.content}
+              comments={post.comments}
+              imageURL={post.imageURL}
+            />
+          ))
+        }
+        {
           mockPosts.map(post => (
             <Post
               key={post._id}
@@ -54,8 +67,8 @@ class FeedStream extends React.Component {
 
 FeedStream.propTypes = {
   fetchFeedData: PropTypes.func.isRequired,
-  // username: PropTypes.string.isRequired,
-  // feedStream: PropTypes.array.isRequired,
+  username: PropTypes.string.isRequired,
+  feedStream: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasErrored: PropTypes.bool.isRequired,
   // updateCount: PropTypes.number.isRequired,
