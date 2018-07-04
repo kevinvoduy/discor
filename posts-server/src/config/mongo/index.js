@@ -1,8 +1,12 @@
 import mongoose from 'mongoose';
 
-const db = 'discor';
+require('dotenv').config();
 
-mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PW}@13.57.209.184:27017/${db}`);
+const db = 'discor';
+const user = process.env.MONGO_USER;
+const password = process.env.MONGO_PW;
+
+mongoose.connect(`mongodb://${user}:${password}@13.57.209.184:27017/${db}`);
 mongoose.Promise = global.Promise;
 const mongoDB = mongoose.connection;
 

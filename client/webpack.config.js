@@ -59,6 +59,8 @@ module.exports = {
         'PRO_POST': JSON.stringify(process.env.PRO_POST),
         'DEV_SOCK': JSON.stringify(process.env.DEV_SOCK),
         'PRO_SOCK': JSON.stringify(process.env.PRO_SOCK),
+        'MONGO_USER': JSON.stringify(process.env.MONGO_USER),
+        'MONGO_PW': JSON.stringify(process.env.MONGO_PW),
       }
     }),
     new FriendlyErrorsWebpackPlugin(),
