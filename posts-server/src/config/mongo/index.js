@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 
-const username = 'discor';
+const db = 'discor';
 
-mongoose.connect(`mongodb://localhost:27017/${username}`);
+mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PW}@13.57.209.184:27017/${db}`);
 mongoose.Promise = global.Promise;
 const mongoDB = mongoose.connection;
 
 mongoDB.once('open', err => {
-  console.log('successfully connected to MongoDB:', username);
+  console.log('successfully connected to MongoDB:', db);
   if (err) console.error('failed to connect to MongoDB', err);
 });
 
