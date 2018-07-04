@@ -2,7 +2,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import url from '../../components/globals/urlPrefix';
 
-const socket = io(`http://${url.postServer}`);
+const socket = io(`${url.postServer}`);
 const broadcastPost = post => {
   socket.emit('new__post', post);
 };

@@ -20,7 +20,7 @@ const PostSchema = new mongoose.Schema({
       ref: 'Comment',
     }
   ],
-  createdAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now, expires: 6000 },
 });
 
 const Post = mongoose.model('Post', PostSchema);
