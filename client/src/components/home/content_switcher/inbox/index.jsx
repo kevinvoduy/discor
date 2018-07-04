@@ -15,7 +15,7 @@ class Inbox extends React.Component {
   }
 
   componentWillMount() {
-    const socket = io.connect(`${url.sockServer}`);
+    const socket = io.connect(`http://${url.sockServer}`);
     this.setState({ socket: socket });
   }
 

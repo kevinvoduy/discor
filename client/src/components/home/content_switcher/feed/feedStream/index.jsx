@@ -9,7 +9,7 @@ import Post from './posts/post';
 import mockPosts from './posts.json';
 import url from '../../../../globals/urlPrefix';
 
-const socket = io(`${url.postServer}`);
+const socket = io(`http://${url.postServer}`);
 
 class FeedStream extends React.Component {
   componentDidMount() {

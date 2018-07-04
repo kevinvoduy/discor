@@ -33,7 +33,7 @@ class CreatePost extends React.Component {
   submitContent() {
     const fullname = this.props.firstname + ' ' + this.props.lastname;
     setTimeout(() => {
-      this.props.createPost(`${url.postServer}/api/posts/createPost`, { owner: fullname, content: this.state.content, imageURL: this.state.imageURL });
+      this.props.createPost(`http://${url.postServer}/api/posts/createPost`, { owner: fullname, content: this.state.content, imageURL: this.state.imageURL });
 
       // resets
       document.getElementById('form').reset();
@@ -44,7 +44,7 @@ class CreatePost extends React.Component {
   }
 
   uploadPhoto(files) {
-    upload.post(`${url.postServer}/api/uploads/photo`)
+    upload.post(`http://${url.postServer}/api/uploads/photo`)
     .attach('photo', files[0], sha256(files[0].name) + files[0].name)
     .end((err, res) => {
       if (err) console.error('failed to upload', err);
