@@ -2,13 +2,22 @@ import express from 'express';
 import multer from 'multer';
 import AWS from 'aws-sdk';
 
-const s3 = new AWS.S3();
+require('dotenv').config();
+
 AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_KEY,
-  subregion: 'us-west-1',
+  // accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  // secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION,
+
 });
 
+// AWS.config = new AWS.Config();
+// AWS.config.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+// AWS.config.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+// AWS.config.region = process.env.AWS_REGION;
+
+const s3 = new AWS.S3();
+console.log('aws', AWS.config);
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 5000000}
