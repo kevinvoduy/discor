@@ -20,10 +20,8 @@ const PostSchema = new mongoose.Schema({
       ref: 'Comment',
     }
   ],
-  createdAt: { type: Date, expires: 60, default: Date.now },
+  createdAt: { type: Date, expires: 180, default: Date.now },
 });
-
-PostSchema.index({createdAt: 1}, {expireAfterSeconds: 60 });
 
 const Post = mongoose.model('Post', PostSchema);
 export default Post;
