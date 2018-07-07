@@ -51,7 +51,7 @@ class CreatePost extends React.Component {
       this.setState({
         imageURL: 'https://s3-us-west-1.amazonaws.com/discor-photos/' + sha256(files[0].name) + files[0].name,
       });
-      console.log(res.text);
+      console.log('Server message:', res.text);
     });
   }
 
