@@ -47,7 +47,7 @@ class CreatePost extends React.Component {
     upload.post(`http://${url.postServer}/api/uploads/photo`)
     .attach('photo', files[0], sha256(files[0].name) + files[0].name)
     .end((err, res) => {
-      if (err) console.error('failed to upload', err);
+      if (err) console.error('Failed to upload.', err);
       this.setState({
         imageURL: 'https://s3-us-west-1.amazonaws.com/discor-photos/' + sha256(files[0].name) + files[0].name,
       });
