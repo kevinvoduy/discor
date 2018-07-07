@@ -23,5 +23,7 @@ const PostSchema = new mongoose.Schema({
   createdAt: { type: Date, expires: 60, default: Date.now },
 });
 
+PostSchema.index({createdAt: 1}, {expireAfterSeconds: 60 });
+
 const Post = mongoose.model('Post', PostSchema);
 export default Post;
