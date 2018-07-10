@@ -59,9 +59,9 @@ class CreatePost extends React.Component {
     return (
       <div className="create__post">
         <div className="content__type">
-          <img src='/assets/document.svg' alt="quote" id="quote" /><p>Share an update</p>
-          <img src='/assets/picture.svg' alt="camera" id="camera" /><p>Upload a photo</p>
-          <img src='/assets/chat.svg' alt="pencil" id="pencil" /><p>Share a post</p>
+          <img src='assets/document.svg' alt="quote" id="quote" /><p>Share an update</p>
+          <img src='assets/picture.svg' alt="camera" id="camera" /><p>Upload a photo</p>
+          <img src='assets/chat.svg' alt="pencil" id="pencil" /><p>Share a post</p>
           <span className="arrow" />
         </div>
 

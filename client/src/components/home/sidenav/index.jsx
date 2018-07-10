@@ -7,15 +7,15 @@ const Links = () => (
   <div className="links">
     <ul>
       <li>
-        <img src='/assets/news.svg' alt="" />
+        <img src='assets/news.svg' alt="" />
         <Link to="/home" href="/home">Feed</Link>
       </li>
       <li>
-        <img src='/assets/avatar.svg' alt="" />
+        <img src='assets/avatar.svg' alt="" />
         <Link to="/people" href="/people">People</Link>
       </li>
       <li id="notification">
-        <img src='/assets/folder.svg' alt="" />
+        <img src='assets/folder.svg' alt="" />
         <Link to="/inbox" href="/inbox">Inbox</Link>
       </li>
 

@@ -17,7 +17,7 @@ const Connections = (props) => {
                   <p id="name">{user.name.first + ' ' + user.name.last}</p>
                   <p id="job">{user.login.username}</p>
                 </div>
-                <img src="/assets/chain.svg" alt="" id="common__icon" />
+                <img src="assets/chain.svg" alt="" id="common__icon" />
               </div>
             </div>
           ))

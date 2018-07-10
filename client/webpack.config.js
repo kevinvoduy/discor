@@ -29,18 +29,18 @@ module.exports = {
         test: /\.s?[ac]ss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+          {loader: 'css-loader', options: { importLoaders: 1 }},
           'postcss-loader',
           'sass-loader',
         ],
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[sha512:hash:base64:7].[ext]',
+              name: '[name].[ext]',
               publicPath: 'assets/',
             }
           }

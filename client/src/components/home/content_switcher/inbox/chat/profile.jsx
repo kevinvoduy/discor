@@ -13,8 +13,8 @@ const Profile = (props) => (
       <p>+1 31 217 8736</p>
 
       <div className="contact__buttons">
-        <img src="/assets/phone.svg" alt="phone" id="icon" />
-        <img src="/assets/mail.svg" alt="email" id="icon" />
+        <img src="assets/phone.svg" alt="phone" id="icon" />
+        <img src="assets/mail.svg" alt="email" id="icon" />
       </div>
     </div>
 

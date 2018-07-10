@@ -85,7 +85,7 @@ class Messages extends React.Component {
                   </Link>
 
                   <div className="show__more">
-                    <img src="/assets/more.png" alt="ico" />
+                    <img src="assets/more.png" alt="ico" />
                   </div>
 
                 </div>

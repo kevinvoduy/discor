@@ -86,7 +86,7 @@ class Login extends React.Component {
         </div>
 
         <div className="hero__image">
-          <img src="/assets/black.png" alt="" />
+          <img src="assets/black.png" alt="" />
         </div>
       </div>
     );
