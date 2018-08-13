@@ -82,7 +82,7 @@ class Login extends React.Component {
 
           <button onClick={this.login}>Login</button>
           <button onClick={this.bypassSignup}>Try Demo</button>
-          <a href="#cta" style={{ fontSize: 14 }}>Don't have an account?</a>
+          <a href="#cta" style={{ fontSize: 14, color: 'dodgerblue' }}>Don't have an account?</a>
         </div>
 
         <div className="hero__image">
