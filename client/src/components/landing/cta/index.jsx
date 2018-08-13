@@ -105,7 +105,7 @@ class CTA extends React.Component {
               </label>
             </form>
 
-            <button onClick={this.userSignup}>Sign Up</button>
+            <button onClick={this.userSignup}>Submit</button>
           </div>
         </div>
 

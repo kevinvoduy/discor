@@ -81,8 +81,8 @@ class Login extends React.Component {
           </form>
 
           <button onClick={this.login}>Login</button>
-          <a href="#cta"><button>Sign up</button></a>
-          <button onClick={this.bypassSignup}>Skip</button>
+          <button onClick={this.bypassSignup}>Try Demo</button>
+          <p id="small__text">Don't have an account? <a href="#cta">Sign up</a></p>
         </div>
 
         <div className="hero__image">
