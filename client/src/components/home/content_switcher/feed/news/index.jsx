@@ -46,7 +46,6 @@ class News extends React.Component {
       autoplaySpeed: 4000,
       draggable: false,
       fade: true,
-      lazyLoad: 'ondemand'
     };
 
     if (this.state.articles) {
